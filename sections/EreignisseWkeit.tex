@@ -1,27 +1,18 @@
 \section{Ereignisse und ihre Wahrscheinlichkeit}
-%\renewcommand{\baselinestretch}{1.25}\normalsize
 	\subsection{Kombinatorik \sachs{66}}
-		\begin{minipage}{13.5cm}
 		\begin{tabular}{| p{5.5cm} | c | c |}
 			\hline
 			Art der Auswahl bzw. Zusammenstellung von $k$ aus $n$ Elementen
-			& \multicolumn{2}{c|}{Anzahl der Möglichkeiten}\\
+			& \multicolumn{2}{|c|}{Anzahl der Möglichkeiten}\\
  			& ohne Wiederholungen		& mit Wiederholungen\\
  			& $(k\leq n)$ 				& $(k\leq n)$ \\
  			\hline
- 			Permutationen & $P_n=n!(n=k)$ &
- 			$P_n^{(k)}=\frac{n!}{k!}$ \\ & &\\
- 			Kombinationen & $C_n^{(k)}=\binom n k$ &
- 			$C_n^{(k)}=\binom{n+k-1} k$\\
- 			& &\\
+ 			Permutationen & $P_n=n!\quad(n=k)$ &	$P_n^{(k)}=\frac{n!}{k!}$ \\
+ 			Kombinationen & $C_n^{(k)}=\binom n k$ & $C_n^{(k)}=\binom{n+k-1} k$ \\
  			Variationen & $V_n^{(k)}=k!\binom n k$ & $V_n^{(k)}=n^k$\\
  			\hline
 		\end{tabular}
-		\end{minipage}
-		\begin{minipage}{5cm}
-		$\binom n k$ mit TR: \texttt{nCr(n,k)} \hspace{9.3mm}En\\
-		\hspace*{19mm} \texttt{Kombinat(n,k)} De
-		\end{minipage}
+		
 		\begin{list}{$\bullet$}{\setlength{\itemsep}{0cm} \setlength{\parsep}{0cm} \setlength{\topsep}{0.1cm}} 
          	\item \textbf{Permutationen}: Gegeben seien $n$ verschiedene Objekte. Dann gibt es $n!$
          	verschiedene Reihenfolgen in denen man diese Objekte anordnen
@@ -39,32 +30,25 @@
 		  \item \textbf{Variation} nennt man eine Auswahl von $k$ Elementen aus $n$
 		  		verschiedenen Elementen unter Beachtung der Reihenfolge
         \end{list}
-        
 \hrule
-\vspace{5mm}
-	\begin{minipage}{6.8cm}
-	\subsection{Wahrscheinlichkeit\skript{18}}
+
+	\subsection{Wahrscheinlichkeit \& Rechenregeln}
 		\begin{tabular}{ll}
 			Wertebereich:
-			& ${0}\le{P(A)}\le{1}$\\ \\
+			& ${0}\le{P(A)}\le{1}$\\
 			Sicheres Ereignis:
-			& $P(\Omega)=1$\\ \\
+			& $P(\Omega)=1$\\
 			unmögliches Ereignis:
 			& $P(\emptyset)=0$
 		\end{tabular}
-	\end{minipage}
-		\begin{minipage}{11.2cm}
-		\subsubsection{Rechenregeln}
-			\begin{tabular}{ll}
-				komplementär Ereignis:
-				&$P(\bar{A})=P({\Omega}\setminus{A})=1-P(A)$\\ \\
-				Differenz der Ereignisse A und B:
-				&$P({A}\setminus{B})=P(A)-P({A}\cap{B})$\\ \\
-				Vereinigung zweier Ereignisse:
-				&$P({A}\cup{B})=P(A)+P(B)-P({A}\cap{B})$
-			\end{tabular}
-		\end{minipage}
-\vspace{1mm}
+		\begin{tabular}{ll}
+			komplementär Ereignis:
+			&$P(\bar{A})=P({\Omega}\setminus{A})=1-P(A)$\\
+			Differenz der Ereignisse A und B:
+			&$P({A}\setminus{B})=P(A)-P({A}\cap{B})$\\
+			Vereinigung zweier Ereignisse:
+			&$P({A}\cup{B})=P(A)+P(B)-P({A}\cap{B})$
+		\end{tabular}
 \hrule
 	
 	\subsection{Laplace-Ereignisse \skript{37} \sachs{79}}
@@ -73,19 +57,15 @@
     	\begin{center}
     	$P(A)=\dfrac{\left| A\right|}{\left|\Omega\right|}$
     	\end{center}
-
-
 \hrule
 
 	\subsection{Unabhängige Ereignise \skript{24} \sachs{83}}
-		Unabhängige Ereignisse $A$ und $B$ liegen vor, wenn:\\
-    	\hspace*{8mm} $P(A\mid B)=P(A)$ \hspace{4mm} und \hspace{4mm}
-    	$P(B\mid A)=P(B)$\\
-    	erfüllt ist. Für sie gilt\\
-    	\hspace*{8mm} $P(A\cap B)=P(A)P(B)$\\
+		Unabhängige Ereignisse $A$ und $B$ liegen vor, wenn: \hspace*{5mm} $P(A\mid
+		B)=P(A)$ \hspace{4mm} und \hspace{4mm} $P(B\mid A)=P(B)$ \hspace*{5mm} erfüllt
+		ist. \\
+		Für sie gilt \hspace*{5mm} $P(A\cap B)=P(A)P(B)$\\
     	Die Tatsache, dass A eingetreten ist, hat keinen Einfluss auf die 
-		Wahrscheinlichkeit von B.\vspace{1mm}
-
+		Wahrscheinlichkeit von B.\\
 \hrule
 
 	\subsection{Bedingte Wahrscheinlichkeit \skript{26} \sachs{85}}
