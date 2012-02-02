@@ -1,46 +1,40 @@
 \section{Ereignisse und ihre Wahrscheinlichkeit}
-	\subsection{Kombinatorik \sachs{66}}
-		\begin{tabular}{| p{5.5cm} | c | c |}
-			\hline
-			Art der Auswahl bzw. Zusammenstellung von $k$ aus $n$ Elementen
-			& \multicolumn{2}{|c|}{Anzahl der Möglichkeiten}\\
- 			& ohne Wiederholungen		& mit Wiederholungen\\
- 			& $(k\leq n)$ 				& $(k\leq n)$ \\
- 			\hline
- 			Permutationen & $P_n=n!\quad(n=k)$ &	$P_n^{(k)}=\frac{n!}{k!}$ \\
- 			Kombinationen & $C_n^{(k)}=\binom n k$ & $C_n^{(k)}=\binom{n+k-1} k$ \\
- 			Variationen & $V_n^{(k)}=k!\binom n k$ & $V_n^{(k)}=n^k$\\
- 			\hline
-		\end{tabular}
-		
-		\begin{list}{$\bullet$}{\setlength{\itemsep}{0cm} \setlength{\parsep}{0cm} \setlength{\topsep}{0.1cm}} 
-         	\item \textbf{Permutationen}: Gegeben seien $n$ verschiedene Objekte. Dann gibt es $n!$
-         	verschiedene Reihenfolgen in denen man diese Objekte anordnen
-         	kann. \\
-         	z.B.: $x,y,z;\quad x,z,y;\quad z,y,x;\ldots$
-         % \item Permutation nennt man eine Anordnung von $n$ Elementen in einer Bestimmten
-		%		Reihenfolge
-		 	\item \textbf{Kombination}: Gegeben seien $n$ verschiedene Objekte. Dann gibt es $\binom n k$
-		 	Möglichkeiten, daraus $k$ Objekte auszuwählen, wenn es nicht auf die Reihenfolge
-		 	ankommt. \\
-		 	z.B.: Wie viele verschiedene Möglichkeiten hat man beim Lotto, 6 Zahlen aus 49
-		 	auszuwählen?
-		 % \item Kombination nennt man eine Auswahl von $k$ Elementen aus $n$ Elementen
-		 % 		ohne Beachtung der Reihenfolge
-		  \item \textbf{Variation} nennt man eine Auswahl von $k$ Elementen aus $n$
-		  		verschiedenen Elementen unter Beachtung der Reihenfolge
-        \end{list}
+
+\subsection{Kombinatorik \skript{5} \sachs{66}}
+\begin{tabular}{| p{5.5cm} | c | c |}
+  \hline
+  Art der Auswahl bzw. Zusammenstellung von $k$ aus $n$ Elementen &
+  \multicolumn{2}{|c|}{Anzahl der Möglichkeiten} \\
+  & ohne Wiederholungen & mit Wiederholungen \\
+ 	&	$(k\leq n)$         & $(k\leq n)$ \\
+ 	\hline
+ 	Permutationen & $P_n=n!\quad(n=k)$       & $P_n^{(k)}=\frac{n!}{k!}$ \\
+ 	Kombinationen & $C_n^{(k)}=\binom n k$   & $C_n^{(k)}=\binom{n+k-1} k$ \\
+  Variationen   & $V_n^{(k)}=k!\binom n k$ & $V_n^{(k)}=n^k$\\
+  \hline
+\end{tabular}
+\begin{list}{$\bullet$}{\setlength{\itemsep}{0cm} \setlength{\parsep}{0cm}
+\setlength{\topsep}{0.1cm}}
+  \item \textbf{Permutationen}: Gegeben seien $n$ verschiedene Objekte. Dann
+    gibt es $n!$ verschiedene Reihenfolgen in denen man diese Objekte anordnen
+    kann. \\
+    z.B.: $x,y,z;\quad x,z,y;\quad z,y,x;\ldots$
+  \item \textbf{Kombination}: Gegeben seien $n$ verschiedene Objekte. Dann gibt
+    es $\binom n k$ Möglichkeiten, daraus $k$ Objekte auszuwählen, wenn es nicht
+    auf die Reihenfolge ankommt. \\
+    z.B.: Wie viele verschiedene Möglichkeiten hat man beim Lotto, 6 Zahlen aus
+    49 auszuwählen?
+  \item \textbf{Variation} nennt man eine Auswahl von $k$ Elementen aus $n$
+    verschiedenen Elementen unter Beachtung der Reihenfolge
+\end{list}
 \hrule
 
-	\subsection{Wahrscheinlichkeit \& Rechenregeln}
-		\begin{tabular}{ll}
-			Wertebereich:
-			& ${0}\le{P(A)}\le{1}$\\
-			Sicheres Ereignis:
-			& $P(\Omega)=1$\\
-			unmögliches Ereignis:
-			& $P(\emptyset)=0$
-		\end{tabular}
+\subsection{Wahrscheinlichkeit \& Rechenregeln \skript{32}}
+\begin{tabular}{ll}
+  Wertebereich:         & ${0}\le{P(A)}\le{1}$\\
+  Sicheres Ereignis:    & $P(\Omega)=1$\\
+  unmögliches Ereignis: & $P(\emptyset)=0$
+\end{tabular}
 		\begin{tabular}{ll}
 			komplementär Ereignis:
 			&$P(\bar{A})=P({\Omega}\setminus{A})=1-P(A)$\\
@@ -50,16 +44,8 @@
 			&$P({A}\cup{B})=P(A)+P(B)-P({A}\cap{B})$
 		\end{tabular}
 \hrule
-	
-	\subsection{Laplace-Ereignisse \skript{37} \sachs{79}}
-    	In einem endlichen Wahrscheinlichkeitsraum $\Omega$ haben alle
-    	Elementarereignisse die gleiche Wahrscheinlichkeit.
-    	\begin{center}
-    	$P(A)=\dfrac{\left| A\right|}{\left|\Omega\right|}$
-    	\end{center}
-\hrule
 
-	\subsection{Unabhängige Ereignise \skript{24} \sachs{83}}
+\subsection{Unabhängige Ereignise \skript{36} \sachs{83}}
 		Unabhängige Ereignisse $A$ und $B$ liegen vor, wenn: \hspace*{5mm} $P(A\mid
 		B)=P(A)$ \hspace{4mm} und \hspace{4mm} $P(B\mid A)=P(B)$ \hspace*{5mm} erfüllt
 		ist. \\
@@ -68,23 +54,31 @@
 		Wahrscheinlichkeit von B.\\
 \hrule
 
-	\subsection{Bedingte Wahrscheinlichkeit \skript{26} \sachs{85}}
-		Die Wahrscheinlichkeit für das Eintreten des Ereignisses $A$ unter der
-		Bedingung, dass das Ereignis $B$ bereits eingetreten ist.
-		\begin{center}
-		$P(A\mid B)= \dfrac{P(A\cap B)}{P(B)}=\underbrace{\frac{P(A)\cdot
-		P(B)}{P(B)}=P(A)}_{\text{nur wenn unabhängig}}$ 
-		\end{center}
-
+\subsection{Bedingte Wahrscheinlichkeit \skript{35} \sachs{85}}
+Die Wahrscheinlichkeit für das Eintreten des Ereignisses $A$ unter der
+Bedingung, dass das Ereignis $B$ bereits eingetreten ist.
+\begin{center}
+  $P(A\mid B)= \dfrac{P(A\cap B)}{P(B)}=\underbrace{\frac{P(A)\cdot
+  P(B)}{P(B)}=P(A)}_{\text{nur wenn unabhängig}}$
+\end{center}
 \hrule
 
-	\subsection{Satz von Bayes \skript{30} \sachs{89}}
-		\begin{tabular}{ll}
-		$P(B\mid A)=P(A\mid B) \cdot\dfrac{P(B)}{P(A)}$\vspace{1mm}
-		\end{tabular}
-
+\subsection{Satz von Bayes \skript{43} \sachs{89}}
+\begin{tabular}{ll}
+  $P(B\mid A)=P(A\mid B) \cdot\dfrac{P(B)}{P(A)}$
+  \vspace{1mm}
+\end{tabular}
 \hrule
-	\subsection{Totale Wahrscheinlichkeit \skript{29} \sachs{88}}
-		\begin{tabular}{ll}
-        $P(A)=\sum\limits_{i=1}^N P(A\mid G_i)\cdot P(G_i)$
-        \end{tabular}
+
+\subsection{Laplace-Ereignisse \skript{47} \sachs{79}}
+In einem endlichen Wahrscheinlichkeitsraum $\Omega$ haben alle
+Elementarereignisse die gleiche Wahrscheinlichkeit.
+\begin{center}
+  $P(A)=\dfrac{\left| A\right|}{\left|\Omega\right|}$
+\end{center}
+\hrule
+
+\subsection{Totale Wahrscheinlichkeit \skript{58 ???} \sachs{88}}
+\begin{tabular}{ll}
+  $P(A)=\sum\limits_{i=1}^N P(A\mid G_i)\cdot P(G_i)$
+\end{tabular}
