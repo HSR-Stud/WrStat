@@ -173,7 +173,9 @@
 \hrule
 
 	\subsection{Hypergeometrische Verteilung \skript{120} \sachs{117}}
-		\begin{minipage}{13cm}
+	    \begin{floatingfigure}[r]{5.5cm}
+        	\includegraphics[width=5.5cm]{./bilder/hypergeo.png}
+        \end{floatingfigure}
         Ist die Wahrscheinlichkeit dass in einer $m$ Elemente umfassenden 
 		Stichprobe aus einer Grundgesamtheit von $n$ Elementen, von denen $r$ eine
 		spezielle Eigenschaft besitzen, $k$ Elemente mit der Eigenschaft zu
@@ -182,18 +184,13 @@
 		$p(k)=P(X=k)=\dfrac{\binom r k \binom{n-r}{m-k}}{\binom n m}$ 
         \hspace{10mm} für $0\leq k \leq r$ und $k \leq n$\\
         Erwartungswert: \hspace{10mm} $E(X)=m \dfrac{r}{n}$\\
-        Varianz: \hspace{22mm} $var(X)=m \dfrac{r(n-r)(n-m)}{n^2(n-1)}$
-        \end{minipage}
-		\begin{minipage}{5cm}
-        \includegraphics[width=5cm]{./bilder/hypergeo.png}
-        \end{minipage}
-		
-		\vspace{3mm}
-		{\bf Beispiel:} Lotto, $n=45$ Zahlen, $r=6$ (die gezogenen Zahlen), $m=6$
+        Varianz: \hspace{22mm} $var(X)=m \dfrac{r(n-r)(n-m)}{n^2(n-1)}$ \\
+		{\bf Beispiel:} \\
+		Lotto, $n=45$ Zahlen, $r=6$ (die gezogenen Zahlen), $m=6$
 		(meine Zahlen)\\
 		$P(X=4)=P(Ein Vierer)=\dfrac{\binom 6 4 \binom {39} 2}{\binom {45}
 		6}=0.001364$
-\newpage
+		
 
 		\subsection{Poissonverteilung \skript{121} \sachs{115}}
 		\begin{tabular}{ll}
