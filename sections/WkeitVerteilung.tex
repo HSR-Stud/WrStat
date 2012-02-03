@@ -24,45 +24,32 @@
 
 \hrule
 
-\vspace{5mm}
-	\begin{minipage}{13cm}
-	\subsection{Wahrscheinlichkeitsdichte \sachs{97}}
-		\begin{tabular}{p{3.3cm}p{8.5cm}}
-    	$\varphi(x)=F'(x)$ &Dichtefunktion oder Wahrscheinlichkeitsdichte\\
-    	\multirow{2}{11cm}{Bei Sprungstellen von F(x): }\\
-    	\multirow{2}{11cm}{$\varphi(x) = $ Dirac mit Gewichtung der Sprunghöhe}
-    	
-    	\end{tabular}
-	\end{minipage}
-	\begin{minipage}{5cm}
-		\subsubsection{Erwartungswert}
-			\begin{tabular}{ll}
-            $\textcolor{red}{E(}\textcolor{green}{X}\textcolor{red}{)}=
-        	\textcolor{red}{\int} \textcolor{green}{x} \cdot 
-        	\textcolor{red}{\varphi(x)dx}$\\
-        	$\textcolor{red}{E(}\textcolor{green}{X^2}\textcolor{red}{)}=
-        	\textcolor{red}{\int} \textcolor{green}{x^2} \cdot 
-        	\textcolor{red}{\varphi(x)dx}$\\ 
-        	$\textcolor{red}{E(}\textcolor{green}{X^N}\textcolor{red}{)}=
-        	\textcolor{red}{\int} \textcolor{green}{x^N} \cdot 
-        	\textcolor{red}{\varphi(x)dx}$\\ 
-%         	$\textcolor{red}{E(}\textcolor{green}{\sin X}\textcolor{red}{)}=
-%         	\textcolor{red}{\int} \textcolor{green}{\sin x} \cdot 
-%         	\textcolor{red}{\varphi(x)dx}$
-			
-        	\end{tabular}
-	\end{minipage}
+\subsection{Wahrscheinlichkeitsdichte \sachs{97}}
+\begin{multicols}{2}
+\textbf{Dichtefunktion oder Wahrscheinlichkeitsdichte:} \\
+$\varphi(x) = F'(x)$ \\
+\textbf{Bei Sprungstellen von F(x):} \\
+$\varphi(x) = $ Dirach mit Gewichtung der Sprunghöhe
+
+\columnbreak
+
+\textbf{Erwartungswert} \\
+$E(\textcolor{red}{X}) = \int \textcolor{red}{x} \cdot \varphi(x) dx$ \\
+$E(\textcolor{red}{X^2}) = \int \textcolor{red}{x^2} \cdot \varphi(x) dx$ \\
+$E(\textcolor{red}{X^N}) = \int \textcolor{red}{x^N} \cdot \varphi(x) dx$ 
+\end{multicols}
+
 \hrule
-\vspace{2mm}
 
 	\subsection{Rechenregeln für $\varphi$ und $F$ \skript{86}}
 		\begin{minipage}{11cm}
 			\begin{tabular}{ll}
-        	Gegeben: &X, Y Zufallsvariablen und $\varphi_X$, $\varphi_Y$ bekannt\\
+        	\textbf{Gegeben:} &X, Y Zufallsvariablen und $\varphi_X$, $\varphi_Y$
+        	bekannt\\
         	\end{tabular}
  
         	\begin{tabular}{p{6cm}p{6cm}}
-        	Verteilungsfunktion: &Dichte:\\
+        	\textbf{Verteilungsfunktion:} & \textbf{Dichte:}\\
         	$F_{X+a}(x)=F_X(x-a)$  &$\varphi_{X+a}(x)=\varphi_X(x-a)$\\
         	$F_{\lambda X}(x)=F_X(\frac{x}{\lambda})$ &$\varphi_{\lambda
         	X}(x)=\varphi_X(\frac{x}{\lambda})\frac{1}{\lambda}$\\
