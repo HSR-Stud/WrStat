@@ -94,10 +94,14 @@
 		M=$\max \{ X_1,\ldots,X_i\} $ \\
 		$F_M(x)=F_X(x)^n$ \\
 
-\hrule
+\newpage
 
 	\subsection{Normalverteilung \skript{101} \sachs{120}}
-		\begin{minipage}{10cm}
+		\begin{floatingfigure}[r]{8cm}
+		\includegraphics[width=8cm]{./bilder/normalverteilung.png}
+		\caption{Dichtefunktion (oben) und Verteilungsfunktion (unten) der
+		Normalverteilung.}
+   		\end{floatingfigure}
 		Viele kleine, unabhängige Zufallsvariable sammeln sich zu einer
 		normalverteilten Zufallsvariable.\\
 		 $\varphi(x)=\frac{1}{\sqrt{2
@@ -110,20 +114,12 @@
 		\textbf{Standardisierung}\\ Erwartungswert: $E(X)=\mu$ \hspace{4mm}(=0 bei Standardnormalver.)\\ 
 		Varianz \hspace{11.5mm}: $var(X)=\sigma^2$ (=1 bei Standardnormalver.)\\ \\
 		$x=\dfrac{X-\mu}{\sigma}$ \hspace{5mm} $x$ aus Tabelle
-		\end{minipage}
-		\begin{minipage}{8cm}
-		\includegraphics[width=8cm]{./bilder/normalverteilung.png}
-		Dichtefunktion (oben) und Verteilungsfunktion (unten) der Normalverteilung. 
-   		\end{minipage} \\ 
-	$ 68\% $ der Werte liegen im Intervall $[ \mu - \sigma, \mu + \sigma]$, 
-	$95\% $ in $[ \mu - 2\sigma, \mu + 2\sigma]$, 	
-	$99.7\% $ in $[ \mu - 3\sigma, \mu + 3\sigma]$
-		\vspace{5mm}
+ 
+	$ 68\% $ der Werte liegen im Intervall $[ \mu - \sigma, \mu + \sigma]$ \\ 
+	$95\% $ in $[ \mu - 2\sigma, \mu + 2\sigma]$ \\
+	$99.7\% $ in $[ \mu - 3\sigma, \mu + 3\sigma]$ \\
 	
-
-
-\newpage
-
+	
 	\subsection{Zentraler Grenzwertsatz \skript{107} \sachs{127}}
       	$X_1, X_2, \ldots , X_n$ sind lauter identisch verteilte (nicht notwendig normalverteilt!)
       	unabhängige Zufallsvariablen mit demselben Erwartungswert $\mu$ und derselben Varianz $\sigma^2$.
@@ -140,7 +136,12 @@
 \hrule
 
 	\subsection{Exponentialverteilung \skript{96}}
- 		\begin{minipage}{10cm}
+		\begin{floatingfigure}[r]{8cm}
+        \includegraphics[width=8cm]{./bilder/exponentialverteilung.png}
+        \caption{Dichtefunktion (oben) und Verteilungsfunktion (unten) der
+        Exponentialverteilung.} 		
+		\end{floatingfigure}
+
 		Zur Ermittlung der Dauer von zufälligen Zeitintervallen ohne Gedächnis
 		(W'keit, dass X in der nächsten Minute defekt geht = const.). Beispiele :
 		\begin{itemize}
@@ -163,15 +164,9 @@
 		\underline{Erwartungswert und Varianz}\\
 		$E(X)=\frac{1}{\lambda}$\\
 		$var(X)=\frac{1}{\lambda^2}$ \\
-        \end{minipage}
-		\begin{minipage}{8cm}
-        \includegraphics[width=8cm]{./bilder/exponentialverteilung.png}
-		Dichtefunktion (oben) und Verteilungsfunktion (unten) der Exponentialverteilung.
-        \end{minipage}
 		
-
-\hrule
-
+		
+\newpage
 	\subsection{Hypergeometrische Verteilung \skript{120} \sachs{117}}
 	    \begin{floatingfigure}[r]{5.5cm}
         	\includegraphics[width=5.5cm]{./bilder/hypergeo.png}
@@ -187,24 +182,27 @@
         Varianz: \hspace{22mm} $var(X)=m \dfrac{r(n-r)(n-m)}{n^2(n-1)}$ \\
 		{\bf Beispiel:} \\
 		Lotto, $n=45$ Zahlen, $r=6$ (die gezogenen Zahlen), $m=6$
-		(meine Zahlen)\\
-		$P(X=4)=P(Ein Vierer)=\dfrac{\binom 6 4 \binom {39} 2}{\binom {45}
-		6}=0.001364$
-		
+		(meine Zahlen) \\
+		$P(X=4)=P(Ein Vierer)=\dfrac{\binom 6 4 \binom {39}
+		2}{\binom {45} 6}=0.001364$	\\
 
-		\subsection{Poissonverteilung \skript{121} \sachs{115}}
+	\subsection{Poissonverteilung \skript{121} \sachs{115}}
+	\begin{multicols}{3}
 		\begin{tabular}{ll}
-        $P_\lambda(k)=\frac{\lambda^k}{k!}e^{-\lambda}$\\
-        Erwartungswert: \hspace{10mm} $E(X)=\lambda$\\
-        Varianz: \hspace{22mm} $var(X)=\lambda$
-        \vspace{2mm}\\
-        {\bf Anwendung der Poisson-Verteilung:} für die Häufigkeiten seltener
-        Ereignisse. Anzahl Anrufe bei einer Telefonzentrale \\ in einer gewissen
+        $P_\lambda(k)=\frac{\lambda^k}{k!}e^{-\lambda}$ & \\
+        Erwartungswert:  & $E(X)=\lambda$\\
+        Varianz:  & $var(X)=\lambda$ \\
+        \end{tabular} \\
+        \columnbreak
+        
+        {\bf Anwendungsbeispiele:} \\ Für die Häufigkeiten seltener
+        Ereignisse. Anzahl Anrufe bei einer Telefonzentrale in einer gewissen
         Periode. Anzahl grosse Versicherungsschäden in einer gewissen Periode.
-        Anzahl Jobs, die bei einem Server \\ ankommen. Anzahl Ereignisse in
+        Anzahl Jobs, die bei einem Server ankommen. Anzahl Ereignisse in
         einem Zeitintervall. Anzahl Lokomotiven der SBB, die in der nächsten Woche 
-        einen Defekt \\ haben. Anzahl der Gewinner mit 4 Richtigen im Lotto.
-        \end{tabular}
+        einen Defekt haben. Anzahl der Gewinner mit 4 Richtigen im Lotto.
+     \end{multicols}
+        
 
 \hrule
 
