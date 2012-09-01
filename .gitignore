@@ -1,0 +1,5 @@
+WrStat.pdf
+*.synctex*
+*.aux
+*.log
+tmp/
