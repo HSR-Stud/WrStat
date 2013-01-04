@@ -2,15 +2,17 @@
 % Anderes Symbol für zuweisung: $\blacktriangleright$
 
 \begin{center}
-\begin{tabular}{|p{4cm}|p{11cm}|}
-\hline
-\textbf{Funktion/Aufgabe} & \textbf{Eingabe} \\
-\hline
-
-$\binom{n}{k}$ & \tt{nCr(n,k)} \\
-\hline
-$\binom{n}{k}\cdot k!$ & \tt{nPr(n,k)} \\
-\hline
+\begin{tabular}{|p{4cm}|p{11cm}|} \hline
+\textbf{Funktion/Aufgabe} & \textbf{Eingabe} \\ \hline
+$\binom{n}{k}$ & \tt{nCr(n,k)} \\ \hline
+$\binom{n}{k}\cdot k!$ & \tt{nPr(n,k)} \\ \hline
+Mittelwert $\overline{X}$ (konsistenter Schätzer) &
+\tt{mean(\{}$x_1,\ldots,x_n$\tt{\})} \\ \hline
+Standardabweichung $\sigma$ & \tt{stdDev($\{x_1, \ldots, x_n\}$)} \\ \hline
+Varianz $\sigma^2$ & \tt{variance($\{x_1, \ldots, x_n\}$)} \\ \hline
+Statistik anzeigen (berechnet folgende Werte: $ \bar x, \: \sum x, \: \sum x^2, \: \sigma x, \: ...$ &
+\begin{minipage}[c]{11cm}\texttt{$\{x_1, \ldots, x_n\} \rightarrow$ l1} \\
+					  \texttt{OneVar l1} \end{minipage} \\ \hline
 
 Lineare Regression &     
 \begin{list}{$\bullet$}{\setlength{\itemsep}{0cm}
@@ -24,12 +26,7 @@ Lineare Regression &
 	 \item Anzeige des Graphs mit \newline
 	 	\texttt{regeq(x)}$\rightarrow$\texttt{y1(x)}$; \;$
 	    \texttt{NewPlot 1,1,l1,l2}
-\end{list} \\
-\hline
-
-Konsistenter Schätzer, Mittelwert, $\overline{X}$ &
-\tt{mean(\{}$X_1,\ldots,Xn$\tt{\})} \\
-\hline
+\end{list} \\ \hline
 
 
 \end{tabular}
