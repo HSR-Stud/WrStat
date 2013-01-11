@@ -178,13 +178,15 @@ $\varphi(x) = $ Dirac mit Gewichtung der Sprunghöhe
 \hrule \hspace{3mm}
 
 	\subsection{Poissonverteilung \skript{128}}
-	\begin{multicols}{3}
+	\begin{multicols}{2}
 		\begin{tabular}{ll}
         $P_\lambda(k)=\frac{\lambda^k}{k!}e^{-\lambda}$ & \\
         Erwartungswert:  & $E(X)=\lambda$\\
         Varianz:  & $var(X)=\lambda$ \\
         $\lambda = a \cdot x$ \\
         \end{tabular} \\
+         $P(X<k) = \sum_0^k P_\lambda(k)=\sum_0^k \frac{\lambda^k}{k!}e^{-\lambda}$ \\
+         $P(X>k) = 1-P(X<k)$ \\
         \columnbreak
         
         {\bf Anwendungsbeispiele:} \\ Für die Häufigkeiten seltener
