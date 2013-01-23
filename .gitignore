@@ -3,3 +3,4 @@ WrStat.pdf
 *.aux
 *.log
 tmp/
+/*.out
