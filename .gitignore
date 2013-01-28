@@ -4,3 +4,5 @@ WrStat.pdf
 *.log
 tmp/
 /*.out
+/*.tcp
+/*.tps

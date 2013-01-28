@@ -1,48 +1,58 @@
 \section{Wahrscheinlichkeitsverteilung}
 
-	\subsection{Verteilungsfunktion \skript{77}}
-		\begin{tabular}[]{|l|l|}
+	\subsection{Verteilungsfunktion \skript{97}}
+		\begin{tabular}[]{|l|l|l|}
         	\hline
-        	\textbf{diskret} & \textbf{kontinuierlich}\\
+        	\textbf{allgemein} & \textbf{diskret} & \textbf{kontinuierlich}\\
         	\hline
         	\hline
-        	$P(X\leq x)=F(x)=\sum\limits_{k=-\infty}^x p_k$ &
-        	$P(X\leq x)=F(x)=\int\limits_{-\infty}^x
-        	\varphi(\tilde{x})d\tilde{x}$\\
-  			$P(X>x)=1-P(X\leq x)$ & $P(X>x)=1-P(X\leq x)$\\        	
-        	$P(a \le X \leq b)=F(b)-F(a)=\sum\limits_{k=a}^b p_k$ &
-  			$P(a \le X \leq b)=F(b)-F(a)=\int \limits_a^b
-  			\varphi(\tilde{x})d\tilde{x}$\\
+        	$P(X\leq x)=F(x)$ & $=\sum\limits_{k=-\infty}^x p_k$ &
+        	$=\int\limits_{-\infty}^x \varphi(\tilde{x})d\tilde{x}$\\
+          
+          $P(X>x)=1-P(X\leq x)$ & & \\        	
+        	$P(a \le X < b)=F(b)-F(a)$ & $=\sum\limits_{k=a}^b p_k$ &
+          $=\int \limits_a^b \varphi(\tilde{x})d\tilde{x}$\\
         	\hline
         \end{tabular}
 
 		\subsubsection{Eigenschaften}
+          Bei einem Sprung gilt: \textbf{Sprunghöhe = Wahrscheinlichkeit des Wertes x}\\
   				$$\boxed{\mathbb{D}(F) = \mathbb{R}} \qquad \boxed{\mathbb{W}(F)
   				\in[0,1]} \qquad \boxed{F(-\infty)=0} \qquad  \boxed{F(\infty)=1}
   				\qquad \boxed{F(x) \text{ ist monoton steigend}}$$
 
 \hrule
 
-\subsection{Wahrscheinlichkeitsdichte}
+\subsection{Wahrscheinlichkeitsdichte \skript{104}}
 \begin{multicols}{2}
 \textbf{Dichtefunktion oder Wahrscheinlichkeitsdichte:} \\
 $\varphi(x) = F'(x)$ \\
 \textbf{Bei Sprungstellen von F(x):} \\
-$\varphi(x) = $ Dirac mit Gewichtung der Sprunghöhe
+$\varphi(x) = $ Dirac mit Gewichtung der Sprunghöhe\\
+\textbf{Allgemein gilt:}\\
+$\int\limits_{-\infty}^{\infty}\varphi (x) dy = 1$
 
 \columnbreak
 
 	\textbf{Erwartungswert} \\
 	\begin{tabular}{l l l}
-		$E(\textcolor{red}{X})$ & $ = \int \textcolor{red}{x} \cdot \varphi(x) dx$  & bzw. $\sum \textcolor{red}{x} \cdot p_k$\\
-		$E(\textcolor{red}{X^2})$ & $ = \int \textcolor{red}{x^2} \cdot \varphi(x) dx$ & bzw. $\sum \textcolor{red}{x^2} \cdot p_k$\\
-		$E(\textcolor{red}{X^N})$ & $ = \int \textcolor{red}{x^N} \cdot \varphi(x) dx$ & bzw. $\sum \textcolor{red}{x^N} \cdot p_k$
+		$E(\textcolor{red}{X})$ &  
+    $ = \int\limits_{-\infty}^{\infty} \textcolor{red}{x} \cdot \varphi(x) dx$  & 
+    bzw. $\sum\limits_{-\infty}^{\infty} \textcolor{red}{x} \cdot p_k$\\
+    
+		$E(\textcolor{red}{X^2})$ & 
+    $ = \int\limits_{-\infty}^{\infty} \textcolor{red}{x^2} \cdot \varphi(x) dx$ & 
+    bzw. $\sum\limits_{-\infty}^{\infty} \textcolor{red}{x^2} \cdot p_k$\\
+    
+		$E(\textcolor{red}{X^N})$ & 
+    $ = \int\limits_{-\infty}^{\infty} \textcolor{red}{x^N} \cdot \varphi(x) dx$ 
+    & bzw. $\sum\limits_{-\infty}^{\infty} \textcolor{red}{x^N} \cdot p_k$
 	\end{tabular}
 \end{multicols}
 
 \hrule
 
-	\subsection{Rechenregeln für $\varphi$ und $F$ \skript{86}}
+	\subsection{Rechenregeln für $\varphi$ und $F$ \skript{109}}
 		\begin{minipage}{11cm}
 			\begin{tabular}{ll}
         	\textbf{Gegeben:} &X, Y Zufallsvariablen und $\varphi_X$, $\varphi_Y$
@@ -58,8 +68,8 @@ $\varphi(x) = $ Dirac mit Gewichtung der Sprunghöhe
         	$\varphi_{X+Y}(x)=\varphi_X\ast\varphi_Y(x)$\\
         	$F_{\sqrt{X}}(x)=F_X(x^2)$ &
         	$\varphi_{\sqrt{X}}(x)=2x\varphi_X(x^2)$\\
-        	$F_{X^2}(x)=F_X(\sqrt{x})$ &
-        	$\varphi_{X^2}(x)=\frac{1}{2}x^{-\frac{1}{2}}\varphi_X(\sqrt{x})$
+        	$F_{X^2}(x)=F_X(\sqrt{x})-F_X(-\sqrt{x})$ &
+        	$\varphi_{X^2}(x)=\frac{1}{2}x^{-\frac{1}{2}}(\varphi_X(\sqrt{x})+\varphi_X(-\sqrt{x}))$
         	\end{tabular}
 		\end{minipage}
 		\begin{minipage}{7cm}
@@ -77,38 +87,60 @@ $\varphi(x) = $ Dirac mit Gewichtung der Sprunghöhe
         	\end{tabular}
 			\vspace{10mm}
         \end{minipage}
-        \subsubsection{Maximalwert eines Intervalls \skript{125}}
-		$X_1,\ldots X_i$ sind auf dem Intervall $[0,l]$ mit $F_X(x)$ verteilt\\
-		M=$\max \{ X_1,\ldots,X_i\} $ \\
-		$F_M(x)=F_X(x)^n$ \\
+    
+    \begin{multicols}{2}    
+      \subsubsection{Maximalwert eines Intervalls}
+        $X_1,\ldots X_i$ sind auf dem Intervall $[0,l]$ mit $F_X(x)$ verteilt\\
+        M=$\max \{ X_1,\ldots,X_i\} $ \\
+        $F_M(x)=F_X(x)^n$ \\
+    \columnbreak
+      \subsubsection{Median \skript{110}}
+        Der Median $med(X)$ von $X$ ist eine Zufallsvariable, welche für
+        $F(med(X)) = \frac{1}{2}$ ist.
+      
+    \end{multicols}
+
+  \subsection{Standardisierung \skript{110}}
+    \begin{multicols}{2}
+      Erwartungswert: $E(X)=\mu$ \hspace{4mm}(=0 bei Standardnormalver.)\\ 
+      Varianz \hspace{11.5mm}: $var(X)=\sigma^2$ (=1 bei Standardnormalver.)\\
+
+      $F_Z(z) = P(Z \leq z) = F_X(\sigma z + \mu)$ \\
+      $F_X(x) = F_Z(\frac{x-\mu}{\sigma})$\\
+      $\varphi_Z(z) = \sigma \cdot \varphi_X(\sigma z + \mu)$\\
+      $\varphi_X(x) = \frac{1}{\sigma} \cdot \varphi_Z(\frac{x - \mu}{\sigma})$ \\
+      
+    \columnbreak
+    
+      \fbox{$Z=\dfrac{X-\mu}{\sigma}$} \hspace{5mm} mit $E(Z) = 0$ und $var(Z) = 1$\\ \\
+      
+      $68\% $ der Werte liegen im Intervall $[ \mu - \sigma, \mu + \sigma]$ \\ 
+      $95\% $ in $[ \mu - 2\sigma, \mu + 2\sigma]$ \\
+      $99.7\% $ in $[ \mu - 3\sigma, \mu + 3\sigma]$ \\
+    
+    \end{multicols}
 
 \newpage
 
 	\subsection{Normalverteilung \skript{101}}
-		\begin{floatingfigure}[r]{8cm}
-		\includegraphics[width=8cm]{./bilder/normalverteilung.png}
-		\caption{Dichtefunktion (oben) und Verteilungsfunktion (unten) der
-		Normalverteilung.}
-   		\end{floatingfigure}
-		Viele kleine, unabhängige Zufallsvariable sammeln sich zu einer
-		normalverteilten Zufallsvariable.\\
-		 $\varphi(x)=\frac{1}{\sqrt{2
-		\pi}\sigma}\cdot e^{-\frac{(x-\mu)^2}{2\sigma^2}} = N(\mu ; \sigma) $\\ 
-		$F(x)=\frac{1}{\sqrt{2
-		\pi}\sigma}\cdot \int\limits^{x}_{-\infty}{e^{-\frac{(\tilde{x} -\mu)^2}{2\sigma^2}}} $ \\
-		Addieren von Normalverteilungen: \\
-		\fbox{$N(\mu_{1} ; \sigma_{1}) + N(\mu_{2} ; \sigma_{2})
-		= N(\mu_{1} + \mu_{2} ; \sqrt{\sigma_{1}^{2} + \sigma_{2}^{2}})$} \\
-		\textbf{Standardisierung}\\ Erwartungswert: $E(X)=\mu$ \hspace{4mm}(=0 bei Standardnormalver.)\\ 
-		Varianz \hspace{11.5mm}: $var(X)=\sigma^2$ (=1 bei Standardnormalver.)\\ \\
-		$x=\dfrac{X-\mu}{\sigma}$ \hspace{5mm} $x$ aus Tabelle
- 
-	$ 68\% $ der Werte liegen im Intervall $[ \mu - \sigma, \mu + \sigma]$ \\ 
-	$95\% $ in $[ \mu - 2\sigma, \mu + 2\sigma]$ \\
-	$99.7\% $ in $[ \mu - 3\sigma, \mu + 3\sigma]$ \\
-	
-\hrule \hspace{3mm}
-	
+    \begin{floatingfigure}[r]{8cm}
+      \includegraphics[width=8cm]{./bilder/normalverteilung.png}
+      \caption{Dichtefunktion (oben) und Verteilungsfunktion (unten) der
+        Normalverteilung.}
+   	\end{floatingfigure}
+    
+    Viele kleine, unabhängige Zufallsvariable sammeln sich zu einer
+    normalverteilten Zufallsvariable.\\
+    $\varphi(x)=\frac{1}{\sqrt{2
+    \pi}\sigma}\cdot e^{-\frac{(x-\mu)^2}{2\sigma^2}} = N(\mu ; \sigma) $\\ 
+    $F(x)=\frac{1}{\sqrt{2\pi}\sigma}\cdot \int\limits^{x}_{-\infty}{e^{-\frac{(\tilde{x} -\mu)^2}{2\sigma^2}}} d\tilde{x} $ \\
+    Addieren von Normalverteilungen: \\
+    \fbox{$N(\mu_{1} ; \sigma_{1}) + N(\mu_{2} ; \sigma_{2})
+    = N(\mu_{1} + \mu_{2} ; \sqrt{\sigma_{1}^{2} + \sigma_{2}^{2}})$} \\
+    
+  \vspace{2cm}
+	\hrule
+  
 	\subsection{Zentraler Grenzwertsatz \skript{107}}
       	$X_1, X_2, \ldots , X_n$ sind lauter identisch verteilte (nicht notwendig normalverteilt!)
       	unabhängige Zufallsvariablen mit demselben Erwartungswert $\mu$ und derselben Varianz $\sigma^2$.
