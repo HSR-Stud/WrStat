@@ -3,14 +3,22 @@
 	- ``Man braucht Aussagen, die man widerlegen könnte.''\\
 	- Irrtum ist möglich (Irrtumsw'keit $\alpha$)\\
 	- Beweis durch Widerlegen des Gegenbeweises
-	\subsection{Vorgehen}
+	\subsection{Vorgehen (Nullhypothese)}
 	\begin{enumerate}
-      \item Hypothese, die der Test Widerlegen soll
-      \item Irrtumsw'keit $\alpha$ = 0.05, 0.01, \ldots (Niveau=1-$\alpha$)
-      \item Testgrösse T, W'keitsverteilung
-      \item Bestimmung der Schranken t für: $P(|T-E(T)|>t)=\alpha$
-      \item Falls Messungen ergeben $|T-E(T)|>t \Longrightarrow$ Hypothese
-      falsch mit W'keit 1- $\alpha$
+      \item Hypothese, die der Test \textbf{widerlegen} soll\\
+      	$\rightarrow$ Nullhypothese $\Rightarrow$ Keine Wirkung/Effekt
+      \item Festlegung der Irrtumswahrscheinlichkeit 	$\alpha$ = 0.05, 0.01, \ldots (Niveau=1-$\alpha$)
+      \item Testgrösse X, W'keitsverteilung
+      	$\rightarrow$ Nur Werte bis zum getesteten Ereignis betrachten! (Nicht Zukunft mit einbeziehen)
+      \item Bestimmung der Schranken $x_{krit}$ für: 		
+      	\begin{itemize}
+      		\item Einseitiger Test $P(X > x_{krit})=\alpha$
+      		\item Zweiseitiger Test $P(|X| > x_{krit})=\alpha/2$
+      	\end{itemize}
+      \item Wert für $F\!\left({\frac{x_{krit}-\mu}{\sigma}}\right)$ aus Tabelle 8.1
+      %TODO pageref
+      \item Falls Messungen ergeben $X > x_{krit} \Longrightarrow$ Hypothese
+      \textbf{falsch} mit W'keit $1-\alpha$
     \end{enumerate}
     
     
