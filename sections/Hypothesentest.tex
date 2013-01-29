@@ -81,11 +81,23 @@
     	&			-wenn wenig Messwerte $\Longrightarrow$ geringe Aussagekraft
     \end{tabular}
 
-\newpage
-	\subsection{Kolmogorov-Smirnov Test}
+  \subsection{Testen einer stetigen Verteilung}
+  	\subsubsection{Mit $\chi^2$-Test}
+  	\begin{minipage}{13cm}
+  		Der $\chi^2$-Test kann im Prinzip nur diskrete Wahrscheinlichkeitsverteilungen testen.\\
+  		$\rightarrow$ Will man eine stetige Verteilung testen, muss man zunächst Klassen von Werten bilden. $\rightarrow$ Anschliessend deren Wahrscheinlichkeiten berechnen und dann prüfen ob die künstlich diskrete Verteilung im $\chi^2$-Test Bestand hat.\\
+  		$\Rightarrow$ Achtung: Durch die Klassenbildung wird eine künstliche Diskretisierung eingeführt. 
+  	\end{minipage}		
+  	\begin{minipage}{6.5cm}
+  	        \includegraphics[width=6cm]{./bilder/chi_quadrat.png}\\
+  	        \end{minipage}
+  	        
+  	
+	\subsubsection{Kolmogorov-Smirnov Test}
 	\begin{tabular}{ll}
+	\textbf{Nullhypothese} & Messwerte $x_1, ..., x_n$ haben Verteilungsfunktion $F_X$\\
     Idee: & Vergleiche Verteilungsfunktionen (statt der Dichtefunktionen)\\
-    Daten: & $X$ Zufallsvariable, Verteilungsfunktion $F_x$, $n$ Messungen
+    Daten: & $X$ Zufallsvariable, Verteilungsfunktion $F_X$, $n$ Messungen
     ergeben Stichprobe $x_i$
     \end{tabular}
 
@@ -94,30 +106,47 @@
     \includegraphics[width=6cm]{./bilder/ks2.png}\\
     \end{minipage}
 	\begin{minipage}{12cm}
-    \textcolor{blue}{$F_x$ theoretische Verteilungsfunktion}\\ \\
+    \textcolor{blue}{$F_X$ theoretische Verteilungsfunktion von X}\\ \\
     \vspace{15mm}
     \textcolor{green}{empirische Verteilungsfunktion $\frac{Anzahl\{x_i \leq
     x \}}{n}$}\\
 
-    \textcolor{red}{$K_-$ = max}
-    \textcolor{blue}{$(F_x$(x)} -
-    \textcolor{green}{$F_{emp}$(x))} 
-    $\cdot\sqrt{n}$ \\
-    \textcolor{red}{$K_{+}$ = max} 
+    Testgrösse\\
+    \hspace*{0.5cm}
+    	\parbox{6cm}{\textcolor{red}{max}
+   			(\textcolor{green}{$F_{emp}$(x)} - 
+   			\textcolor{blue}{$F_x$(x)})\\
+    		\textcolor{red}{min} 
     \textcolor{green}{$(F_{emp}(x)$}-
-    \textcolor{blue}{$F_x(x))$}
-    $\cdot\sqrt{n}$ \\
+    		\textcolor{blue}{$F_x(x))$}}
 
     \end{minipage}
 
-	\begin{tabular}{p{18cm}}
-		Sei $X1,\ldots,Xn$ sei eine Stichprobe einer Zufallsvariable $X$ . Der
-		Kolmogorov- Smirnov-Test auf dem Niveau $\alpha$ für die Hypothese, 
-		dass $X$ die Verteilungsfunktion $F$ hat wird wie folgt durchgeführt: \\ \\
-		1. Berechne 
-		$K_n^+ = \sqrt{n} \underset{-\infty<x<\infty}{max}(F(x)-F_n(x))$ und
-		$K_n^- = \sqrt{n} \cdot \underset{x \in \mathbb{R}}{max}(F_n(x)-F(x))$  \\
-		2. Finde $t_{n,1-\alpha}$ in der Tabelle\\ 
-		3. Falls $K^+_n > t_{n,1-\alpha}$ oder $K^-_n < t_{n,\alpha}$,
-		verwerfe die Hypothese, dass $X$ die Verteilungsfunktion $F$ hat. 
+	\textbf{Durchführen des Kolmogorov-Smirnov Test}\\
+	\begin{tabular}{l p{18cm}}
+		1. &  Werte $x_1, ..., x_n$ in aufsteigender Reihenfolge sortieren\\
+		2. & \parbox[t]{18cm}{
+				$\mathbf{K_n^{\pm}}$ \textbf{berechnen}\\
+				\hspace*{0.5cm}
+				\parbox{6cm}{
+				$\boxed{K_n^+ = \sqrt{n}\underset{1<x<n}{max}\left(\frac{i}{n} - F_X(x_i)\right)}$\\
+					$\boxed{K_n^- = \sqrt{n}\underset{1<x<n}{max}\left(F_X(x_i)- \frac{i-1}{n}\right)}$}
+				\parbox[c]{8cm}{
+				Mit Tabelle:
+				\begin{tabular}[t]{|c|c|c|c|c|}
+				   \hline
+				    $i$ & $x_i$ & $i/n$ & $F_X(x_i)$ & $(i-1)/n$ \\
+				    \hline
+				    1 & $min(x_i)$ & & & \\
+				    & $\vdots$ & & &\\	    
+				    n & $max(x_i)$ & & &\\
+				     \hline
+				     
+				 \end{tabular}
+				 }		
+		}\\
+	3. & Finde $t_{n,1-\alpha}$,$t_{n,\alpha}$  in der Tabelle 8.3\\
+	%TODO Pageref für Tabelle
+	4. & Falls $K^+_n > t_{n,1-\alpha}$ oder $K^-_n < t_{n,\alpha}$,
+			verwerfe die Hypothese, dass $X$ die Verteilungsfunktion $F_X$ hat. 
 	\end{tabular}
