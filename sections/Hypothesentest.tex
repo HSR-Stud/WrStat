@@ -22,59 +22,58 @@
     \end{enumerate}
     
     
-	\subsection{$\chi^2$-Test - Testen einer Wahrscheinlichkeitsverteilung
+	\subsection{Testen einer diskreten Verteilung
 	\skript{147}}
-		$\chi ^2 = Z_1^2+\ldots+Z_r^2$ ($Z_r$ sind standardnormalverteilt) $\Longrightarrow
-		\chi^2$-Verteilung mit r-Freiheitsgraden\\ \\
-		\begin{minipage}{6.5cm}
-        \includegraphics[width=6cm]{./bilder/chi_quadrat.png}\\
-        \end{minipage}
-		\begin{minipage}{12cm}
-        Teilintervalle: $I_i$, $i=1,\ldots,k$\\
-        Wahrscheinlichkeit: $P(X\in I_i)=\textcolor{red}{p_i}$\\
-        $n$ Beobachtungen, davon jeweils \textcolor{blue}{$n_i$} im Intervall
-        $i$ ($n=\sum n_i$)\\
-        $D=\sum\limits_i\frac{(\textcolor{blue}{n_i}-\textcolor{red}{np_i})^2}{\textcolor{red}{np_i}}$
-        \hspace{8mm} ist $\chi^2_{k-1}$, mit $k-1$ Freiheitsgrade\\
-        $\varphi_n(x)=  \begin{cases}\displaystyle \frac{x^{\frac{r}{2}-1}e^{
-        -\frac{x}{2}}}{2^{\frac{r}{2}}\Gamma\left(\frac{r}{2}\right)} & x>0 \\
-        0 & x\leq 0 \end{cases} $\\  
-		$E(X)=r; \quad var(X)=2r$
-        \end{minipage}
+	\subsubsection{$\chi^2$-Test mit k-möglichen Ausgängen}
 		
-		\subsubsection{Durchführung des $\chi^2$-Tests}
+		\begin{tabular}{l l}
+			Mögliche Ausgänge: $I_i$, $i=1,\ldots,k$&
+			Wahrscheinlichkeit von Ausgang $i$: $P(X\in I_i)=\textcolor{red}{p_i}$\\
+			$n$ Beobachtungen, davon jeweils \textcolor{blue}{$n_i$} mit Ausgang $i$ &
+			$\boxed{D=\sum\limits_{i=1}^{k}\frac{(\textcolor{blue}{n_i}-\textcolor{red}{np_i})^2}{\textcolor{red}{np_i}}}$ \hspace{4mm} ist $\chi^2_{k-1}$, mit $k-1$ Freiheitsgrade\\
+		\end{tabular}
+        
+       % $\varphi_n(x)=  \begin{cases}\displaystyle \frac{x^{\frac{r}{2}-1}e^{
+        %-\frac{x}{2}}}{2^{\frac{r}{2}}\Gamma\left(\frac{r}{2}\right)} & x>0 \\
+        %0 & x\leq 0 \end{cases} $\\  
+		%$E(X)=r; \quad var(X)=2r$
+
+		
+		\textbf{Durchführung des $\chi^2$-Tests}\\
 		\begin{minipage}{13cm}
 		\begin{tabular}{p{4cm}p{8cm}}
-        1. Klasse bilden: & Gross genug, dass mehrere Beobachtungen in jede
-        Klasse fallen.\\  
-        & (erste und letzte Klasse können breiter sein)\\
-        & Faustregel: $\boldsymbol{n_i\geq 5}$; k: Anzahle der Klassen\\
-        2. \textbf{Diskrepanz $D$} berechnen & \begin{tabular}[t]{|c|c|c|c|c|}
+		1. Daten erfassen: &
+			Damit der Test optimal funktioniert muss folgende Bedingung erfüllt sein:
+			$\boldsymbol{n_i\geq 5 \; \forall \; i}$\\
+        
+        2. \textbf{Diskrepanz $D$} berechnen & \begin{tabular}[t]{|c|c|c|c|c|c|}
                                   \hline
-                                  $i$ & Intervall & $p_i$ & $n_i$ &
+                                  $i$ & Ausgang & $p_i$ & $n_i$ & $(n_i-np_i)$ &
                                   $(n_i-np_i)^2/np_i$\\
                                   \hline
-                                  1 & & & & \\
-                                  2 & & & & \\
-                                  3 & & & & \\
-                                  4 & & & & \\
-                                  5 & & & & \\
+                                  1 & & & & & \\
+                                  2 & & & & & \\
+                                  3 & & & & & \\
+                                  4 & & & & & \\
+                                  5 & & & & & \\
                                   \hline
-                                  & & & & $D=\sum$ \\
+                                  & & & n & & $D=\sum$ \\
                                   \hline
                                   
                                   \end{tabular}\\
-        3. Schwellenwert für $D$ & aus $\chi_{k-1}^2$-Tabelle lesen. Wenn
+        3. Schwellenwert für $D$ & $x_{1-\alpha}$ für $F_{\chi_{k-1}^2}(x) = 1- \alpha$ aus $\chi_{k-1}^2$-Tabelle lesen. \\
+        & Wenn
         $\alpha$ nicht vorgegeben, dann $\alpha$ z.B. $0.1$ oder $0.05$
         wählen.\\
-        &(Anzahl Freiheitsgrade)= Anzahl Klassen $ -1 $ = $k - 1$ \\ & $p=1-\alpha$ \hspace{10mm}$\alpha=$Irrtumswahrscheinlichkeit\\
-        & \textcolor{green}{$D \geq D_{1-\alpha}$} Hypothese ist unwahrscheinlich!\\
-        & $D < D_{1-\alpha}$ Hypothese nicht wiederlegbar!\\
-        & \textcolor{blue}{$D \leq D_\alpha$} Daten möglicherweise
+        &Anzahl Freiheitsgrade= Anzahl Ausgänge$ -1 $ = $k - 1$ \\ & $p=1-\alpha$ \hspace{10mm}$\alpha=$Irrtumswahrscheinlichkeit\\
+        & \textcolor{green}{$D \geq x_{1-\alpha}$} Hypothese ist unwahrscheinlich!\\
+        & $D < x_{1-\alpha}$ Hypothese nicht wiederlegbar!\\
+        & \textcolor{blue}{$D \leq x_\alpha$} Daten möglicherweise
         ''fabriziert''!\\
         \end{tabular}
         \end{minipage}
 		\begin{minipage}{6cm}
+		\vspace*{6cm}
         \includegraphics[width=6cm]{./bilder/chi-test.png}
         \end{minipage}\\
 	\begin{tabular}{ll}
