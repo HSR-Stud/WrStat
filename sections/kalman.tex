@@ -3,64 +3,7 @@
 	Messung und Systementwicklung. \\
 
 	\subsection{Datenfluss im Kalman-Filter}
-	\begin{tikzpicture}
-	% Styles
-		[	inner sep = 2mm,
-			block/.style={rectangle, minimum size=6mm, thick, draw=blue!50!black!30,
-				top color=white, bottom color=blue!50},
-			add/.style={circle, minimum size=5mm, thick, draw=white!50!black!50,
-				top color=white, bottom color=white!50!black!50, inner sep=1pt},
-			point/.style={circle, inner sep=0pt, minimum size=0pt}
-		]
-	% Graphic
-		% Blocks
-		\node at (0,0)		(add1)	[add]	{$+$};
-		\node at (0,-2)		(phi1)	[block]	{$\varphi_{k-1}$};
-		\node at (2,-2)		(del1)	[block]	{\textit{DELAY}};
-		\node at (4.5,0)	(h1)	[block]	{$H_k$};
-		\node at (6,0)		(add2)	[add]	{$+$};
-		\node at (8,0)		(sub1)	[add]	{$-$};
-		\node at (9.5,0)	(k1)	[block]	{$K_k$};
-		\node at (9.5,-2)	(h2)	[block]	{$H_k$};
-		\node at (11,0)		(add3)	[add]	{$+$};
-		\node at (12.5,-2)	(phi2)	[block]	{$\varphi_{k-1}$};
-		\node at (14.5,-2)	(del2)	[block]	{\textit{DELAY}};
-		% Labels
-		\node at (0,1)		(uk)			{$u_k$};
-		\node at (3.5,0.2)					{$x_k$};
-		\node at (6,-1.2)	(wk)			{$w_k$};
-		\node at (7,0.2)					{$z_k$};
-		\node at (11,-2.4)					{$\hat{x}_{k|k-1}$};
-		\node at (17,0)		(xk)			{$\hat{x}_k$};
-		% Connection Points
-		\node at (3.5,0)	(p1)	[point]	{};
-		\node at (3.5,-2)	(p2)	[point]	{};
-		\node at (8,-2)		(p3)	[point]	{};
-		\node at (11,-2)	(p4)	[point]	{};
-		\node at (16,0)		(p5)	[point]	{};
-		\node at (16,-2)	(p6)	[point]	{};
-		
-		% Braces Labels
-		\node at (1.5,-3.6)					{System};
-		\node at (5.5,-3.6)					{Messung};
-		\node at (12,-3.6)					{Kalman-Filter};
-	
-		% Connectors
-		\graph[use existing nodes] {
-			uk -> add1 -> h1 -> add2 -> sub1;
-			p1 -- p2 -> del1 -> phi1 -> add1;
-			wk -> add2;
-			sub1 -> k1 -> add3 -> xk;
-			p5 -- p6 -> del2 -> phi2 -> h2 -- p3 -> sub1;
-			p4 -> add3;
-		};
-		
-		% Braces
-		\draw[decoration={brace,amplitude=3mm,mirror},decorate] (-0.5,-3) -- (3.5,-3);
-		\draw[decoration={brace,amplitude=3mm,mirror},decorate] (4,-3) -- (7,-3);
-		\draw[decoration={brace,amplitude=3mm,mirror},decorate] (7.5,-3) -- (16.5,-3);
-		
-	\end{tikzpicture} \\
+		\input{tikz/datenfluss-kalman}
 	
 	\begin{minipage}{8cm}
 		\begin{tabular}{ll}
