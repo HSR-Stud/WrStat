@@ -80,7 +80,7 @@
     	Nachteile:&	-Grob verpixeltes Bild der Verteilung\\
     	&			-wenn wenig Messwerte $\Longrightarrow$ geringe Aussagekraft
     \end{tabular}
-
+   	
   \subsection{Testen einer stetigen Verteilung}
   	\subsubsection{Mit $\chi^2$-Test}
   	\begin{minipage}{13cm}
@@ -117,7 +117,7 @@
    			(\textcolor{green}{$F_{emp}$(x)} - 
    			\textcolor{blue}{$F_x$(x)})\\
     		\textcolor{red}{min} 
-    \textcolor{green}{$(F_{emp}(x)$}-
+    		\textcolor{green}{$(F_{emp}(x)$}-
     		\textcolor{blue}{$F_x(x))$}}
 
     \end{minipage}
@@ -129,18 +129,18 @@
 				$\mathbf{K_n^{\pm}}$ \textbf{berechnen}\\
 				\hspace*{0.5cm}
 				\parbox{6cm}{
-				$\boxed{K_n^+ = \sqrt{n}\underset{1<x<n}{max}\left(\frac{i}{n} - F_X(x_i)\right)}$\\
+					$\boxed{K_n^+ = \sqrt{n}\underset{1<x<n}{max}\left(\frac{i}{n} - F_X(x_i)\right)}$\\
 					$\boxed{K_n^- = \sqrt{n}\underset{1<x<n}{max}\left(F_X(x_i)- \frac{i-1}{n}\right)}$}
 				\parbox[c]{8cm}{
-				Mit Tabelle:
-				\begin{tabular}[t]{|c|c|c|c|c|}
-				   \hline
-				    $i$ & $x_i$ & $i/n$ & $F_X(x_i)$ & $(i-1)/n$ \\
-				    \hline
-				    1 & $min(x_i)$ & & & \\
-				    & $\vdots$ & & &\\	    
-				    n & $max(x_i)$ & & &\\
-				     \hline
+					Mit Tabelle:
+					\begin{tabular}[t]{|c|c|c|c|c|}
+				   		\hline
+				    	$i$ & $x_i$ & $i/n$ & $F_X(x_i)$ & $(i-1)/n$ \\
+				    	\hline
+				    	1 & $min(x_i)$ & & & \\
+				    	& $\vdots$ & & &\\	    
+				    	n & $max(x_i)$ & & &\\
+				     	\hline
 				     
 				 \end{tabular}
 				 }		
@@ -150,3 +150,29 @@
 	4. & Falls $K^+_n > t_{n,1-\alpha}$ oder $K^-_n < t_{n,\alpha}$,
 			verwerfe die Hypothese, dass $X$ die Verteilungsfunktion $F_X$ hat. 
 	\end{tabular}
+
+\subsection{Vergleichen von Mittelwerten (t-Test)}
+	\begin{tabular}{l l}
+		\textbf{Nullhypothese} & 
+		$\Rightarrow$ $E(X) = E(Y)$\\
+		
+		\textbf{Daten}&
+		$\mathbf{n}$ Messungen von $x_i \Rightarrow \bar{X} \; ; \; S_X^2$ \\ 
+		& $\mathbf{m}$ Messungen von $y_i \Rightarrow \bar{Y} \; ; \; S_Y^2$\\
+		
+		\textbf{Testgrösse} &
+		$T = \dfrac{\bar{X}-\bar{Y}}{\sqrt{(n-1)\cdot S_X^2 + (m-1)\cdot S_Y^2}}\cdot \sqrt{\dfrac{n m (n+m-2)}{n + m}}$\\
+		& T ist t-verteilt\\
+		
+		\textbf{Schwellenwert} &
+		$t_{krit}$ aus Tabelle 10.4 mit Freiheitsgrad $n+m-2$ und $p = 1-\alpha$\\
+		%TODO Pageref für Tabelle
+		
+		\textbf{Test} &
+		Falls $T > t_{krit}$ wird die Hypothese $E(X) = E(Y)$ verworfen
+		
+	\end{tabular}
+	 
+	
+	
+	\
