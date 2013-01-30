@@ -1,8 +1,22 @@
-\section{Kalman-Filter}
+\section{Prozessverbesserungen}
+
+\subsection{Gewichteter Mittelwert}
+	Besitzt man die Möglichkeit Messwerte aus zwei Messsystemen $X_1$ und $X_2$ mit unterschiedlicher Genauigkeit ($var(X_1)$/$var(X_2)$) zu beziehen, so kann man die Messwerte so gewichten, dass eine optimale Genauigkeit besteht.\\
+	
+	$\boxed{X_{opt} = t\cdot X_1 + (1-t) \cdot X_2} \qquad \rightarrow t$ so wählen, dass $var(X_{opt})$ minimal wird\\
+	
+	\hspace*{1cm} $var(X_{opt}) = t^2 \cdot var(X_1) + (1-t)^2 \cdot var(X_2) \qquad \rightarrow$ nach $t$ ableiten und Null setzen \\  
+	
+	$\Rightarrow \boxed{t = \dfrac{\sigma_2^2}{\sigma_1^2 + \sigma_2^2}} \; ; \; \boxed{1-t = \dfrac{\sigma_1^2}{\sigma_1^2 + \sigma_2^2}}$
+	\hspace{1cm} $var(X_{opt}) = \dfrac{\sigma_1^2 \cdot \sigma_2^2}{\sigma_1^2 + \sigma_2^2}$
+
+
+
+\subsection{Kalman-Filter}
 	\textbf{Prinzip:} bestmögliche Schätzung für Systemzustand auf Grund von fehlerbehafteter
 	Messung und Systementwicklung. \\
 
-	\subsection{Datenfluss im Kalman-Filter}
+	\subsubsection{Datenfluss im Kalman-Filter}
 		\input{tikz/datenfluss-kalman}
 	
 	\begin{minipage}{8cm}
@@ -50,7 +64,7 @@
 		\end{tabular}
 	\end{minipage}
 	
-	\subsection{Vorgehen}
+	\subsubsection{Vorgehen}
 	\begin{enumerate}
 		\item Bestimmung des Zustandsvektors $x_k$ und des Messvektors $z_k$
 		\item Aufstellen der Messmatrix $H_k$ aus: $z_k = H_k x_k$
@@ -67,7 +81,7 @@
 		\item Damit wird $P_k$ vereinfacht zu: $P_k = (I-K_kH_k) P_{k|k-1}$
 	\end{enumerate}
 	
-	\subsection{Vereinfachung}
+	\subsubsection{Vereinfachung}
 		In der Praxis kann meist davon ausgegangen werden, dass $\varphi_k$, $R_k$,
 		$Q_k$ und $H_k$ konstant sind. Damit werden auch $P_k$ und $K_k$ konstant und
 		die Vorhersage wird vereinfacht zu: $\hat{x}_k = \hat{x}_{k|k-1} 
