@@ -1,18 +1,18 @@
 \section{Erwartungswert und Varianz}
 
 \subsection{Erwartungswert \skript{63}}
+\begin{minipage}[t]{9cm}
 Sei $X$ eine Funktion auf $\Omega$, und lasse sich $\Omega$ in endlich viele
 Ereignisse $A_i$ zerlegen, auf denen $X(\omega)$ konstant ist, dann ist der
-Erwartungswert von $X$ \\
-\hspace*{5.7cm}
-$Erwartungswert = \sum Wert \cdot Wahrscheinlichkeit$ \\
-\hspace*{7.5cm}
-$E(X)=\sum\limits_{i=0}^n \underbrace{X(A_i)}_{\text{Wert}}\cdot
-\underbrace{P(A_i)}_{\text{W'keit}}$ \\
-\hspace*{5.7cm}
-$E(X) = \int\limits_{-\infty}^x x \cdot \varphi(x) dx$ mit $\varphi(x) =
-Dichtefunktion$
-
+Erwartungswert von $X$ 
+\[Erwartungswert = \sum Wert \cdot Wahrscheinlichkeit\] 
+\[\boxed{E(X)=\sum\limits_{i=0}^n \underbrace{X(A_i)}_{\text{Wert}}\cdot
+\underbrace{P(A_i)}_{\text{W'keit}}}\] 
+\[E(X) = \int\limits_{-\infty}^x x \cdot \varphi(x) dx$ mit $\varphi(x) =
+Dichtefunktion\]
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}[t]{9cm}
 \subsubsection{Rechenregeln \skript{67}}
 \begin{tabular}{ll}
   $E(X+Y)=E(X)+E(Y)$ \\
@@ -20,6 +20,7 @@ Dichtefunktion$
   \mathbb{R}$ \\
   $E(XY) = E(X)\cdot E(Y)$ & wenn X,Y unabhängig sind \\
 \end{tabular}
+\end{minipage}
 \vspace{1mm} %
 \hrule       % <<- Wär tuet so scheiss??
 \vspace{2mm} %
@@ -27,7 +28,7 @@ Dichtefunktion$
 \begin{minipage}{9cm}
 \subsection{Varianz \skript{63}}
   \begin{tabular}{ll}
-    $var(X)=\sigma ^2=E[(X-E(X))^2]=E(X^2)-E(X)^2$\\
+    $\boxed{var(X)=E(X^2)-E(X)^2}=\sigma ^2=E[(X-E(X))^2]$\\
     $\sigma = $ Standardabweichung\\
 	\end{tabular}
 	\subsubsection{Kovarianz}
@@ -83,7 +84,7 @@ gleichem Erwartungswert $ \mu $ und gleicher Varianz $ \sigma^2 $ gegeben. \\
   \vspace{.1cm}
   \textbf{Regressionskoeffizient r} \\
   $r$ ist ein Mass für die Qualität der Regression (standardisiert) \\
-  $r^2=\dfrac{cov(X,Y)^2}{var(X)var(Y)}$ \\
+  $r^2=\dfrac{cov(X,Y)^2}{var(X)var(Y)}=a^2\cdot\dfrac{var(X)}{var(Y)}$ \\
   \textbf{Mittlerer quadratischer Fehler} \\
   $\Delta^2 = var(Y)(1-r^2) =
   var(Y)\left(1-\dfrac{cov(X,Y)^2}{var(X)var(Y)}\right) $ \\

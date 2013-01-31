@@ -7,6 +7,7 @@ $n_1 \cdot n_2 \cdots n_k =  \prod_{i=1}^{k} n_i$\\
   \hline
   Art der Auswahl von $k$ aus $n$ Elementen &
   \multicolumn{3}{c|}{Anzahl der Möglichkeiten} \\
+  \cline{2-4}
   & ohne Wiederholungen & TR & mit Wiederholungen (Zurücklegen) \\
  	&	$(k\leq n)$   &      & $(k\leq n)$ \\
  	\hline
@@ -62,9 +63,9 @@ nicht $A$&$\Omega\setminus A$\\
   Differenz der Ereignisse A und B: & $P({A}\setminus{B})=P(A)-P({A}\cap{B})$\\
   Vereinigung zweier Ereignisse: & $P({A}\cup{B})=P(A)+P(B)-P({A}\cap{B})$\\
 \end{tabular}
-\begin{center}
-$P(A)=\lim\limits_{\text{Anzahl Versuche} \to \infty} \dfrac{\text{Anzahl Versuche bei der A eingetreten ist}}{\text{Anzahl Versuche}}$\\
-\end{center}
+
+\[P(A)=\lim\limits_{\text{Anzahl Versuche} \to \infty} \dfrac{\text{Anzahl Versuche bei der A eingetreten ist}}{\text{Anzahl Versuche}}
+\]
 \end{minipage}
 \vspace{.5cm}
 \hrule
@@ -72,41 +73,43 @@ $P(A)=\lim\limits_{\text{Anzahl Versuche} \to \infty} \dfrac{\text{Anzahl Versuc
 \subsection{Bedingte Wahrscheinlichkeit \skript{35}}
 Die Wahrscheinlichkeit für das Eintreten des Ereignisses $A$ unter der
 Bedingung, dass das Ereignis $B$ bereits eingetreten ist.
-\begin{center}
-  $P(A\mid B)= \dfrac{P(A\cap B)}{P(B)}=\underbrace{\frac{P(A)\cdot
+\[\boxed{P(A\mid B)= \dfrac{P(A\cap B)}{P(B)}}=\underbrace{\frac{P(A)\cdot
   P(B)}{P(B)}=P(A)}_{\text{nur wenn unabhängig}} \qquad P(\overline{A}|B) = 1 -
-  P(A|B)$
-\end{center}
+  P(A|B)\]
+  
 \hrule
 
 \subsection{Unabhängige Ereignise \skript{36}}
-		Für sie gilt \hspace*{5mm} $P(A\cap B)=P(A)P(B)$\\
+		Für sie gilt \hspace*{5mm} $\boxed{P(A\cap B)=P(A)P(B)}$\\
     	Die Tatsache, dass A eingetreten ist, hat keinen Einfluss auf die 
 		Wahrscheinlichkeit von B.\\
 		Unabhängige Ereignisse $A$ und $B$ liegen vor, wenn: 
 		\hspace*{5mm} $P(A\mid B)=P(A\mid \overline{B})$ \\		
 \hrule
 
-\subsection{Totale Wahrscheinlichkeit \skript{58}}
-	$P(A)=\sum\limits_{i=1}^n \underbrace{P(A\mid B_i)}_{\text{??¿¿nicht die bedingten W'keiten einsetzen¿¿??}}\cdot P(B_i)$ \\
+\begin{minipage}[t]{11.5cm}
+	\subsection{Totale Wahrscheinlichkeit \skript{58}}
+		$\boxed{P(A)=\sum\limits_{i=1}^n P(A\mid B_i)\cdot P(B_i)}$ \\
 	
-	in Matrixform: \\
-	$\begin{pmatrix}P(A_1)\\P(A_2)\\\vdots\\P(A_n)\end{pmatrix} = 
-	\underbrace{\begin{pmatrix}P(A_1|B_1) & P(A_1|B_2) & \ldots & P(A_1|B_n) \\
-	P(A_2|B_1) & P(A_2|B_2) & \ldots & P(A_2|B_n) \\
-	\vdots & \vdots & \ddots & \cdots \\
-	P(A_m|B_1) & P(A_m|B_2) & \ldots & P(A_m|B_n)\end{pmatrix}}_{\text{W'keitsmatrix}}
-	\cdot \begin{pmatrix}P(B_1)\\P(B_2)\\\vdots\\P(B_n)\end{pmatrix}$
-\hrule
-
+		in Matrixform: \\
+		$\begin{pmatrix}P(A_1)\\P(A_2)\\\vdots\\P(A_n)\end{pmatrix} = 
+		\underbrace{\begin{pmatrix}P(A_1|B_1) & P(A_1|B_2) & \ldots & P(A_1|B_n) \\
+		P(A_2|B_1) & P(A_2|B_2) & \ldots & P(A_2|B_n) \\
+		\vdots & \vdots & \ddots & \cdots \\
+		P(A_m|B_1) & P(A_m|B_2) & \ldots & P(A_m|B_n)\end{pmatrix}}_{\text{W'keitsmatrix}}
+		\cdot \begin{pmatrix}P(B_1)\\P(B_2)\\\vdots\\P(B_n)\end{pmatrix}$
+	\end{minipage}
+\begin{minipage}[t]{7cm}
 \subsection{Satz von Bayes \skript{43}}
 \begin{tabular}{ll}
-  $P(B\mid A)=P(A\mid B) \cdot\dfrac{P(B)}{P(A)}$
+  $\boxed{P(B\mid A)=P(A\mid B) \cdot\dfrac{P(B)}{P(A)}}$
   \vspace{1mm}
 \end{tabular}
-\hrule
-
 \subsection{Laplace-Ereignisse \skript{47}}
 In einem endlichen Wahrscheinlichkeitsraum $\Omega$ haben alle
 Elementarereignisse die gleiche Wahrscheinlichkeit. \\
-$P(A)=\dfrac{\left| A\right|}{\left|\Omega\right|}$ \\
+$\boxed{P(A)=\dfrac{\left| A\right|}{\left|\Omega\right|}}$ \\
+\end{minipage}
+
+\hrule
+
