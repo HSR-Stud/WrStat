@@ -1,6 +1,6 @@
 \section{Ereignisse und ihre Wahrscheinlichkeit}
 
-\subsection{Kombinatorik \skript{5} \sachs{66}}
+\subsection{Kombinatorik \skript{5}}
 \begin{tabular}{| p{5.5cm} | c | c |}
   \hline
   Art der Auswahl bzw. Zusammenstellung von $k$ aus $n$ Elementen &
@@ -45,7 +45,7 @@
 		\end{tabular}
 \hrule
 
-\subsection{Unabhängige Ereignise \skript{36} \sachs{83}}
+\subsection{Unabhängige Ereignise \skript{36}}
 		Unabhängige Ereignisse $A$ und $B$ liegen vor, wenn: \hspace*{5mm} $P(A\mid
 		B)=P(A)$ \hspace{4mm} und \hspace{4mm} $P(B\mid A)=P(B)$ \hspace*{5mm} erfüllt
 		ist. \\
@@ -54,7 +54,7 @@
 		Wahrscheinlichkeit von B.\\
 \hrule
 
-\subsection{Bedingte Wahrscheinlichkeit \skript{35} \sachs{85}}
+\subsection{Bedingte Wahrscheinlichkeit \skript{35}}
 Die Wahrscheinlichkeit für das Eintreten des Ereignisses $A$ unter der
 Bedingung, dass das Ereignis $B$ bereits eingetreten ist.
 \begin{center}
@@ -64,18 +64,33 @@ Bedingung, dass das Ereignis $B$ bereits eingetreten ist.
 \end{center}
 \hrule
 
-\subsection{Satz von Bayes \skript{43} \sachs{89}}
+\begin{minipage}{7cm}
+\vspace{3mm}
+\subsection{Satz von Bayes \skript{43}}
 \begin{tabular}{ll}
   $P(B\mid A)=P(A\mid B) \cdot\dfrac{P(B)}{P(A)}$
   \vspace{1mm}
 \end{tabular}
 \hrule
 
-\subsection{Laplace-Ereignisse \skript{47} \sachs{79}}
+\subsection{Laplace-Ereignisse \skript{47}}
 In einem endlichen Wahrscheinlichkeitsraum $\Omega$ haben alle
 Elementarereignisse die gleiche Wahrscheinlichkeit. \\
 $P(A)=\dfrac{\left| A\right|}{\left|\Omega\right|}$ \\
-\hrule
 
-\subsection{Totale Wahrscheinlichkeit \skript{58 ???} \sachs{88}}
-$P(A)=\sum\limits_{i=1}^N P(A\mid G_i)\cdot P(G_i)$ 
+
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{12cm}
+\hspace{2mm}
+\subsection{Totale Wahrscheinlichkeit \skript{58}}
+	$P(A)=\sum\limits_{i=1}^N P(A\mid G_i)\cdot P(G_i)$ \\
+	
+	in Matrixform: \\
+	$\begin{pmatrix}P(A_1)\\P(A_2)\\\vdots\\P(A_n)\end{pmatrix} = 
+	\underbrace{\begin{pmatrix}P(A_1|B_1) & P(A_1|B_2) & \ldots & P(A_1|B_n) \\
+	P(A_2|B_1) & P(A_2|B_2) & \ldots & P(A_2|B_n) \\
+	\vdots & \vdots & \ddots & \cdots \\
+	P(A_m|B_1) & P(A_m|B_2) & \ldots & P(A_m|B_n)\end{pmatrix}}_{\text{W'keitsmatrix}}
+	\cdot \begin{pmatrix}P(B_1)\\P(B_2)\\\vdots\\P(B_n)\end{pmatrix}$
+\end{minipage}

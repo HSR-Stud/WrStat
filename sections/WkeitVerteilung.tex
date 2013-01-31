@@ -1,7 +1,6 @@
 \section{Wahrscheinlichkeitsverteilung}
 
-	\subsection{Verteilungsfunktion \skript{77} \sachs{93 (diskret), 97
-	(kontinuierlich)}}
+	\subsection{Verteilungsfunktion \skript{77}}
 		\begin{tabular}[]{|l|l|}
         	\hline
         	\textbf{diskret} & \textbf{kontinuierlich}\\
@@ -24,19 +23,21 @@
 
 \hrule
 
-\subsection{Wahrscheinlichkeitsdichte \sachs{97}}
+\subsection{Wahrscheinlichkeitsdichte}
 \begin{multicols}{2}
 \textbf{Dichtefunktion oder Wahrscheinlichkeitsdichte:} \\
 $\varphi(x) = F'(x)$ \\
 \textbf{Bei Sprungstellen von F(x):} \\
-$\varphi(x) = $ Dirach mit Gewichtung der Sprunghöhe
+$\varphi(x) = $ Dirac mit Gewichtung der Sprunghöhe
 
 \columnbreak
 
-\textbf{Erwartungswert} \\
-$E(\textcolor{red}{X}) = \int \textcolor{red}{x} \cdot \varphi(x) dx$ \\
-$E(\textcolor{red}{X^2}) = \int \textcolor{red}{x^2} \cdot \varphi(x) dx$ \\
-$E(\textcolor{red}{X^N}) = \int \textcolor{red}{x^N} \cdot \varphi(x) dx$ 
+	\textbf{Erwartungswert} \\
+	\begin{tabular}{l l l}
+		$E(\textcolor{red}{X})$ & $ = \int \textcolor{red}{x} \cdot \varphi(x) dx$  & bzw. $\sum \textcolor{red}{x} \cdot p_k$\\
+		$E(\textcolor{red}{X^2})$ & $ = \int \textcolor{red}{x^2} \cdot \varphi(x) dx$ & bzw. $\sum \textcolor{red}{x^2} \cdot p_k$\\
+		$E(\textcolor{red}{X^N})$ & $ = \int \textcolor{red}{x^N} \cdot \varphi(x) dx$ & bzw. $\sum \textcolor{red}{x^N} \cdot p_k$
+	\end{tabular}
 \end{multicols}
 
 \hrule
@@ -83,7 +84,7 @@ $E(\textcolor{red}{X^N}) = \int \textcolor{red}{x^N} \cdot \varphi(x) dx$
 
 \newpage
 
-	\subsection{Normalverteilung \skript{101} \sachs{120}}
+	\subsection{Normalverteilung \skript{101}}
 		\begin{floatingfigure}[r]{8cm}
 		\includegraphics[width=8cm]{./bilder/normalverteilung.png}
 		\caption{Dichtefunktion (oben) und Verteilungsfunktion (unten) der
@@ -106,8 +107,9 @@ $E(\textcolor{red}{X^N}) = \int \textcolor{red}{x^N} \cdot \varphi(x) dx$
 	$95\% $ in $[ \mu - 2\sigma, \mu + 2\sigma]$ \\
 	$99.7\% $ in $[ \mu - 3\sigma, \mu + 3\sigma]$ \\
 	
+\hrule \hspace{3mm}
 	
-	\subsection{Zentraler Grenzwertsatz \skript{107} \sachs{127}}
+	\subsection{Zentraler Grenzwertsatz \skript{107}}
       	$X_1, X_2, \ldots , X_n$ sind lauter identisch verteilte (nicht notwendig normalverteilt!)
       	unabhängige Zufallsvariablen mit demselben Erwartungswert $\mu$ und derselben Varianz $\sigma^2$.
       	\\ 
@@ -134,7 +136,7 @@ $E(\textcolor{red}{X^N}) = \int \textcolor{red}{x^N} \cdot \varphi(x) dx$
 		\begin{itemize}
           \item Lebensdauer von Atomen beim radioaktiven Zerfall
           \item Lebensdauer von Bauteilen, Maschinen \& Geräten\\(MTBF -
-          Mean Time Before Failure = $\frac{1}{\lambda}$)
+          Mean Time Between Failure = $\frac{1}{\lambda}$)
         \end{itemize}
         
 		\underline{Dichtefunktion und Verteilungsfunktion}\\
@@ -154,7 +156,7 @@ $E(\textcolor{red}{X^N}) = \int \textcolor{red}{x^N} \cdot \varphi(x) dx$
 		
 		
 \newpage
-	\subsection{Hypergeometrische Verteilung \skript{120} \sachs{117}}
+	\subsection{Hypergeometrische Verteilung \skript{120}}
 	    \begin{floatingfigure}[r]{5.5cm}
         	\includegraphics[width=5.5cm]{./bilder/hypergeo.png}
         \end{floatingfigure}
@@ -170,17 +172,21 @@ $E(\textcolor{red}{X^N}) = \int \textcolor{red}{x^N} \cdot \varphi(x) dx$
 		{\bf Beispiel:} \\
 		Lotto, $n=45$ Zahlen, $r=6$ (die gezogenen Zahlen), $m=6$
 		(meine Zahlen) \\
-		$P(X=4)=P(Ein Vierer)=\dfrac{\binom 6 4 \binom {39}
+		$P(X=4)=P(\text{Ein Vierer})=\dfrac{\binom 6 4 \binom {39}
 		2}{\binom {45} 6}=0.001364$	\\
 
-	\subsection{Poissonverteilung \skript{128} \sachs{115}}
-	\begin{multicols}{3}
+\hrule \hspace{3mm}
+
+	\subsection{Poissonverteilung \skript{128}}
+	\begin{multicols}{2}
 		\begin{tabular}{ll}
         $P_\lambda(k)=\frac{\lambda^k}{k!}e^{-\lambda}$ & \\
         Erwartungswert:  & $E(X)=\lambda$\\
         Varianz:  & $var(X)=\lambda$ \\
         $\lambda = a \cdot x$ \\
         \end{tabular} \\
+         $P(X<k) = \sum_0^k P_\lambda(k)=\sum_0^k \frac{\lambda^k}{k!}e^{-\lambda}$ \\
+         $P(X>k) = 1-P(X<k)$ \\
         \columnbreak
         
         {\bf Anwendungsbeispiele:} \\ Für die Häufigkeiten seltener
@@ -194,7 +200,7 @@ $E(\textcolor{red}{X^N}) = \int \textcolor{red}{x^N} \cdot \varphi(x) dx$
 
 \hrule
 
-		\subsection{Binomialverteilung \skript{125} \sachs{112}}
+		\subsection{Binomialverteilung \skript{125}}
 		\begin{tabular}{p{18cm}}
     	Wird angewendet bei einem Experiment mit nur zwei Ausgängen (Ereignis mit W'keit $p$ tritt
     	ein, Ereignis tritt nicht ein). \\

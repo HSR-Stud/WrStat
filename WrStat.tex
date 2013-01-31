@@ -2,8 +2,8 @@
 % Dokumentinformationen %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\titleinfo}{Wahrscheinlichkeitsrechnung und Statistik - Formelsammlung}
-\newcommand{\authorinfo}{Braun \& Co, J.Rast}
-\newcommand{\versioninfo}{$Revision: 1 $ - powered by \LaTeX}  
+\newcommand{\authorinfo}{Braun \& Co, J.Rast, H.Badertscher}
+\newcommand{\versioninfo}{$Revision: 2 $ - powered by \LaTeX}  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Standard projektübergreifender Header für
@@ -14,6 +14,12 @@
 % DORT NUR ERGÄNZEN, NICHTS LÖSCHEN\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{header/header}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,positioning,fit,petri}
+\usetikzlibrary{calc,intersections,through,backgrounds,graphs}
+\usetikzlibrary{patterns,decorations.pathreplacing}
+
 
 % Möglichst keine Ergänzungen hier, sondern in header.tex
 \begin{document}
@@ -29,13 +35,17 @@
  
 \input{sections/Hypothesentest}
 
+\input{sections/Kalman}
+
 \section{Wichtige Formeln}
 \input{idiotenseite/diverses/subsections/Reihenentwicklung}
-
+\newpage
+\input{sections/AuswahlVerteilung}
 \input{sections/Uebungsverzeichnis}
 \newpage
 \input{sections/Tabellen}
 
-\input{sections/Taschenrechner}
+%\input{sections/Taschenrechner}
+\input{TI-Reference/tex/statistik}
 
 \end{document} 
