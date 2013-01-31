@@ -3,82 +3,101 @@
 	- ``Man braucht Aussagen, die man widerlegen könnte.''\\
 	- Irrtum ist möglich (Irrtumsw'keit $\alpha$)\\
 	- Beweis durch Widerlegen des Gegenbeweises
-	\subsection{Vorgehen}
+	\subsection{Vorgehen (Nullhypothese)}
 	\begin{enumerate}
-      \item Hypothese, die der Test Widerlegen soll
-      \item Irrtumsw'keit $\alpha$ = 0.05, 0.01, \ldots (Niveau=1-$\alpha$)
-      \item Testgrösse T, W'keitsverteilung
-      \item Bestimmung der Schranken t für: $P(|T-E(T)|>t)=\alpha$
-      \item Falls Messungen ergeben $|T-E(T)|>t \Longrightarrow$ Hypothese
-      falsch mit W'keit 1- $\alpha$
+      \item Hypothese, die der Test \textbf{widerlegen} soll\\
+      	$\rightarrow$ Nullhypothese $\Rightarrow$ Keine Wirkung/Effekt
+      \item Festlegung der Irrtumswahrscheinlichkeit 	$\alpha$ = 0.05, 0.01, \ldots (Niveau=1-$\alpha$)
+      \item Testgrösse X, W'keitsverteilung
+      	$\rightarrow$ Nur Werte bis zum getesteten Ereignis betrachten! (Nicht Zukunft mit einbeziehen)
+      \item Bestimmung der Schranken $x_{krit}$ für: 		
+      	\begin{itemize}
+      		\item Einseitiger Test $P(X > x_{krit})=\alpha$
+      		\item Zweiseitiger Test $P(|X| > x_{krit})=\alpha/2$
+      	\end{itemize}
+      \item Wert für $F\!\left({\frac{x_{krit}-\mu}{\sigma}}\right)$ aus Tabelle 10.1
+      %TODO pageref für Tabelle
+      \item Falls Messungen ergeben $X > x_{krit} \Longrightarrow$ Hypothese
+      \textbf{falsch} mit W'keit $1-\alpha$
     \end{enumerate}
     
     
-	\subsection{$\chi^2$-Test - Testen einer Wahrscheinlichkeitsverteilung
+	\subsection{Testen einer diskreten Verteilung
 	\skript{147}}
-		$\chi ^2 = Z_1^2+\ldots+Z_r^2$ ($Z_r$ sind standardnormalverteilt) $\Longrightarrow
-		\chi^2$-Verteilung mit r-Freiheitsgraden\\ \\
-		\begin{minipage}{6.5cm}
-        \includegraphics[width=6cm]{./bilder/chi_quadrat.png}\\
-        \end{minipage}
-		\begin{minipage}{12cm}
-        Teilintervalle: $I_i$, $i=1,\ldots,k$\\
-        Wahrscheinlichkeit: $P(X\in I_i)=\textcolor{red}{p_i}$\\
-        $n$ Beobachtungen, davon jeweils \textcolor{blue}{$n_i$} im Intervall
-        $i$ ($n=\sum n_i$)\\
-        $D=\sum\limits_i\frac{(\textcolor{blue}{n_i}-\textcolor{red}{np_i})^2}{\textcolor{red}{np_i}}$
-        \hspace{8mm} ist $\chi^2_{k-1}$, mit $k-1$ Freiheitsgrade\\
-        $\varphi_n(x)=  \begin{cases}\displaystyle \frac{x^{\frac{r}{2}-1}e^{
-        -\frac{x}{2}}}{2^{\frac{r}{2}}\Gamma\left(\frac{r}{2}\right)} & x>0 \\
-        0 & x\leq 0 \end{cases} $\\  
-		$E(X)=r; \quad var(X)=2r$
-        \end{minipage}
+	\subsubsection{$\chi^2$-Test mit k-möglichen Ausgängen}
 		
-		\subsubsection{Durchführung des $\chi^2$-Tests}
+		\begin{tabular}{l l}
+			Mögliche Ausgänge: $I_i$, $i=1,\ldots,k$&
+			Wahrscheinlichkeit von Ausgang $i$: $P(X\in I_i)=\textcolor{red}{p_i}$\\
+			$n$ Beobachtungen, davon jeweils \textcolor{blue}{$n_i$} mit Ausgang $i$ &
+			$\boxed{D=\sum\limits_{i=1}^{k}\frac{(\textcolor{blue}{n_i}-\textcolor{red}{np_i})^2}{\textcolor{red}{np_i}}}$ \hspace{4mm} ist $\chi^2_{k-1}$, mit $k-1$ Freiheitsgrade\\
+		\end{tabular}
+        
+       % $\varphi_n(x)=  \begin{cases}\displaystyle \frac{x^{\frac{r}{2}-1}e^{
+        %-\frac{x}{2}}}{2^{\frac{r}{2}}\Gamma\left(\frac{r}{2}\right)} & x>0 \\
+        %0 & x\leq 0 \end{cases} $\\  
+		%$E(X)=r; \quad var(X)=2r$
+
+		
+		\textbf{Durchführung des $\chi^2$-Tests}\\
 		\begin{minipage}{13cm}
 		\begin{tabular}{p{4cm}p{8cm}}
-        1. Klasse bilden: & Gross genug, dass mehrere Beobachtungen in jede
-        Klasse fallen.\\  
-        & (erste und letzte Klasse können breiter sein)\\
-        & Faustregel: $\boldsymbol{n_i\geq 5}$; k: Anzahle der Klassen\\
-        2. \textbf{Diskrepanz $D$} berechnen & \begin{tabular}[t]{|c|c|c|c|c|}
+		1. Daten erfassen: &
+			Damit der Test optimal funktioniert muss folgende Bedingung erfüllt sein:
+			$\boldsymbol{n_i\geq 5 \; \forall \; i}$\\
+        
+        2. \textbf{Diskrepanz $D$} berechnen & \begin{tabular}[t]{|c|c|c|c|c|c|}
                                   \hline
-                                  $i$ & Intervall & $p_i$ & $n_i$ &
+                                  $i$ & Ausgang & $p_i$ & $n_i$ & $(n_i-np_i)$ &
                                   $(n_i-np_i)^2/np_i$\\
                                   \hline
-                                  1 & & & & \\
-                                  2 & & & & \\
-                                  3 & & & & \\
-                                  4 & & & & \\
-                                  5 & & & & \\
+                                  1 & & & & & \\
+                                  2 & & & & & \\
+                                  3 & & & & & \\
+                                  4 & & & & & \\
+                                  5 & & & & & \\
                                   \hline
-                                  & & & & $D=\sum$ \\
+                                  & & & n & & $D=\sum$ \\
                                   \hline
                                   
                                   \end{tabular}\\
-        3. Schwellenwert für $D$ & aus $\chi_{k-1}^2$-Tabelle lesen. Wenn
+        3. Schwellenwert für $D$ & $x_{1-\alpha}$ für $F_{\chi_{k-1}^2}(x) = 1- \alpha$ aus $\chi_{k-1}^2$-Tabelle lesen. \\
+        & Wenn
         $\alpha$ nicht vorgegeben, dann $\alpha$ z.B. $0.1$ oder $0.05$
         wählen.\\
-        &(Anzahl Freiheitsgrade)= Anzahl Klassen $ -1 $ = $k - 1$ \\ & $p=1-\alpha$ \hspace{10mm}$\alpha=$Irrtumswahrscheinlichkeit\\
-        & \textcolor{green}{$D \geq D_{1-\alpha}$} Hypothese ist unwahrscheinlich!\\
-        & $D < D_{1-\alpha}$ Hypothese nicht wiederlegbar!\\
-        & \textcolor{blue}{$D \leq D_\alpha$} Daten möglicherweise
+        &Anzahl Freiheitsgrade= Anzahl Ausgänge$ -1 $ = $k - 1$ \\ & $p=1-\alpha$ \hspace{10mm}$\alpha=$Irrtumswahrscheinlichkeit\\
+        & \textcolor{green}{$D \geq x_{1-\alpha}$} Hypothese ist unwahrscheinlich!\\
+        & $D < x_{1-\alpha}$ Hypothese nicht wiederlegbar!\\
+        & \textcolor{blue}{$D \leq x_\alpha$} Daten möglicherweise
         ''fabriziert''!\\
         \end{tabular}
         \end{minipage}
 		\begin{minipage}{6cm}
+		\vspace*{6cm}
         \includegraphics[width=6cm]{./bilder/chi-test.png}
         \end{minipage}\\
 	\begin{tabular}{ll}
     	Nachteile:&	-Grob verpixeltes Bild der Verteilung\\
     	&			-wenn wenig Messwerte $\Longrightarrow$ geringe Aussagekraft
     \end{tabular}
-
-\newpage
-	\subsection{Kolmogorov-Smirnov Test}
+   	
+  \subsection{Testen einer stetigen Verteilung}
+  	\subsubsection{Mit $\chi^2$-Test}
+  	\begin{minipage}{13cm}
+  		Der $\chi^2$-Test kann im Prinzip nur diskrete Wahrscheinlichkeitsverteilungen testen.\\
+  		$\rightarrow$ Will man eine stetige Verteilung testen, muss man zunächst Klassen von Werten bilden. $\rightarrow$ Anschliessend deren Wahrscheinlichkeiten berechnen und dann prüfen ob die künstlich diskrete Verteilung im $\chi^2$-Test Bestand hat.\\
+  		$\Rightarrow$ Achtung: Durch die Klassenbildung wird eine künstliche Diskretisierung eingeführt. 
+  	\end{minipage}		
+  	\begin{minipage}{6.5cm}
+  	        \includegraphics[width=6cm]{./bilder/chi_quadrat.png}\\
+  	        \end{minipage}
+  	        
+  	
+	\subsubsection{Kolmogorov-Smirnov Test}
 	\begin{tabular}{ll}
+	\textbf{Nullhypothese} & Messwerte $x_1, ..., x_n$ haben Verteilungsfunktion $F_X$\\
     Idee: & Vergleiche Verteilungsfunktionen (statt der Dichtefunktionen)\\
-    Daten: & $X$ Zufallsvariable, Verteilungsfunktion $F_x$, $n$ Messungen
+    Daten: & $X$ Zufallsvariable, Verteilungsfunktion $F_X$, $n$ Messungen
     ergeben Stichprobe $x_i$
     \end{tabular}
 
@@ -87,30 +106,73 @@
     \includegraphics[width=6cm]{./bilder/ks2.png}\\
     \end{minipage}
 	\begin{minipage}{12cm}
-    \textcolor{blue}{$F_x$ theoretische Verteilungsfunktion}\\ \\
+    \textcolor{blue}{$F_X$ theoretische Verteilungsfunktion von X}\\ \\
     \vspace{15mm}
     \textcolor{green}{empirische Verteilungsfunktion $\frac{Anzahl\{x_i \leq
     x \}}{n}$}\\
 
-    \textcolor{red}{$K_-$ = max}
-    \textcolor{blue}{$(F_x$(x)} -
-    \textcolor{green}{$F_{emp}$(x))} 
-    $\cdot\sqrt{n}$ \\
-    \textcolor{red}{$K_{+}$ = max} 
-    \textcolor{green}{$(F_{emp}(x)$}-
-    \textcolor{blue}{$F_x(x))$}
-    $\cdot\sqrt{n}$ \\
+    Testgrösse\\
+    \hspace*{0.5cm}
+    	\parbox{6cm}{\textcolor{red}{max}
+   			(\textcolor{green}{$F_{emp}$(x)} - 
+   			\textcolor{blue}{$F_x$(x)})\\
+    		\textcolor{red}{min} 
+    		\textcolor{green}{$(F_{emp}(x)$}-
+    		\textcolor{blue}{$F_x(x))$}}
 
     \end{minipage}
 
-	\begin{tabular}{p{18cm}}
-		Sei $X1,\ldots,Xn$ sei eine Stichprobe einer Zufallsvariable $X$ . Der
-		Kolmogorov- Smirnov-Test auf dem Niveau $\alpha$ für die Hypothese, 
-		dass $X$ die Verteilungsfunktion $F$ hat wird wie folgt durchgeführt: \\ \\
-		1. Berechne 
-		$K_n^+ = \sqrt{n} \underset{-\infty<x<\infty}{max}(F(x)-F_n(x))$ und
-		$K_n^- = \sqrt{n} \cdot \underset{x \in \mathbb{R}}{max}(F_n(x)-F(x))$  \\
-		2. Finde $t_{n,1-\alpha}$ in der Tabelle\\ 
-		3. Falls $K^+_n > t_{n,1-\alpha}$ oder $K^-_n < t_{n,\alpha}$,
-		verwerfe die Hypothese, dass $X$ die Verteilungsfunktion $F$ hat. 
+	\textbf{Durchführen des Kolmogorov-Smirnov Test}\\
+	\begin{tabular}{l p{18cm}}
+		1. &  Werte $x_1, ..., x_n$ in aufsteigender Reihenfolge sortieren\\
+		2. & \parbox[t]{18cm}{
+				$\mathbf{K_n^{\pm}}$ \textbf{berechnen}\\
+				\hspace*{0.5cm}
+				\parbox{6cm}{
+					$\boxed{K_n^+ = \sqrt{n}\underset{1<x<n}{max}\left(\frac{i}{n} - F_X(x_i)\right)}$\\
+					$\boxed{K_n^- = \sqrt{n}\underset{1<x<n}{max}\left(F_X(x_i)- \frac{i-1}{n}\right)}$}
+				\parbox[c]{8cm}{
+					Mit Tabelle:
+					\begin{tabular}[t]{|c|c|c|c|c|}
+				   		\hline
+				    	$i$ & $x_i$ & $i/n$ & $F_X(x_i)$ & $(i-1)/n$ \\
+				    	\hline
+				    	1 & $min(x_i)$ & & & \\
+				    	& $\vdots$ & & &\\	    
+				    	n & $max(x_i)$ & & &\\
+				     	\hline
+				     
+				 \end{tabular}
+				 }		
+		}\\
+	3. & Finde $t_{n,1-\alpha}$,$t_{n,\alpha}$  in der Tabelle 10.3\\
+	%TODO Pageref für Tabelle
+	4. & Falls $K^+_n > t_{n,1-\alpha}$ oder $K^-_n < t_{n,\alpha}$,
+			verwerfe die Hypothese, dass $X$ die Verteilungsfunktion $F_X$ hat. 
 	\end{tabular}
+
+\subsection{Vergleichen von Mittelwerten (t-Test)}
+	\begin{tabular}{l l}
+		\textbf{Nullhypothese} & 
+		$\Rightarrow$ $E(X) = E(Y)$\\
+		
+		\textbf{Daten}&
+		$\mathbf{n}$ Messungen von $x_i \Rightarrow \bar{X} \; ; \; S_X^2$ \\ 
+		& $\mathbf{m}$ Messungen von $y_i \Rightarrow \bar{Y} \; ; \; S_Y^2$\\
+		
+		\textbf{Testgrösse} &
+		$T = \dfrac{\bar{X}-\bar{Y}}{\sqrt{(n-1)\cdot S_X^2 + (m-1)\cdot S_Y^2}}\cdot \sqrt{\dfrac{n m (n+m-2)}{n + m}}$\\
+		& T ist t-verteilt\\
+		
+		\textbf{Schwellenwert} &
+		$t_{krit}$ aus Tabelle 10.4 mit Freiheitsgrad $n+m-2$ und $p = 1-\alpha$\\
+		%TODO Pageref für Tabelle
+		
+		\textbf{Test} &
+		Falls $T > t_{krit}$ wird die Hypothese $E(X) = E(Y)$ verworfen
+		
+	\end{tabular}
+	 
+	
+	
+	\

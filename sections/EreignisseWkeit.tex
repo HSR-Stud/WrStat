@@ -1,16 +1,19 @@
 \section{Ereignisse und ihre Wahrscheinlichkeit}
 
 \subsection{Kombinatorik \skript{5}}
-\begin{tabular}{| p{5.5cm} | c | c |}
+$k$ Positionen müssen unabhängig von einander markiert werden, wobei $n_i$ verschiedene Markierungen zur Verfügung stehen.\\
+$n_1 \cdot n_2 \cdots n_k =  \prod_{i=1}^{k} n_i$\\
+\begin{tabular}{| p{6cm} | c | c || c |}
   \hline
-  Art der Auswahl bzw. Zusammenstellung von $k$ aus $n$ Elementen &
-  \multicolumn{2}{|c|}{Anzahl der Möglichkeiten} \\
-  & ohne Wiederholungen & mit Wiederholungen \\
- 	&	$(k\leq n)$         & $(k\leq n)$ \\
+  Art der Auswahl von $k$ aus $n$ Elementen &
+  \multicolumn{3}{c|}{Anzahl der Möglichkeiten} \\
+  \cline{2-4}
+  & ohne Wiederholungen & TR & mit Wiederholungen (Zurücklegen) \\
+ 	&	$(k\leq n)$   &      & $(k\leq n)$ \\
  	\hline
- 	Permutationen & $P_n=n!\quad(n=k)$       & $P_n^{(k)}=\frac{n!}{k!}$ \\
- 	Kombinationen & $C_n^{(k)}=\binom n k$   & $C_n^{(k)}=\binom{n+k-1} k$ \\
-  Variationen   & $V_n^{(k)}=k!\binom n k$ & $V_n^{(k)}=n^k$\\
+ 	Permutationen & $P_n=n!\quad(n=k)$       & nPr(n,n) & $P_n^{(k)}=\frac{n!}{k!}$ \\
+ 	Kombinationen & $C_n^{(k)}=\binom n k$   & nCr(n,k) & $C_n^{(k)}=\binom{n+k-1} k$ \\
+  Variationen   & $V_n^{(k)}=k!\binom n k$ & nPr(n,k) & $V_n^{(k)}=n^k$ \\
   \hline
 \end{tabular}
 \begin{list}{$\bullet$}{\setlength{\itemsep}{0cm} \setlength{\parsep}{0cm}
@@ -28,69 +31,85 @@
     verschiedenen Elementen unter Beachtung der Reihenfolge
 \end{list}
 \hrule
-
+\vspace{.5cm}
+\begin{minipage}[t]{6.5cm}
+\subsection{Ereignisse \skript{22}}
+Begriffe der Wahrscheinlichkeitstheorie und ihre mathematischen
+Modellierung\\
+\begin{tabular}{|l|c|}
+\hline
+Begriff&Modell\\
+\hline
+Elementarereignis&$\omega$\\
+alle Elementarereignisse&$\Omega$\\
+Ereignis&$A\subset\Omega$\\
+sicheres Ereignis&$\Omega$\\
+unm"ogliches Ereignis&$\emptyset$\\
+$A$ und $B$&$A\cap B$\\
+$A$ oder $B$&$A\cup B$\\
+$A$ hat $B$ zur Folge, $A\Rightarrow B$&$A\subset B$\\
+nicht $A$&$\Omega\setminus A$\\
+\hline
+\end{tabular}
+\end{minipage}
+\hspace{.5cm}
+\begin{minipage}[t]{9cm}
 \subsection{Wahrscheinlichkeit \& Rechenregeln \skript{32}}
 \begin{tabular}{ll}
-  Wertebereich:         & ${0}\le{P(A)}\le{1}$\\
+  Wertebereich: & ${0}\le{P(A)}\le{1}$\\
   Sicheres Ereignis:    & $P(\Omega)=1$\\
-  unmögliches Ereignis: & $P(\emptyset)=0$
+  unmögliches Ereignis: & $P(\emptyset)=0$\\
+  komplementär Ereignis: & $P(\bar{A})=P({\Omega}\setminus{A})=1-P(A)$\\
+  Differenz der Ereignisse A und B: & $P({A}\setminus{B})=P(A)-P({A}\cap{B})$\\
+  Vereinigung zweier Ereignisse: & $P({A}\cup{B})=P(A)+P(B)-P({A}\cap{B})$\\
 \end{tabular}
-		\begin{tabular}{ll}
-			komplementär Ereignis:
-			&$P(\bar{A})=P({\Omega}\setminus{A})=1-P(A)$\\
-			Differenz der Ereignisse A und B:
-			&$P({A}\setminus{B})=P(A)-P({A}\cap{B})$\\
-			Vereinigung zweier Ereignisse:
-			&$P({A}\cup{B})=P(A)+P(B)-P({A}\cap{B})$
-		\end{tabular}
-\hrule
 
-\subsection{Unabhängige Ereignise \skript{36}}
-		Unabhängige Ereignisse $A$ und $B$ liegen vor, wenn: \hspace*{5mm} $P(A\mid
-		B)=P(A)$ \hspace{4mm} und \hspace{4mm} $P(B\mid A)=P(B)$ \hspace*{5mm} erfüllt
-		ist. \\
-		Für sie gilt \hspace*{5mm} $P(A\cap B)=P(A)P(B)$\\
-    	Die Tatsache, dass A eingetreten ist, hat keinen Einfluss auf die 
-		Wahrscheinlichkeit von B.\\
+\[P(A)=\lim\limits_{\text{Anzahl Versuche} \to \infty} \dfrac{\text{Anzahl Versuche bei der A eingetreten ist}}{\text{Anzahl Versuche}}
+\]
+\end{minipage}
+\vspace{.5cm}
 \hrule
 
 \subsection{Bedingte Wahrscheinlichkeit \skript{35}}
 Die Wahrscheinlichkeit für das Eintreten des Ereignisses $A$ unter der
 Bedingung, dass das Ereignis $B$ bereits eingetreten ist.
-\begin{center}
-  $P(A\mid B)= \dfrac{P(A\cap B)}{P(B)}=\underbrace{\frac{P(A)\cdot
-  (B)}{P(B)}=P(A)}_{\text{nur wenn unabhängig}} \qquad P(\overline{A}|B) = 1 -
-  P(A|B)$
-\end{center}
+\[\boxed{P(A\mid B)= \dfrac{P(A\cap B)}{P(B)}}=\underbrace{\frac{P(A)\cdot
+  P(B)}{P(B)}=P(A)}_{\text{nur wenn unabhängig}} \qquad P(\overline{A}|B) = 1 -
+  P(A|B)\]
+  
 \hrule
 
-\begin{minipage}{7cm}
-\vspace{3mm}
+\subsection{Unabhängige Ereignise \skript{36}}
+		Für sie gilt \hspace*{5mm} $\boxed{P(A\cap B)=P(A)P(B)}$\\
+    	Die Tatsache, dass A eingetreten ist, hat keinen Einfluss auf die 
+		Wahrscheinlichkeit von B.\\
+		Unabhängige Ereignisse $A$ und $B$ liegen vor, wenn: 
+		\hspace*{5mm} $P(A\mid B)=P(A\mid \overline{B})$ \\		
+\hrule
+
+\begin{minipage}[t]{11.5cm}
+	\subsection{Totale Wahrscheinlichkeit \skript{58}}
+		$\boxed{P(A)=\sum\limits_{i=1}^n P(A\mid B_i)\cdot P(B_i)}$ \\
+	
+		in Matrixform: \\
+		$\begin{pmatrix}P(A_1)\\P(A_2)\\\vdots\\P(A_n)\end{pmatrix} = 
+		\underbrace{\begin{pmatrix}P(A_1|B_1) & P(A_1|B_2) & \ldots & P(A_1|B_n) \\
+		P(A_2|B_1) & P(A_2|B_2) & \ldots & P(A_2|B_n) \\
+		\vdots & \vdots & \ddots & \cdots \\
+		P(A_m|B_1) & P(A_m|B_2) & \ldots & P(A_m|B_n)\end{pmatrix}}_{\text{W'keitsmatrix}}
+		\cdot \begin{pmatrix}P(B_1)\\P(B_2)\\\vdots\\P(B_n)\end{pmatrix}$
+	\end{minipage}
+\begin{minipage}[t]{7cm}
 \subsection{Satz von Bayes \skript{43}}
 \begin{tabular}{ll}
-  $P(B\mid A)=P(A\mid B) \cdot\dfrac{P(B)}{P(A)}$
+  $\boxed{P(B\mid A)=P(A\mid B) \cdot\dfrac{P(B)}{P(A)}}$
   \vspace{1mm}
 \end{tabular}
-\hrule
-
 \subsection{Laplace-Ereignisse \skript{47}}
 In einem endlichen Wahrscheinlichkeitsraum $\Omega$ haben alle
 Elementarereignisse die gleiche Wahrscheinlichkeit. \\
-$P(A)=\dfrac{\left| A\right|}{\left|\Omega\right|}$ \\
-
-
+$\boxed{P(A)=\dfrac{\left| A\right|}{\left|\Omega\right|}}$ \\
 \end{minipage}
-\hspace{5mm}
-\begin{minipage}{12cm}
-\hspace{2mm}
-\subsection{Totale Wahrscheinlichkeit \skript{58}}
-	$P(A)=\sum\limits_{i=1}^N P(A\mid G_i)\cdot P(G_i)$ \\
-	
-	in Matrixform: \\
-	$\begin{pmatrix}P(A_1)\\P(A_2)\\\vdots\\P(A_n)\end{pmatrix} = 
-	\underbrace{\begin{pmatrix}P(A_1|B_1) & P(A_1|B_2) & \ldots & P(A_1|B_n) \\
-	P(A_2|B_1) & P(A_2|B_2) & \ldots & P(A_2|B_n) \\
-	\vdots & \vdots & \ddots & \cdots \\
-	P(A_m|B_1) & P(A_m|B_2) & \ldots & P(A_m|B_n)\end{pmatrix}}_{\text{W'keitsmatrix}}
-	\cdot \begin{pmatrix}P(B_1)\\P(B_2)\\\vdots\\P(B_n)\end{pmatrix}$
-\end{minipage}
+
+\hrule
+

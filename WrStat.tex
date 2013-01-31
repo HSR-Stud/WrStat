@@ -2,8 +2,9 @@
 % Dokumentinformationen %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\titleinfo}{Wahrscheinlichkeitsrechnung und Statistik - Formelsammlung}
-\newcommand{\authorinfo}{Braun \& Co, J.Rast, H.Badertscher}
-\newcommand{\versioninfo}{$Revision: 2 $ - powered by \LaTeX}  
+\newcommand{\authorinfo}{Braun \& Co, Rast, K\"orner, Gwerder, Badertscher, Niedermann}
+\newcommand{\versioninfo}{$Rev: 0.1 $ | 
+						gem\"ass Unterricht Andreas M\"uller/HS2012}    
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Standard projektübergreifender Header für
@@ -25,17 +26,23 @@
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{sections/EreignisseWkeit}
+\title{\Huge{WrStat}}
+\maketitle
+\setcounter{tocdepth}{1}
+\tableofcontents
+\newpage
 
-\input{sections/ErwartungswertVarianz}
+\input{sections/EreignisseWkeit} %Fabian
 
-\input{sections/WkeitVerteilung}
+\input{sections/ErwartungswertVarianz} %Fabian
 
-\input{sections/Schaetzen} 
+\input{sections/WkeitVerteilung} %Sven
+
+\input{sections/Schaetzen} % Sven
  
-\input{sections/Hypothesentest}
+\input{sections/Hypothesentest} %Christian
 
-\input{sections/Kalman}
+\input{sections/Kalman} %Christian
 
 \section{Wichtige Formeln}
 \input{idiotenseite/diverses/subsections/Reihenentwicklung}

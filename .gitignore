@@ -3,3 +3,7 @@ WrStat.pdf
 *.aux
 *.log
 tmp/
+/*.out
+/*.tcp
+/*.tps
+*.toc
