@@ -4,3 +4,6 @@
 [submodule "idiotenseite"]
 	path = idiotenseite
 	url = git@github.com:HSR-Stud/idiotenseite.git
+[submodule "TI-Reference"]
+	path = TI-Reference
+	url = git@github.com:HBadertscher/TI-Reference.git

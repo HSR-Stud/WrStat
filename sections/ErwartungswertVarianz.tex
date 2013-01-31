@@ -1,6 +1,6 @@
 \section{Erwartungswert und Varianz}
 
-\subsection{Erwartungswert \skript{63} \sachs{101}}
+\subsection{Erwartungswert \skript{63}}
 Sei $X$ eine Funktion auf $\Omega$, und lasse sich $\Omega$ in endlich viele
 Ereignisse, auf denen $X(\omega)$ konstant ist, $A_i$ zerlegen, dann ist der
 Erwartungswert von $X$ \\
@@ -25,11 +25,11 @@ Dichtefunktion$
 \vspace{2mm} %
 
 \begin{minipage}{9cm}
-\subsection{Varianz \skript{63} \sachs{106}}
+\subsection{Varianz \skript{63}}
   \begin{tabular}{ll}
     $var(x)=\sigma ^2=E[(X-E(X))^2]=E(X^2)-E(X)^2$\\
 	\end{tabular}
-	\subsubsection{Kovarianz \sachs{49}}
+	\subsubsection{Kovarianz}
 	\begin{tabular}{ll}
 	  $cov(X,Y)=E(XY)-E(X)E(Y)=\underbrace{0}_{\text{falls X,Y unabhängig}}$
 	\end{tabular}
@@ -62,8 +62,8 @@ gleichem Erwartungswert $ \mu $ und gleicher Varianz $ \sigma^2 $ gegeben. \\
 \hrule
 \vspace{2mm}
 
-\begin{minipage}[]{9cm}
-  \subsection{Regression \skript{80} \sachs{60, 141}}
+\begin{minipage}[c]{9cm}
+  \subsection{Regression \skript{80}}
   \begin{tabular}{ll}
     Allgemein: & X,Y Zufallsvariable \\
     Gesucht: & Regressionsgerade $y=ax+b$ mit min. Fehler \\
@@ -77,35 +77,35 @@ gleichem Erwartungswert $ \mu $ und gleicher Varianz $ \sigma^2 $ gegeben. \\
   $\Delta^2 = var(Y)(1-r^2) =
   var(Y)\left(1-\dfrac{cov(X,Y)^2}{var(X)var(Y)}\right) $ \\
 \end{minipage}
-\begin{minipage}{10cm}
+\begin{minipage}[c]{10cm}
   \textbf{Vorgehen:}
-  \textcolor{grey}{mit Fehlerberechnung}
+  \textcolor{Aquamarine}{mit Fehlerberechnung}
 	\begin{enumerate}
 		\item Tabelle mit bekannten Werten aufstellen:\\
   		\begin{tabular}{|l||l|l||l|l||l|}
   		  \hline
         \textbf{$k$} & \textbf{$x$} & \textbf{$x^2$} & \textbf{$y$} &
-  		  \textcolor{grey}{\textbf{$y^2$}} & \textbf{$xy$} \\
+  		  \textcolor{Aquamarine}{\textbf{$y^2$}} & \textbf{$xy$} \\
   		  \hline \hline
-  		  $1$ & $x_1$ & $x_1^2$ & $y_1$ & \textcolor{grey}{$y_1^2$} & $x_1y_1$ \\
+  		  $1$ & $x_1$ & $x_1^2$ & $y_1$ & \textcolor{Aquamarine}{$y_1^2$} & $x_1y_1$ \\
   		  \hline
-  		  $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & \textcolor{grey}{$\vdots$} &
-  		  $\vdots$ \\\hline $n$ & $x_n$ & $y_n^2$ & $y_n$ & \textcolor{grey}{$y_n^2$} & $x_ny_n$ \\
+  		  $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & \textcolor{Aquamarine}{$\vdots$} &
+  		  $\vdots$ \\\hline $n$ & $x_n$ & $y_n^2$ & $y_n$ & \textcolor{Aquamarine}{$y_n^2$} & $x_ny_n$ \\
   		  \hline
   		  \hline
-  		  $\sum$ & $\sum x_k$ & $\sum x_k^2$ & $\sum y_k$ & \textcolor{grey}{$\sum
+  		  $\sum$ & $\sum x_k$ & $\sum x_k^2$ & $\sum y_k$ & \textcolor{Aquamarine}{$\sum
   		  y_k^2$} & $\sum x_ky_k$ \\
   		  \hline $E$ & $\frac{\sum x_k}{n}$ & $\frac{\sum x_k^2}{n}$ & $\frac{\sum
-  		  y_k}{n}$ & \textcolor{grey}{$\frac{\sum y_k^2}{n}$} & $\frac{\sum x_ky_k}{n}$ \\
+  		  y_k}{n}$ & \textcolor{Aquamarine}{$\frac{\sum y_k^2}{n}$} & $\frac{\sum x_ky_k}{n}$ \\
   		  \hline
   		\end{tabular} 
 		\item Varianzen, Kovarianz berechnen: \\
 		  $var(X) = E(X^2) - E^2(X)$ \\
-		  \textcolor{grey}{$var(Y) = E(Y^2) - E^2(Y)$} \\
+		  \textcolor{Aquamarine}{$var(Y) = E(Y^2) - E^2(Y)$} \\
 		  $cov(X,Y) = E(XY) - E(X)E(Y)$
-		\item Koeffizienten \textcolor{grey}{und Fehler} der Gerade berechnen: \\
+		\item Koeffizienten \textcolor{Aquamarine}{und Fehler} der Gerade berechnen: \\
 		  $a=\dfrac{cov(X,Y)}{var(X)}$
-		  \textcolor{grey}{$\qquad\Delta^2=var(Y)\left(1-\dfrac{cov(X,Y)^2}
+		  \textcolor{Aquamarine}{$\qquad\Delta^2=var(Y)\left(1-\dfrac{cov(X,Y)^2}
 		  {var(X)var(Y)}\right) $} \\
 		  $b=E(Y)-aE(X)$
 		\item Gerade: \\
@@ -113,7 +113,7 @@ gleichem Erwartungswert $ \mu $ und gleicher Varianz $ \sigma^2 $ gegeben. \\
 	\end{enumerate}
 \end{minipage}
 \vspace{2mm}
-\hrule
+
 
 \subsection{Satz von Tschebyscheff \skript{77}}
 \begin{tabular}{ll}
