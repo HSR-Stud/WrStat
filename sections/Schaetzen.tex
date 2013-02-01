@@ -1,3 +1,4 @@
+\newpage
 \section{Schätzen \skript{127}}
 
 	\subsection{Konsistente Schätzer \skript{129}}
@@ -19,16 +20,15 @@
         sogar erwartungstreu:
         & $E(\mu(X_1,\ldots,X_n))=\frac{E(X_1)+\ldots+E(X_n)}{n}=E(X)$\\
         Erwartungstreue Schätzer für $var(x)$ ist:\\
-        $S^2=\frac{1}{n-1}(\sum X_i^2-\frac{1}{n}(\sum X_i)^2)$
+       \fbox{$S^2=\frac{n}{n-1}(\underbrace{\frac{1}{n}\sum X_i^2}_{E(X^2)}-
+               \underbrace{(\frac{1}{n}\sum X_i)^2)}_{E(X)^2}$}
         & Stichprobenvarianz, empirische Varianz\\
         $S^2=\frac{1}{n-1}\sum\limits_{i=1}^n(X_i-\bar{X})^2$
-        & $\bar{X}=M_n$ heisst Stichprobenmittelwert\\ \\
-        {\bf Mit Taschenrechner}\\
-        \multicolumn{2}{l}{$S^2$: \texttt{variance(\{$X_1,\ldots,X_i$\})} \qquad $S$: \texttt{stdDev(\{$X_1,\ldots,X_i$\}) }}
+        & $\bar{X}=M_n$ heisst Stichprobenmittelwert\\
         \end{tabular}
 	\subsubsection{Kleinstmöglicher Fehler}
-		$E( (E(X)- \frac{x_1+\ldots+x_n}{n})^2)= minimal$
-		\vspace{3mm}
+		$E( (E(X)- \frac{x_1+\ldots+x_n}{n})^2)= minimal$ \\
+
 \hrule
 
 	\subsection{Maximum Likelihood Schätzer \skript{131}}
@@ -50,29 +50,61 @@
 	
 \hrule
 
-	\subsection{t-Verteilung}
-	Der Mittelwert ($\frac{x_1+\ldots+x_n}{n}$) normalverteilter Daten ist
-    t-Verteilt, wenn die \textbf{Varianz mit der Stichprobenvarianz geschätzt} wurde.\\
-    Ab einer gewissen Anzahl Messungen ($n \geq 30$) kann näherungsweise auch wieder mit
-    der Normalverteilung gerechnet werden.  \\ \\
-	\begin{tabular}{p{10cm}p{8cm}}
-    Die Wahrscheinlichkeitdichte der
-    t-Verteilung ist: &$\varphi_t(t)=\frac{\Gamma (\frac{k+1}{2})}{\sqrt{\pi
-    k}\Gamma(\frac{k}{2})}\left(1+\frac{t^2}{k}\right)^{- \frac{k+1}{2}}$\\ \\
-    Falls Verteilung bekannt ist, finde t so dass
-    &$P\left(\left|\frac{\bar{X}-\mu}{S / \sqrt{n}}\right|\leq t\right) = 1 - \alpha$\\ \\
-    &$\mu\in\left[\bar{X}-t\frac{S}{\sqrt{n}},\bar{X}+t\frac{S}{\sqrt{n}}\right]$\\
+  \subsection{Verteilung der Schätzwerte \skript{166}}
+    $X_1, \ldots, X_n$ sind unabhängige, normalverteilte Zufallsvariablen mit Erwartungswert
+    $\mu$ und Varianz $\sigma^2$. Dann gilt
+    \begin{enumerate}
+      \item $\bar{X}$ und $S^2$ sind unabhängig
+      \item $\bar{X} = \frac{X_1 + \ldots X_n}{n}$ ist normalverteilt mit $E(\bar{X}) = \mu$
+            und $var(\bar{X}) = \frac{\sigma^2}{2}$
+      \item \fbox{$\frac{n-1}{\sigma^2} \cdot S^2$ ist $\chi_{n-1}^2$-verteilt} mit
+            $S^2 = \frac{1}{n-1} \sum\limits_{i=1}^n (X_i - \bar{X})^2$
+    \end{enumerate}
+    
+\newpage
+
+	\subsection{Konfidenzintervall von Messwerten}
+		\subsubsection{Konfidenzintervall \skript{139}}
+			\begin{tabular}{p{18cm}}
+		     Ein Intervall $[L(X_1,\ldots,X_n),R(X_1,\ldots,X_n)]$ heisst ein
+		     $1-\alpha$- Konfidenzintervall für den Parameter $\vartheta$, wenn der wahre
+		     Wert des Parameters $\vartheta$ höchstens mit Wahrscheinlichkeit $\alpha$
+		     ausserhalb des Intervalls liegt.\\
+		     Es gilt: $P(L \leq X \leq R) = 1-\alpha$
+		    \end{tabular}\\
+		    
+	   
+    \subsubsection{Bei bekannter Varianz $\sigma^2$}
+     Falls Varianz $\sigma^2$ von Messwerten bekannt ist, handelt es sich bei $\bar{X}$ um \textbf{normalverteilte} Zufallsvariable mit Varianz $\sigma^2/n$. \\
+    \begin{tabular}{p{8cm}p{8cm}}
+    Also kann sehr einfach ein x für das Konfidenzintervall gefunden werden:
+    &$P\left(\left|\frac{\bar{X}-\mu}{\sigma / \sqrt{n}}\right|\leq x\right) = 1 - \alpha \Rightarrow F(x) = 1- \frac{\alpha}{2}$\\
+    Daraus ergibt sich folgendes Konfidenzintervall
+    &$\mu\in\left[\bar{X}-x\frac{\sigma}{\sqrt{n}},\bar{X}+x\frac{\sigma}{\sqrt{n}}\right]$ mit W'keit $1-\alpha$\\
     \end{tabular}\\
-	\begin{minipage}{10cm}
- 		\subsubsection{Checkliste}
+    
+    \subsubsection{Bei geschätzter Varianz $S^2$}
+    \textbf{t-Verteilung}\\
+    	Der Mittelwert ($\frac{x_1+\ldots+x_n}{n}$) normalverteilter Daten ist
+        t-Verteilt, wenn Varianz mit Stichprobenvarianz geschätzt wurde.\\
+        Ab einer gewissen Anzahl Messungen ($n \geq 30$) kann näherungsweise auch mit
+        der Normalverteilung gerechnet werden.  \\
+%    	\begin{tabular}{p{8cm}p{8cm}}
+%        Die Wahrscheinlichkeitdichte der
+%        t-Verteilung ist: &$\varphi_t(t)=\frac{\Gamma (\frac{k+1}{2})}{\sqrt{\pi
+%        k}\Gamma(\frac{k}{2})}\left(1+\frac{t^2}{k}\right)^{- \frac{k+1}{2}}$\\ \\
+%        \end{tabular}\\
+    
+	\begin{minipage}{11cm}
+ 		\textbf{Checkliste}\\
 		\begin{tabular}{ll}
-        1) $\bar{X}, S$ als Schätzungen von $\mu, \sigma$ ermitteln\\
-        2) $t$ aus {\em t-Tabelle} $(k=n-1)$ für $\alpha$ = Fehlerw'keit\\
+        1) $\bar{X}, S$ als Schätzungen aus $x_i$ bestimmen\\
+        2) $t$ aus {\em t-Tabelle} $(k=n-1)$ für $1- \dfrac{\alpha}{2}$ = W'keit für eine Seite\\
         3) Intervall
         $\left[\bar{X}-t\frac{S}{\sqrt{n}},\bar{X}+t\frac{S}{\sqrt{n}}\right]$,
         $(1-\alpha)$ Konfidenzintervall
         \end{tabular}\\
-		\subsubsection{Anwendung}
+		\textbf{Anwendung}\\
 		\begin{tabular}{ll}
         $\frac{\textcolor{red}{\bar{X}}-\mu}{\textcolor{blue}{S}/\sqrt{\textcolor{green}{n}}}$
         & t-Verteilt\\ \\
@@ -107,13 +139,3 @@
 		\textcolor{red}{4{,}7}+3{,}2498\frac{\textcolor{blue}{0{,}1}}{\sqrt{\textcolor{green}{10}}}\right]$\\ \\
 		& $\mu\in \left[4{,}5072, 4{,}8028\right]$ mit Wahrscheinlichkeit 99\%
         \end{tabular}
-\hrule
-
-	\subsection{Konfidenzintervall \skript{139}}
-	\begin{tabular}{p{18cm}}
-     Ein Intervall $[L(X_1,\ldots,X_n),R(X_1,\ldots,X_n)]$ heisst ein
-     $1-\alpha$- Konfidenzintervall für den Parameter $\vartheta$, wenn der wahre
-     Wert des Parameters $\vartheta$ höchstens mit Wahrscheinlichkeit $\alpha$
-     ausserhalb des Intervalls liegt.
-    \end{tabular}\\
-\hrule
