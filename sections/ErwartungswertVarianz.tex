@@ -5,11 +5,11 @@
 Sei $X$ eine Funktion auf $\Omega$, und lasse sich $\Omega$ in endlich viele
 Ereignisse $A_i$ zerlegen, auf denen $X(\omega)$ konstant ist, dann ist der
 Erwartungswert von $X$ 
-\[Erwartungswert = \sum Wert \cdot Wahrscheinlichkeit\] 
+\[ \text{Erwartungswert} = \sum \text{Wert} \cdot \text{Wahrscheinlichkeit}\] 
 \[\boxed{E(X)=\sum\limits_{i=0}^n \underbrace{X(A_i)}_{\text{Wert}}\cdot
 \underbrace{P(A_i)}_{\text{W'keit}}}\] 
 \[E(X) = \int\limits_{-\infty}^x x \cdot \varphi(x) dx$ mit $\varphi(x) =
-Dichtefunktion\]
+\text{Dichtefunktion}\] 
 \end{minipage}
 \hspace{1cm}
 \begin{minipage}[t]{9cm}
@@ -21,15 +21,15 @@ Dichtefunktion\]
   $E(XY) = E(X)\cdot E(Y)$ & wenn X,Y unabhängig sind \\
 \end{tabular}
 \end{minipage}
-\vspace{1mm} %
-\hrule       % <<- Wär tuet so scheiss??
-\vspace{2mm} %
+
+\hrule
+
 
 \begin{minipage}{9cm}
 \subsection{Varianz \skript{63}}
   \begin{tabular}{ll}
-    $\boxed{var(X)=E(X^2)-E(X)^2}=\sigma ^2=E[(X-E(X))^2]$\\
-    $\sigma = $ Standardabweichung\\
+    $\boxed{var(X)=E(X^2)-E(X)^2}= \:E[(X-E(X))^2]$\\
+   Standardabweichung $\sigma = \sqrt{var(X)}$
 	\end{tabular}
 	\subsubsection{Kovarianz}
 	\begin{tabular}{ll}
@@ -46,14 +46,14 @@ Dichtefunktion\]
       var(X)+var(Y)                      &	\text{(X,Y unabh.)}\\                     
       var(X) + var(Y) + 2 \cdot cov(X,Y) &	\text{(X,Y abhängig)}\\
     \end{cases} $ \\
-    $var(X Y)= var(Y)var(X)+var(Y)E(X)^2+var(X)E(Y)^2$
+    $var(X Y)= var(Y)var(X)+var(Y)E(X)^2+var(X)E(Y)^2$ \\
   \end{tabular}
 \end{minipage}
-\vspace{1mm}
+
 \hrule
 
 \subsection{Erwartungswert und Varianz des arithmetischen Mittels \skript{78}}
-Es sei eine folge von unabhängigen Zufallsvariablen $X_1, X_2, \ldots , X_n$ mit
+Es sei eine Folge von unabhängigen Zufallsvariablen $X_1, X_2, \ldots , X_n$ mit
 gleichem Erwartungswert $ \mu $ und gleicher Varianz $ \sigma^2 $ gegeben. \\
 \begin{tabular}{p{6cm} p{6cm} p{6cm}}
   Mittelwert: $M_n=\frac{X_1+\ldots+X_n}{n}$ &
@@ -70,21 +70,20 @@ gleichem Erwartungswert $ \mu $ und gleicher Varianz $ \sigma^2 $ gegeben. \\
   $P(|M_{n}-\mu|>\varepsilon)\leq \frac{\sigma^{2}}{\varepsilon^{2}n} $ &
   W'keit, dass $M_{n}$ von $n$ unab. ZV mit Mittelwert $\mu$ und Varianz $\sigma^{2}$ mehr als $\varepsilon$ von $\mu$ abweicht.
 \end{tabular}
-\vspace{1mm}
-\hrule
-\vspace{4mm}
+
 
 \begin{minipage}[t]{9cm}
   \subsection{Regression \skript{80}}
   \begin{tabular}{ll}
     Allgemein: & X,Y Zufallsvariable \\
     Gesucht: & Regressionsgerade $y=ax+b$ mit min. Fehler \\
-    Fehler: & $E(Y-(aX+b))=0$
-  \end{tabular}
-  \vspace{.1cm}
+    Fehler: & $E(Y-(aX+b))=0$ \\
+  \end{tabular} \\
+ 
   \textbf{Regressionskoeffizient r} \\
   $r$ ist ein Mass für die Qualität der Regression (standardisiert) \\
   $r^2=\dfrac{cov(X,Y)^2}{var(X)var(Y)}=a^2\cdot\dfrac{var(X)}{var(Y)}$ \\
+ 
   \textbf{Mittlerer quadratischer Fehler} \\
   $\Delta^2 = var(Y)(1-r^2) =
   var(Y)\left(1-\dfrac{cov(X,Y)^2}{var(X)var(Y)}\right) $ \\
@@ -124,3 +123,5 @@ gleichem Erwartungswert $ \mu $ und gleicher Varianz $ \sigma^2 $ gegeben. \\
 		$y=ax+b$
 	\end{enumerate}
 \end{minipage}
+
+\hrule
