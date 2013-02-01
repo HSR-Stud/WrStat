@@ -50,7 +50,6 @@ $\int\limits_{-\infty}^{\infty}\varphi (x) dy = 1$
 	\end{tabular}
 \end{multicols}
 
-\hrule
 
 	\subsection{Rechenregeln für $\varphi$ und $F$ \skript{109}}
 		\begin{minipage}{11cm}
@@ -100,6 +99,8 @@ $\int\limits_{-\infty}^{\infty}\varphi (x) dy = 1$
       
     \end{multicols}
 
+\hrule
+
   \subsection{Standardisierung \skript{110}}
     \begin{multicols}{2}
       Erwartungswert: $E(X)=\mu$ \hspace{4mm}(=0 bei Standardnormalver.)\\ 
@@ -120,15 +121,9 @@ $\int\limits_{-\infty}^{\infty}\varphi (x) dy = 1$
     
     \end{multicols}
 
-\newpage
-
+\hrule
 	\subsection{Normalverteilung \skript{101}}
-    \begin{floatingfigure}[r]{8cm}
-      \includegraphics[width=8cm]{./bilder/normalverteilung.png}
-      \caption{Dichtefunktion (oben) und Verteilungsfunktion (unten) der
-        Normalverteilung.}
-   	\end{floatingfigure}
-    
+    \begin{minipage}{10cm}
     Viele kleine, unabhängige Zufallsvariable sammeln sich zu einer
     normalverteilten Zufallsvariable.\\
     $\varphi(x)=\frac{1}{\sqrt{2
@@ -138,20 +133,22 @@ $\int\limits_{-\infty}^{\infty}\varphi (x) dy = 1$
     \fbox{$N(\mu_{1} ; \sigma_{1}) + N(\mu_{2} ; \sigma_{2})
     = N(\mu_{1} + \mu_{2} ; \sqrt{\sigma_{1}^{2} + \sigma_{2}^{2}})$} \\
     Für $F(-x)$ gilt $F(-x) = 1 - F(x)$
-    
-  \vspace{2cm}
-  
+  	\end{minipage}
+	\begin{minipage}{8cm}
+      \includegraphics[width=6cm]{./bilder/normalverteilung.png}\\
+		Dichtefunktion (oben) und Verteilungsfunktion (unten) der
+		Normalverteilung.
+   	\end{minipage}
 	\hrule
   
 	\subsection{Zentraler Grenzwertsatz \skript{128}}
     $X_1, X_2, \ldots , X_n$ sind lauter identisch verteilte (nicht notwendig normalverteilt!)
     unabhängige Zufallsvariablen mit demselben Erwartungswert $\mu$ und derselben Varianz $\sigma^2$
-    und mit $Z = \frac{X-\mu}{\sigma}$\\
-    Dann hat die Summe
+    und mit $Z = \frac{X-\mu}{\sigma}$. Dann hat die Summe
     \begin{equation}
       S_n = \frac{1}{\sqrt{n}}\sum_{i=1}^n Z_i \nonumber
     \end{equation}
-    den Erwartungswert $n \mu$ und die Varianz $n \sigma^2$. \\
+    den Erwartungswert $n \mu$ und die Varianz $n \sigma^2$.\\
     Die damit verbundene standardisierte ($E(S_n) = 0, var(S_n) = 1$) Variable $S_n$ ist somit wie
     folgt definiert: \\ 
     \begin{equation}
@@ -161,8 +158,7 @@ $\int\limits_{-\infty}^{\infty}\varphi (x) dy = 1$
     \end{equation}
     Für $\boldsymbol{n \to \infty}$ strebt die Verteilung von $S_n$ gegen die
     Standardnormalverteilung. \\
-        
-\hrule
+
 
 	\subsection{Exponentialverteilung \skript{118}}
 		\begin{floatingfigure}[r]{8cm}
@@ -176,7 +172,7 @@ $\int\limits_{-\infty}^{\infty}\varphi (x) dy = 1$
 		\begin{itemize}
           \item Lebensdauer von Atomen beim radioaktiven Zerfall
           \item Lebensdauer von Bauteilen, Maschinen \& Geräten\\(MTBF -
-          Mean Time Between Failure = $\frac{1}{a}$)
+          Mean Time Before Failure = $\frac{1}{a}$)
     \end{itemize}
     
     gilt $P(X \leq t) = P(X \leq t_0 + t | X > t_0)$\\
@@ -214,8 +210,8 @@ $\int\limits_{-\infty}^{\infty}\varphi (x) dy = 1$
       \end{align}
     \end{minipage}
 		
-		
-\newpage
+	\hrule
+
 	\subsection{Hypergeometrische Verteilung \skript{149}}
 	    \begin{floatingfigure}[r]{5.5cm}
         	\includegraphics[width=5.5cm]{./bilder/hypergeo.png}
@@ -259,10 +255,8 @@ $\int\limits_{-\infty}^{\infty}\varphi (x) dy = 1$
         einen Defekt haben. Anzahl der Gewinner mit 4 Richtigen im Lotto.
      \end{multicols}
         
-
-\hrule
-
-		\subsection{Binomialverteilung \skript{146}}
+\newpage
+	\subsection{Binomialverteilung \skript{146}}
 		
     	Wird angewendet bei einem Experiment mit nur zwei Ausgängen (Ereignis mit W'keit $p$ tritt
     	ein, Ereignis tritt nicht ein). \\
@@ -324,16 +318,30 @@ $\int\limits_{-\infty}^{\infty}\varphi (x) dy = 1$
         Verteilungsfunktion(oben) und Wahrscheinlichkeitsdichte (unten)
         der Gleichverteilung
       \end{multicols}
+  
+  \hrule 
       
-  \subsection{Potenzgesetze (Power-Laws) \skript{139}}
-    \fbox{viele kleine, wenige grosse}\\
+	\subsection{Potenzgesetze (Power-Laws) \skript{139}}
+	Die Normalverteilung beschreibt (physikalische) Grössen, die vor allem in einer bestimmten
+	Grössenordnung vorkommen. Die Potenzgesetze dienen dazu, Grössen welche einen grossen
+	Wertebereich annehmen können, zu beschreiben.
+	
     \begin{multicols}{2}
-      $\varphi(x) = \begin{cases}
-        \frac{\alpha - 1}{x_{min}^{1-\alpha}}\cdot x^{-\alpha} & x > x_{min} \\
-        0 & sonst
-      \end{cases} \qquad $ mit $\alpha > 1$\\
+		$\varphi(x) = \begin{cases}
+		\frac{\alpha - 1}{x_{min}^{1-\alpha}}\cdot x^{-\alpha} & x > x_{min} \\
+		0 & sonst
+		\end{cases} \qquad $ mit $\alpha > 1$\\
+		
     \columnbreak
     
-      $E(X) = \frac{\alpha - 1}{\alpha - 2} \cdot x_{min}$\\
-      $var(X) = \left(\frac{\alpha - 1}{\alpha - 3} - \left(\frac{\alpha -1}{\alpha -2}\right)^2\right)\cdot x_{min}^2$
-		\end{multicols}
+		$E(X) = \frac{\alpha - 1}{\alpha - 2} \cdot x_{min}$ \\
+		$E(X^2) = \frac{\alpha - 1}{\alpha - 3} \cdot x_{min}^2$ \\
+ 		$var(X) = \left(\frac{\alpha - 1}{\alpha - 3} - \left(\frac{\alpha -1}{\alpha -2}\right)^2\right)\cdot x_{min}^2$ \\
+ 		$x_{\frac{1}{2}} = 2^{\frac{1}{\alpha - 1}} \cdot x_{min}$ \\
+	\end{multicols}
+	
+	Eine nach dem Potenzgesetz verteilte Zufallsvariable kann man daran erkennen, dass die Dichtefunktion in doppelt logarithmischer Darstellung eine Gerade ist. Wegen
+	$\log p(x) = -\alpha \log x + \log C$ ist die Steigung der Geraden $-\alpha$. \\
+	
+	Der Parameter $\alpha$ kann mithilfe eines Maximum-Likelihood Schätzers bestimmt werden. Es gilt: $\alpha = 1 + \frac{n}{\sum_{i=1}^{n}} \log \frac{x_i}{x_min}$ \\
+\hrule
