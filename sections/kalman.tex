@@ -1,5 +1,7 @@
 \section{Prozessverbesserungen}
 \subsection{Gewichteter Mittelwert}
+	Besitzt man die Möglichkeit Messwerte aus zwei Messsystemen $X_1$ und $X_2$ mit unterschiedlicher Genauigkeit ($var(X_1)$/$var(X_2)$) zu beziehen, so kann man die Messwerte so gewichten, dass eine optimale Genauigkeit besteht.\\
+	
 	$\boxed{X_{opt} = t\cdot X_1 + (1-t) \cdot X_2} \qquad \rightarrow t$ so wählen, dass $var(X_{opt})$ minimal wird\\
 
 
@@ -76,7 +78,8 @@
 									 P_k = (I-K_kH_k)P_{k|k-1}(I-K_kH_k)^t + K_kR_kK_k^t$ }
 		\item \textbf{Bestimmung des optimalen $K_k$:} \hspace{1cm}\fbox{
 									$K_k = P_{k|k-1}H_k^t(H_kP_{k|k-1}H_k^t + R_k)^{-1}$}
-		\item Damit wird $P_k$ vereinfacht zu: $P_k = (I-K_kH_k) P_{k|k-1}$
+		\item Damit wird $P_k$ vereinfacht zu: $P_k = (I-K_kH_k) P_{k|k-1}$ \hspace{1cm} 
+		$ \rightarrow P_k$ bleibt variabel
 	\end{enumerate}
 	
 	\subsubsection{Vereinfachung}

@@ -172,7 +172,7 @@ $\int\limits_{-\infty}^{\infty}\varphi (x) dy = 1$
 		\begin{itemize}
           \item Lebensdauer von Atomen beim radioaktiven Zerfall
           \item Lebensdauer von Bauteilen, Maschinen \& Geräten\\(MTBF -
-          Mean Time Before Failure = $\frac{1}{a}$)
+          Mean Time Between Failure = $\frac{1}{a}$)
     \end{itemize}
     
     gilt $P(X \leq t) = P(X \leq t_0 + t | X > t_0)$\\
@@ -236,15 +236,16 @@ $\int\limits_{-\infty}^{\infty}\varphi (x) dy = 1$
 	\subsection{Poissonverteilung \skript{150}}
 	\begin{multicols}{2}
 		\begin{tabular}{ll}
-        $P_\lambda(k)=\frac{\lambda^k}{k!}e^{-\lambda}$ & \\
+        $P_\lambda(k)=\frac{\lambda^k}{k!}e^{-\lambda}$ &
+         \parbox{4cm}{W'keit dass k Ereignisse im Intervall [0,x] auftreten} \\
         Erwartungswert:  & $E(X)=\lambda$\\
         Varianz:  & $var(X)=\lambda$ \\
-        $\lambda = a \cdot x$ \\
+        %$\lambda = a \cdot x$ \\
         \end{tabular} \\
-         $P(X<k) = \sum_0^k P_\lambda(k)=\sum_0^k \frac{\lambda^k}{k!}e^{-\lambda}$ \\
+         $P(X<k) \leq \sum_0^k P_\lambda(k)=\sum_0^k \frac{\lambda^k}{k!}e^{-\lambda}$ \\
          $P(X>k) = 1-P(X<k)$ \\
         $x =$ Anzahl Versuche\\
-        $\lambda =$ Ereignisse pro Intervall
+        $\lambda =$ Ereignisse pro Intervall im Mittel
         \columnbreak
         
         {\bf Anwendungsbeispiele:} \\ Für die Häufigkeiten seltener
