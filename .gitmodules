@@ -7,3 +7,6 @@
 [submodule "TI-Reference"]
 	path = TI-Reference
 	url = git@github.com:HBadertscher/TI-Reference.git
+[submodule "SkriptMueller"]
+	path = SkriptMueller
+	url = https://github.com/AndreasFMueller/WrStat.git
