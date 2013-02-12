@@ -1,5 +1,5 @@
 \newpage
-\section{Hypothesentest \skript{143}}
+\section{Hypothesentest \skript{\pageref{sk-chapter-hypothesen-testen}}}
 	\subsection{Grundsätze}
 	- ``Man braucht Aussagen, die man widerlegen könnte.''\\
 	- Irrtum ist möglich (Irrtumsw'keit $\alpha$)\\
@@ -16,15 +16,14 @@
       		\item Einseitiger Test $P(X > x_{krit})=\alpha$
       		\item Zweiseitiger Test $P(|X| > x_{krit})=\alpha/2$
       	\end{itemize}
-      \item Wert für $F\!\left({\frac{x_{krit}-\mu}{\sigma}}\right)$ aus Tabelle 10.1
-      %TODO pageref für Tabelle
+      \item Wert für $F\!\left({\frac{x_{krit}-\mu}{\sigma}}\right)$ aus Tabelle \ref{tabelle-quantilen-normalverteilung} (S. \pageref{tabelle-quantilen-normalverteilung})
       \item Falls Messungen ergeben $X > x_{krit} \Longrightarrow$ Hypothese
       \textbf{falsch} mit W'keit $1-\alpha$
     \end{enumerate}
     
 
 	\subsection{Testen einer diskreten Verteilung
-	\skript{147}}
+	\skript{\pageref{sk-section-testen-diskreter-wkeitsverteilung}}}
 	\subsubsection{$\chi^2$-Test mit k-möglichen Ausgängen}
 		
 		\begin{tabular}{l l}
@@ -81,7 +80,7 @@
     	&			-wenn wenig Messwerte $\Longrightarrow$ geringe Aussagekraft
     \end{tabular}
    	
-  \subsection{Testen einer stetigen Verteilung}
+  \subsection{Testen einer stetigen Verteilung\skript{\pageref{sk-section-testen-stetiger-wkeitsverteilung}}}
   	\subsubsection{Mit $\chi^2$-Test}
   	\begin{minipage}{13cm}
   		Der $\chi^2$-Test kann im Prinzip nur diskrete Wahrscheinlichkeitsverteilungen testen.\\
@@ -145,13 +144,12 @@
 				 \end{tabular}
 				 }		
 		}\\
-	3. & Finde $t_{n,1-\alpha}$,$t_{n,\alpha}$  in der Tabelle 10.3\\
-	%TODO Pageref für Tabelle
+	3. & Finde $t_{n,1-\alpha}$,$t_{n,\alpha}$  in der Tabelle \ref{tabelle-quantilen-kstest} (S. \pageref{tabelle-quantilen-kstest})\\
 	4. & Falls $K^+_n > t_{n,1-\alpha}$ oder $K^-_n < t_{n,\alpha}$,
 			verwerfe die Hypothese, dass $X$ die Verteilungsfunktion $F_X$ hat. 
 	\end{tabular}
 
-\subsection{Vergleichen von Mittelwerten (t-Test)}
+\subsection{Vergleichen von Mittelwerten (t-Test)\skript{\pageref{sk-section-t-test}}}
 	\begin{tabular}{l l}
 		\textbf{Nullhypothese} & 
 		$\Rightarrow$ $E(X) = E(Y)$\\
@@ -165,8 +163,7 @@
 		& T ist t-verteilt\\
 		
 		\textbf{Schwellenwert} &
-		$t_{krit}$ aus Tabelle 10.4 mit Freiheitsgrad $n+m-2$ und $p = 1-\alpha$\\
-		%TODO Pageref für Tabelle
+		$t_{krit}$ aus Tabelle \ref{tabelle-quantilen-tvert} mit Freiheitsgrad $n+m-2$ und $p = 1-\alpha$\\
 		
 		\textbf{Test} &
 		Falls $T > t_{krit}$ wird die Hypothese $E(X) = E(Y)$ verworfen
