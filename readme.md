@@ -1,11 +1,19 @@
-WrStat - Wahrscheinlichkeitsrechnung und Statistik
+WrStat
 ======
 
-## Erlaubte Hilfsmittel (nach Modulprüfung HS2012/13)
+
+Erlaubte Hilfsmittel (HS 12/13)
+-------------------------------
 
 	* Open Books
 	* beliebige gedruckte oder handgeschriebene Hilfsmittel
 	* Taschenrechner
 	* keine Laptops, Computer, etc.
-## Ausdruck
-* Zusammenfassung am Besten als A5-Booklet ausdrucken
+
+Build
+-------
+Damit die pagerefs richtig gesetzt werden können, muss zuerst das als Submodul eingebundene Skript mit folgenden Befehlen gebaut werden:
+
+* make
+* makeindex skript
+* make
