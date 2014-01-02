@@ -84,7 +84,8 @@ Bedingung, dass das Ereignis $B$ bereits eingetreten ist.
     	Die Tatsache, dass A eingetreten ist, hat keinen Einfluss auf die 
 		Wahrscheinlichkeit von B.\\
 		Unabhängige Ereignisse $A$ und $B$ liegen vor, wenn: 
-		\hspace*{5mm} $P(A\mid B)=P(A\mid \overline{B})$ \\		
+		\hspace*{5mm} $P(A\mid B)=P(A\mid \overline{B})$ \\	
+		Wenn Ereignisse nicht gleichzeitig eintreten können, so sind sie abhängig.	
 
 \begin{minipage}[t]{11.5cm}
 	\subsection{Totale Wahrscheinlichkeit \skript{\pageref{sk-zerlegung}}}
@@ -108,7 +109,22 @@ Bedingung, dass das Ereignis $B$ bereits eingetreten ist.
 In einem endlichen Wahrscheinlichkeitsraum $\Omega$ haben alle
 Elementarereignisse die gleiche Wahrscheinlichkeit. \\
 $\boxed{P(A)=\dfrac{\left| A\right|}{\left|\Omega\right|}}$ \\
-\end{minipage}
+\end{minipage}\\ \ \\
 
+\hrule
+
+\subsection{Google Matrix}
+	Es gibt folgende Ereignisse: $P(S_i)=$\{Ein User ist auf der Seite i\} und \\
+								 \hspace*{43.3mm}$P(S_j')=$\{Ein User ist nach einem Klick auf der Seite j\} \\
+	nach einiger Zeit ergibt sich ein Gleichgewicht $P(S_i)=P(S_j')$ \\
+	$P(S_j')=P(S_j'|S_1)P(S_1)+P(S_j'|S_2)P(S_2)+\dots$ \\
+	$\begin{pmatrix}P(S_1')\\P(S_2')\\\vdots\end{pmatrix} = 
+	\underbrace{\begin{pmatrix}P(S_1'|S_1)P(S_1) & P(S_1'|S_2)P(S_2) & \ldots \\
+	P(S_2'|S_1)P(S_1) & P(S_2'|S_2)P(S_2) & \ldots \\
+	\vdots & \vdots & \vdots \\
+	\end{pmatrix}}_{\text{H}}
+	\underbrace{\begin{pmatrix}P(S_1)\\P(S_2)\\\vdots\end{pmatrix}}_{\text{p (Pagerank)}} \rightarrow Hp=p$ \\
+	Wird der freie Wille noch einberechnet, dann gilt: $H'=\alpha H+\frac{1-\alpha}{\textbf{Anzahl Seiten}}A$ wobei A nur aus 1en besteht.\\
+	
 \hrule
 
