@@ -1,12 +1,12 @@
 [submodule "header"]
 	path = header
-	url = git@github.com:HSR-Stud/header.git
+	url = https://github.com/HSR-Stud/header.git
 [submodule "idiotenseite"]
 	path = idiotenseite
-	url = git@github.com:HSR-Stud/idiotenseite.git
+	url = https://github.com/HSR-Stud/idiotenseite.git
 [submodule "TI-Reference"]
 	path = TI-Reference
-	url = git@github.com:HBadertscher/TI-Reference.git
+	url = https://github.com/HBadertscher/TI-Reference.git
 [submodule "SkriptMueller"]
 	path = SkriptMueller
 	url = https://github.com/AndreasFMueller/WrStat.git
