@@ -24,9 +24,9 @@
 
 \usepackage{xr}
 \usepackage{colortbl}
-\externaldocument[sk-]{SkriptMueller/skript/skript}
+%\externaldocument[sk-]{SkriptMueller/skript/skript}
 
-\raggedbottom
+\raggedbottom %Inhalt nicht auf gesamte Seite verteilen
 % Möglichst keine Ergänzungen hier, sondern in header.tex
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,6 +36,8 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 \newpage
+
+\input{sections/Kombinatorik.tex}
 
 \input{sections/EreignisseWkeit}
 
