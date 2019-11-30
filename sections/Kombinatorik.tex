@@ -1,0 +1,33 @@
+\section{Kombinatorik}
+
+\subsection{Produktregel}
+\textbf{Für-jedes-gibt-es-Regel} $k$ Positionen müssen unabhängig von einander markiert werden, wobei $n_i$ verschiedene Markierungen zur Verfügung stehen.\\[5pt]
+$\boxed{n_1 \cdot n_2 \cdots n_k =  \prod_{i=1}^{k} n_i}$\\[5pt]
+\textbf{Beispiel:} Wie viele mögliche Augenzahlbilder können entstehen, wenn zwei verschiedenfarbige Würfel geworfen werden?\\
+\textbf{Antwort:} Der erste Würfel kann $n_1 = 6$ verschiedene Augenzahlen anzeigen, der zweite $n_2 = 6$. Da die beiden unabhängig sind gibt es $n_1 \cdot n_2 = 36$ verschiedene Augenzahlbilder.
+
+\hrule
+
+\subsection{Permutation}
+\textbf{Grundfrage:} Auf wie viele Arten lassen sich $n$ verschiedene Objekte anordnen? resp. Wie viele Permutationen von $n$ Objekten gibt es?\\[5pt]
+$\boxed{P_n = n(n-1)(n-2) \dots 2 \cdot 1 = n!}$ \qquad oder Rekursiv: $\boxed{P_n = n \cdot P_{n-1}}$\\[5pt]
+\textbf{Beispiel:} In wie vielen verschiedenen Reihenfolgen können acht Läufer eines Rennens im Ziel eintreffen?\\
+\textbf{Antwort:} Jede Reihenfolge ist möglich, also $8! = 40'320$ mögliche Reihenfolgen.
+
+\hrule
+
+\subsection{Kombination}
+\textbf{Grundfrage:} Auf wie viele Arten kann $k$ aus $n$ verschiedenen Objekte auswählen.\\[5pt]
+$ \boxed{\dfrac{n!}{k!(n-k)!} = C^n_k = \binom{n}{k} }$\\[5pt]
+\textbf{Beispiel:} Für ein Projekt stellt eine Firma mit 30 Mitarbeitern ein Team aus 5 Leuten zusammen. Auf wie viele Arten ist dies möglich?\\
+\textbf{Antwort:} Es geht darum 5 von 30 Mitarbeitern auszuwählen, was auf $\displaystyle \binom{30}{5} = 142'506$ möglich ist.
+
+\hrule
+
+\subsection{Variation}
+\textbf{Grundfrage:} Auf wie viele Arten kann man $k$ mal unter $n$ verschiedenen Objekten auswählen?\\[5pt]
+$ \boxed{ V_{n, k}=n^{k} }$\\[5pt]
+\textbf{Beispiel:} Auf wie viele Arten kann man eine Perlenkette der Länge $k=10$ aus $n=5$ Farben von Perlen herstellen?\\
+\textbf{Antwort:} Die Variation Formel lässt sich auch über die Produktregel herleiten. Für jede Perle stehen wieder n verschiedene folge Perlen zur Auswahl. $ V_{n,k} = n^k = 5^10 = 9'765'625$
+
+\hrule

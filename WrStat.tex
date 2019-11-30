@@ -2,9 +2,10 @@
 % Dokumentinformationen %
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\titleinfo}{Wahrscheinlichkeitsrechnung und Statistik - Formelsammlung}
-\newcommand{\authorinfo}{Braun \& Co, Rast, K\"orner, Gwerder, Badertscher, Niedermann, Leuenberger}
-\newcommand{\versioninfo}{$Rev: 1.1 $ | 
-						gem\"ass Unterricht Andreas M\"uller/HS2013}    
+\newcommand{\authorinfo}{S.Walker sowie weiter Autoren}
+%Autoren: S.Walker Braun \& Co, Rast, Körner, Gwerder, Badertscher, Niedermann, Leuenberger
+\newcommand{\versioninfo}{$HS \ 2019$ | 
+						gem\"ass Unterricht Andreas M\"uller/HS2019}    
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Standard projektübergreifender Header für
@@ -22,9 +23,16 @@
 \usetikzlibrary{patterns,decorations.pathreplacing}
 
 \usepackage{xr}
-\externaldocument[sk-]{SkriptMueller/skript/skript}
+\usepackage{colortbl}
+%\externaldocument[sk-]{SkriptMueller/skript/skript}
 
+\raggedbottom %Inhalt nicht auf gesamte Seite verteilen
+\usepackage{tabularx}
+\usepackage{arydshln} %Geschtrichene linien für Tabellen
 % Möglichst keine Ergänzungen hier, sondern in header.tex
+
+
+
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,6 +41,8 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 \newpage
+
+\input{sections/Kombinatorik.tex}
 
 \input{sections/EreignisseWkeit}
 
