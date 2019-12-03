@@ -1,64 +1,58 @@
 \section{Erwartungswert und Varianz}
 
-\subsection{Erwartungswert \skript{\pageref{sk-section-erwartungswert}}}
-\begin{minipage}[t]{9cm}
-Sei $X$ eine Funktion auf $\Omega$, und lasse sich $\Omega$ in endlich viele
-Ereignisse $A_i$ zerlegen, auf denen $X(\omega)$ konstant ist, dann ist der
-Erwartungswert von $X$ 
-\[ \text{Erwartungswert} = \sum \text{Wert} \cdot \text{Wahrscheinlichkeit}\] 
-\[\boxed{E(X)=\sum\limits_{i=0}^n \underbrace{X(A_i)}_{\text{Wert}}\cdot
-\underbrace{P(A_i)}_{\text{W'keit}}}\] 
-\[E(X) = \int\limits_{-\infty}^x x \cdot \varphi(x) dx$ mit $\varphi(x) =
-\text{Dichtefunktion}\] 
+\subsection{Erwartungswert}
+\begin{minipage}{0.49\textwidth}
+	Sei $X$ eine Funktion auf $\Omega$, und lasse sich $\Omega$ in endlich viele Ereignisse $A_i$ zerlegen, auf denen $X(\omega)$ konstant ist, dann ist der Erwartungswert von $X$ 
+	\[ \text{Erwartungswert} = \sum \text{Wert} \cdot \text{Wahrscheinlichkeit}\] 
+	\[\boxed{E(X)=\sum\limits_{i=0}^n \underbrace{X(A_i)}_{\text{Wert}}\cdot 		\underbrace{P(A_i)}_{\text{W'keit}}}\]
+	\[E(X) = \int\limits_{-\infty}^x x \cdot \varphi(x) dx$ mit $\varphi(x) = \text{Dichtefunktion}\] 
+	\subsubsection{Rechenregeln}
+	$E(X+Y)=E(X)+E(Y)$ \\
+	$E(\lambda X + \mu) = \lambda \cdot E(X) + \mu \quad \lambda, \mu \in
+	\mathbb{R}$ \\
+	$E(XY) = E(X)\cdot E(Y)$ \quad  wenn X,Y unabhängig sind \\
 \end{minipage}
-\hspace{1cm}
-\begin{minipage}[t]{9cm}
-\subsubsection{Rechenregeln \skript{\pageref{sk-rechenregeln-erwartungswert}}}
-\begin{tabular}{ll}
-  $E(X+Y)=E(X)+E(Y)$ \\
-  $E(\lambda X + \mu) = \lambda \cdot E(X) + \mu$ & $\lambda, \mu \in
-  \mathbb{R}$ \\
-  $E(XY) = E(X)\cdot E(Y)$ & wenn X,Y unabhängig sind \\
-\end{tabular}
-\end{minipage}
-
-\hrule  \ \\
-
-
-\begin{minipage}{9cm}
-\subsection{Varianz \skript{\pageref{sk-section-varianz}}}
-  \begin{tabular}{ll}
-    $\boxed{var(X)=E(X^2)-E(X)^2}= \:E[(X-E(X))^2]$\\
-   Standardabweichung $\sigma = \sqrt{var(X)}$
-	\end{tabular}
-	\subsubsection{Kovarianz}
-	\begin{tabular}{ll}
-	  $cov(X,Y)=E(XY)-E(X)E(Y)=\underbrace{0}_{\text{falls X,Y unabhängig}}$
-	\end{tabular}
-\end{minipage}
-\begin{minipage}{9cm}
-  \subsubsection{Rechenregeln \skript{\pageref{sk-rechenregeln-varianz}}}
-  \begin{tabular}{ll}
-    $var(\lambda X)=\lambda^2 var(X) \qquad $ $\lambda, \mu
-    \in \mathbb{R}$\\
-    $var(X_1+X_2+\ldots+X_n) \neq var(n X)$ \\
-    $var(X+Y)= \begin{cases}
-      var(X)+var(Y)                      &	\text{(X,Y unabh.)}\\                     
-      var(X) + var(Y) + 2 \cdot cov(X,Y) &	\text{(X,Y abhängig)}\\
-    \end{cases} $ \\
-    $var(X Y)= var(Y)var(X)+var(Y)E(X)^2+var(X)E(Y)^2$ \\
-  \end{tabular}
+\hspace{0.02\textwidth}
+\begin{minipage}{0.49\textwidth}
+	\input{tikz/ErwartungswertVarianz}
 \end{minipage}
 
 \hrule
 
-\subsection{Erwartungswert und Varianz des arithmetischen Mittels \skript{\pageref{sk-approximation-mittelwert}}}
-Es sei eine Folge von unabhängigen Zufallsvariablen $X_1, X_2, \ldots , X_n$ mit
-gleichem Erwartungswert $ \mu $ und gleicher Varianz $ \sigma^2 $ gegeben. \\
-\begin{tabular}{p{6cm} p{6cm} p{6cm}}
-  Mittelwert: $M_n=\frac{X_1+\ldots+X_n}{n}$ &
-  Erwartungswert: $E(X)=E(M_n) = \mu$  &
-  Varianz: $var(M_n)=\frac{1}{n}var(X) = \frac{\sigma ^2}{n} $
+\begin{minipage}{0.42\textwidth}
+	\vspace{2mm}
+	\subsection{Varianz}
+	$\boxed{var(X)=E(X^2)-E(X)^2}= \:E[(X-E(X))^2]$\\[2pt]
+	\textbf{Standardabweichung} $\sigma = \sqrt{var(X)}$
+
+	\subsubsection{Kovarianz}
+	$cov(X,Y)=E(XY)-E(X)E(Y)=\hspace{-0.8cm}\underbrace{0}_{\text{falls X,Y unabhängig}}$\\[2pt]
+	Ist die Kovarianz positiv so tendieren höhere $X$-Werte zu höheren $Y$-Werten.
+	\vspace{.2cm}
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}{0.56\textwidth}
+	\vspace{2mm}
+	\subsubsection{Rechenregeln}
+		$var(\lambda X)=\lambda^2 var(X) \qquad $ $\lambda, \mu \in \mathbb{R}$\\[4pt]
+		$var(X_1+X_2+\ldots+X_n) \neq var(n X)$ \\[4pt]
+		$var(X+Y)= 
+			\begin{cases}
+		  		var(X)+var(Y) & \text{(X,Y unabh.)}\\                
+		  		var(X) + var(Y) + 2 \cdot cov(X,Y) & \text{(X,Y abhängig)}\\
+			\end{cases} $ \\[4pt]
+		$var(X Y)= var(Y)var(X)+var(Y)E(X)^2+var(X)E(Y)^2$ \\
+	\vspace{.2cm}
+\end{minipage}
+
+\hrule
+
+\subsection{Erwartungswert und Varianz des arithmetischen Mittels}
+Es sei eine Folge von unabhängigen Zufallsvariablen $X_1, X_2, \ldots , X_n$ mit gleichem Erwartungswert $ \mu $ und gleicher Varianz $ \sigma^2 $ gegeben. \\
+\begin{tabular}{m{0.33\textwidth} m{0.33\textwidth} m{0.33\textwidth}}
+	Mittelwert: $M_n=\frac{X_1+\ldots+X_n}{n}$ &
+	Erwartungswert: $E(X)=E(M_n) = \mu$  &
+	Varianz: $var(M_n)=\frac{1}{n}var(X) = \frac{\sigma ^2}{n} $
 \end{tabular}
 \vspace{1mm}
 \hrule
@@ -70,7 +64,6 @@ gleichem Erwartungswert $ \mu $ und gleicher Varianz $ \sigma^2 $ gegeben. \\
   $P(|M_{n}-\mu|>\varepsilon)\leq \frac{\sigma^{2}}{\varepsilon^{2}n} $ &
   W'keit, dass $M_{n}$ von $n$ unab. ZV mit Mittelwert $\mu$ und Varianz $\sigma^{2}$ mehr als $\varepsilon$ von $\mu$ abweicht.
 \end{tabular}
-
 
 \begin{minipage}[t]{9cm}
   \subsection{Regression \skript{\pageref{sk-rekursion}}}
