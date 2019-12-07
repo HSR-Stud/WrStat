@@ -1,9 +1,9 @@
 % Genereller Header
-\documentclass[10pt,twoside,a4paper,fleqn]{article}
+\documentclass[10pt,a4paper,fleqn]{article}
 % Dateiencoding
 \usepackage[utf8]{inputenc}
 % Seitenränder
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+\usepackage[left=2cm,right=2cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
 % Sprachpaket
 \usepackage[ngerman]{babel,varioref}
 
@@ -110,18 +110,15 @@
 \fancyhf{}
 %Linien oben und unten
 \renewcommand{\headrulewidth}{0.5pt} 
-\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
 
-\fancyhead[L]{\titleinfo{ }\tiny{(\versioninfo)}}
+\fancyhead[L]{\titleinfo{ }}
 %Kopfzeile rechts bzw. aussen
-\fancyhead[R]{Seite \thepage { }von \pageref{LastPage}}
+
 %Fusszeile links bzw. innen
-\fancyfoot[L]{\footnotesize{\authorShort}}
+
 %Fusszeile rechts bzw. ausen
-\fancyfoot[R]{\footnotesize{\today}}
-% Lizenz CC-BY-NC-SA
-\input{header/lizenzen}
-\lizenz{cc-by-nc-sa}{small}
+
 % Einrücken verhindern versuchen
 \setlength{\parindent}{0pt}
 
