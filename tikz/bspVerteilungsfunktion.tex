@@ -1,0 +1,24 @@
+%Autor: Simon Walker
+%Version: 1.0
+%Datum: 09.12.2019
+%Lizenz: CC BY-NC-SA
+
+\begin{tikzpicture}[xscale=0.4, yscale=2.5]
+	\def\xMin{-20}
+	\def\xMax{20}
+	\def\yValues{{0, 0, 0.00016, 0.00034, 0.00069, 0.00135, 0.00256, 0.00466, 0.0082, 0.0139, 0.02275, 0.03593, 0.0548, 0.08076, 0.11507, 0.15866, 0.21186, 0.27425, 0.34458, 0.42074, 0.5, 0.57926, 0.65542, 0.72575, 0.78814, 0.84134, 0.88493, 0.91924, 0.9452, 0.96407, 0.97725, 0.9861, 0.9918, 0.99534, 0.99744, 0.99865, 0.99931, 0.99966, 0.99984, 0.99993, 0.99997}}
+	
+	%Achse
+	\draw[very thick, ->] (-8-0.5, 0) -- (8+0.5, 0);
+	\draw[very thick, ->] (0, 0) -- (0, 1.2);
+	\draw[dashed] (-8, 1) -- (8, 1);
+	\node[above left] at (0, 1) {$1$};
+	\node[right] at (\xMax+0.5, 0) {$x$};
+	\node[above] at (0, 1.2) {W'keit $F(x)$};
+	
+	\draw[blue, very thick, smooth cycle]
+	\foreach \i in {0, 1, ..., 39}{
+		 ({(\xMin+\i)*0.4},  \yValues[\i]) -- ({(\xMin+\i+1)*0.4}, {\yValues[\i+1]})
+	};
+	
+\end{tikzpicture}
