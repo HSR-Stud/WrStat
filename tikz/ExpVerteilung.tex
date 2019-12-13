@@ -11,6 +11,7 @@
 	%Dichte funktion
 	%Achsen
 	\draw[very thick, ->] (-0.5, \yOf) -- (\xMax+0.5, \yOf);
+	\node[right] at (\xMax+0.5, \yOf) {$x$};
 	\draw[very thick, ->] (0, \yOf) -- (0, \yOf + \a +0.5);
 	\node[above] at (0, \yOf + \a +0.5) {Dichte $\varphi(x)$};
 	
@@ -21,6 +22,7 @@
 	%Verteilungsfunktion
 	%Achsen
 	\draw[very thick, ->] (-0.5, 0) -- (\xMax+0.5, 0);
+	\node[right] at (\xMax+0.5, 0) {$x$};
 	\draw[very thick, ->] (0, 0) -- (0, 1.5);
 	\node[above] at (0, 1.5) {W'keit $F(x)$};
 	
