@@ -14,8 +14,10 @@
 
 	\def\yOf{2.5}
 	\def\a{-0.5}
-	\def\b{2.5}
-	\def\EWert{{(\a+\b)/2}}
+	\def\b{2.5} 
+	\def\EWert{{(\a+\b)/2}} %Erwartungswert Stetig
+	\def\n{7} %Anzahl Diskrete Werte
+	\def\breite{0.17} %Breite der Diskreten Dichte
 	
 	%Dichte funktion
 	%Achsen
@@ -62,6 +64,24 @@
 	\draw[blue, thick] (-0.8, 0) -- (\a, 0);
 	\draw[blue, thick] (\a, 0) -- (\b, 1);
 	\draw[blue, thick] (\b, 1) -- (3.8, 1);
+	
+	%Diskrete Werte
+	\def\absD{(\b - \a)/(\n + 1)}
+	\def\absF{(\b - \a)/(\n)}
+	\def\dy{1/\n}
+	\foreach \i in {1, 2, ..., \n}
+	{
+		\fill[brown, opacity=.6] ({\a+ (\i*\absD) - \breite/2}, \yOf)
+		rectangle 
+		({\a+ (\i*\absD) + \breite/2}, {\yOf+0.8});
+		\draw[brown, very thick] ({(\i-1)*\absF + \a}, {\dy*(\i-1)}) -- 
+		({(\i)*\absF + \a},{\dy*(\i-1)});
+	}
+
+	
+	
+	
+	
 	
 	
 	%\HelpCords{-1}{0}{4}{5}
