@@ -66,14 +66,14 @@
 	\draw[blue, thick] (\b, 1) -- (3.8, 1);
 	
 	%Diskrete Werte
-	\def\absD{(\b - \a)/(\n + 1)}
+	\def\absD{(\b - \a)/(\n)}
 	\def\absF{(\b - \a)/(\n)}
 	\def\dy{1/\n}
 	\foreach \i in {1, 2, ..., \n}
 	{
-		\fill[brown, opacity=.6] ({\a+ (\i*\absD) - \breite/2}, \yOf)
+		\fill[brown, opacity=.6] ({\a+ ((\i-1)*\absD) - \breite/2 + \absD/2}, \yOf)
 		rectangle 
-		({\a+ (\i*\absD) + \breite/2}, {\yOf+0.8});
+		({\a+ ((\i-1)*\absD) + \breite/2 + \absD/2}, {\yOf+0.8});
 		\draw[brown, very thick] ({(\i-1)*\absF + \a}, {\dy*(\i-1)}) -- 
 		({(\i)*\absF + \a},{\dy*(\i-1)});
 	}

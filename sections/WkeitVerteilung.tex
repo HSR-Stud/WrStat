@@ -112,7 +112,7 @@ Wahrscheinlichkeitsdichte der Normalverteilung
 %\hrule
 
 \subsection{Normalverteilung}
-\begin{minipage}{10cm}
+\begin{minipage}{12cm}
 	Viele kleine, unabhängige Zufallsvariable sammeln sich zu einer
 	normalverteilten Zufallsvariable.\\
 	$\varphi(x)=\frac{1}{\sqrt{2
@@ -123,11 +123,8 @@ Wahrscheinlichkeitsdichte der Normalverteilung
 		= N(\mu_{1} + \mu_{2} ; \sqrt{\sigma_{1}^{2} + \sigma_{2}^{2}})$} \\
 	Für $F(-x)$ gilt $F(-x) = 1 - F(x)$
 \end{minipage}
-\begin{minipage}{8cm}
+\begin{minipage}{6cm}
 	\input{tikz/Normalverteilung.tex}
-	%\includegraphics[width=6cm]{./bilder/normalverteilung.png}\\
-	Dichtefunktion (oben) und Verteilungsfunktion (unten) der
-	Normalverteilung.
 \end{minipage}
 \hrule
 
@@ -225,27 +222,32 @@ Standardnormalverteilung. \\
 	
 \end{minipage} \hspace{0.05\textwidth}
 \begin{minipage}{0.35\textwidth}
-	\input{tikz/ExpVerteilung.tex}\\
-	Dichtefunktion (oben) und Verteilungsfunktion (unten) der
-	Exponentialverteilung.
+	\input{tikz/ExpVerteilung.tex}
+\end{minipage}\\[5pt]
+\begin{minipage}[t]{0.6\textwidth}
+	\underline{Dichtefunktion und Verteilungsfunktion}
+	\begin{multicols}{2}
+		$\varphi(x)=\begin{cases}
+		a e^{-a x}  & x \geq 0\\
+		0						& x < 0
+		\end{cases}$
+		
+		$F(x)=\begin{cases}
+		1-e^{-a x}  		& x \geq 0\\
+		0	 					& x < 0
+		\end{cases}$\\
+		
+		\columnbreak
+		
+		$X < x$ Ausfall/Zerfall\\
+		$X > x$ kein Ausfall/Zerfall
+	\end{multicols} 
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+	\underline{Halbwertszeit}\\[2pt]
+	$ t_{1/2} = \dfrac{log(2)}{a} $
 \end{minipage}
 
-\underline{Dichtefunktion und Verteilungsfunktion}\\
-\begin{minipage}{5cm}
-	$\varphi(x)=\begin{cases}
-	a e^{-a x}  & x \geq 0\\
-	0						& x < 0
-	\end{cases}$
-	
-	$F(x)=\begin{cases}
-	1-e^{-a x}  		& x \geq 0\\
-	0	 					& x < 0
-	\end{cases}$
-\end{minipage} 
-\begin{minipage}{4.5cm}
-	$X < x$ Ausfall/Zerfall\\
-	$X > x$ kein Ausfall/Zerfall
-\end{minipage}\\
     
 \begin{minipage}[t]{6cm}
   \underline{Erwartungswert und Varianz}\\[4pt]
@@ -260,7 +262,8 @@ Standardnormalverteilung. \\
     &= (1-P(X_1\leq x_1)) \cdot (1-P(X_2\leq x_2)) \cdot (1-P(X_3\leq x_3)) \ldots \nonumber \\
     &= (1-F(x_1)) \cdot (1-F(x_2)) \cdot (1-F(x_3)) \ldots \nonumber
   \end{align}
-\end{minipage}
+\end{minipage}\\
+
 		
 	\hrule
 
@@ -268,17 +271,16 @@ Standardnormalverteilung. \\
 
       	
 \begin{minipage}{0.7\textwidth}
-	Ist die Wahrscheinlichkeit dass in einer $m$ Elemente umfassenden 
-	Stichprobe aus einer Grundgesamtheit von $n$ Elementen, von denen $r$ eine
-	spezielle Eigenschaft besitzen, $k$ Elemente mit der Eigenschaft zu
-	finden sind.\\
-	\vspace{5mm} 
-	$p(k)=P(X=k)=\dfrac{\binom r k \binom{n-r}{m-k}}{\binom n m}$ 
-	\hspace{10mm} für $0\leq k \leq r$ und $k \leq n$\\
-	Erwartungswert: \hspace{10mm} $E(X)=m \dfrac{r}{n}$\\
-	Varianz: \hspace{22mm} $var(X)=m \dfrac{r(n-r)(n-m)}{n^2(n-1)}$ \\
+	Ist die Wahrscheinlichkeit dass in einer $n$ Elemente umfassenden 
+	Stichprobe aus einer Grundgesamtheit von $N$ Elementen, von denen $M$ eine
+	spezielle Eigenschaft besitzen, $m$ Elemente mit der Eigenschaft zu
+	finden sind.\\[5pt]
+	$p(m)=P(X=m)=\dfrac{\binom M m \binom{N-M}{n-m}}{\binom N n}$ 
+	\hspace{10mm} für $0\leq m \leq M$ und $m \leq N$\\
+	Erwartungswert: \hspace{10mm} $E(X)=n \dfrac{M}{N}$\\[5pt]
+	Varianz: \hspace{22mm} $var(X)=n \dfrac{M(N-M)(N-n)}{N^2(N-1)}$ \\
 	{\bf Beispiel:} \\
-	Lotto, $n=45$ Zahlen, $r=6$ (die gezogenen Zahlen), $m=6$
+	Lotto, $N=45$ Zahlen, $M=6$ (die gezogenen Zahlen), $n=6$
 	(meine Zahlen) \\
 	$P(X=4)=P(\text{Ein Vierer})=\dfrac{\binom 6 4 \binom {39}
 	2}{\binom {45} 6}=0.001364$
@@ -290,7 +292,8 @@ Standardnormalverteilung. \\
 
 \hrule \hspace{3mm}
 
-	\subsection{Poissonverteilung \skript{\pageref{sk-section-poissonverteilung}}}
+	\subsection{Poissonverteilung}
+	Kann als Approximation der Binominalverteilung (für kleine p) verwendet werden.
 	\begin{multicols}{2}
 		\begin{tabular}{ll}
         $P_\lambda(k)=\frac{\lambda^k}{k!}e^{-\lambda}$ &
@@ -314,7 +317,7 @@ Standardnormalverteilung. \\
      \end{multicols}
         
 \hrule
-	\subsection{Binomialverteilung \skript{\pageref{sk-section-binomialverteilung}}}
+	\subsection{Binomialverteilung}
 		
     	Wird angewendet bei einem Experiment mit nur zwei Ausgängen (Ereignis mit W'keit $p$ tritt
     	ein, Ereignis tritt nicht ein). \\
@@ -329,7 +332,8 @@ Standardnormalverteilung. \\
       $k$: k-mal erfolgreich \hspace{10mm}
       $p$: Wahrscheinlichkeit\\
       
-      Approximation mit Normalverteilung: $P(a \leq x \leq b) \simeq \underbrace{P(a-0.5 \leq x \leq b+0.5)}_{\text{Normalverteilung}}$\\
+      Approximation mit Normalverteilung: $P(a \leq x \leq b) \simeq \underbrace{P(a-0.5 \leq x \leq b+0.5)}_{\text{Normalverteilung}}$\\[7pt]
+      \textbf{\textcolor{red}{Achtung:}} Für seltene Ereignisse Poissonverteilung verwenden!\\
       
       {\bf Beispiel:} Wie hoch ist die Wahrscheinlichkeit, dass bei 350 Leuten genau
       k $(k\leq 350)$ heute Geburtstag haben?\\
@@ -341,7 +345,7 @@ Standardnormalverteilung. \\
 \hrule
 		\subsection{Gleichverteilung}
       \begin{multicols}{3}
-        \textbf{Stetig \skript{\pageref{sk-section-gleichverteilung-stetig}}}\\ \\
+        \textbf{Stetig}\\ \\
         $\varphi(x) = \begin{cases}
           0 & x < a\\
           \frac{1}{b-a} & x \in [a, b]\\
@@ -358,7 +362,7 @@ Standardnormalverteilung. \\
         \end{tabular}
       \columnbreak
       
-        \textbf{Diskret \skript{\pageref{sk-section-gleichverteilung-diskret}}}\\ \\
+        \textbf{Diskret}\\ \\
         $F(x) = \begin{cases}
           0 & x \leq 1\\
           \frac{|x|}{n} & 1 \leq x \leq n \\
@@ -384,20 +388,27 @@ Standardnormalverteilung. \\
 	
     \begin{multicols}{2}
 		$\varphi(x) = \begin{cases}
-		\frac{\alpha - 1}{x_{min}^{1-\alpha}}\cdot x^{-\alpha} & x > x_{min} \\
+		\dfrac{\alpha - 1}{x_{min}} \left( \dfrac{x}{x_{min}}\right)^{-\alpha} & x \geq x_{min} \\
 		0 & sonst
 		\end{cases} \qquad $ mit $\alpha > 1$\\
 		
+		$ F(x) = \begin{cases}
+			1-\left( \dfrac{x}{x_{min}} \right)^{1-\alpha} & x \geq x_{min}\\
+			0 & sonst
+		\end{cases}$
+		
     \columnbreak
-    
-		$E(X) = \frac{\alpha - 1}{\alpha - 2} \cdot x_{min}$ \\
-		$E(X^2) = \frac{\alpha - 1}{\alpha - 3} \cdot x_{min}^2$ \\
- 		$var(X) = \left(\frac{\alpha - 1}{\alpha - 3} - \left(\frac{\alpha -1}{\alpha -2}\right)^2\right)\cdot x_{min}^2$ \\
- 		$x_{\frac{1}{2}} = 2^{\frac{1}{\alpha - 1}} \cdot x_{min}$ \\
+    \begin{tabular}{ll}
+    	$E(X) = \dfrac{\alpha - 1}{\alpha - 2} \cdot x_{min}$ & $\alpha > 2$\\
+    	$E(X^2) = \dfrac{\alpha - 1}{\alpha - 3} \cdot x_{min}^2$ & $\alpha > 3$ \\
+    	$var(X) = \left(\dfrac{\alpha - 1}{\alpha - 3} - \left(\dfrac{\alpha -1}{\alpha -2}\right)^2\right)\cdot x_{min}^2$  & $\alpha > 3$\\
+    	$x_{\frac{1}{2}} = 2^{\frac{1}{\alpha - 1}} \cdot x_{min}$ \quad Median & $\alpha > 1$\\
+    \end{tabular}
+		
 	\end{multicols}
 	
 	Eine nach dem Potenzgesetz verteilte Zufallsvariable kann man daran erkennen, dass die Dichtefunktion in doppelt logarithmischer Darstellung eine Gerade ist. Wegen
 	$\log p(x) = -\alpha \log x + \log C$ ist die Steigung der Geraden $-\alpha$. \\
 	
-	Der Parameter $\alpha$ kann mithilfe eines Maximum-Likelihood Schätzers bestimmt werden. Es gilt: $\alpha = 1 + \frac{n}{\sum_{i=1}^{n}} \log \frac{x_i}{x_min}$ \\
+	Der Parameter $\alpha$ kann mithilfe eines Maximum-Likelihood Schätzers bestimmt werden. Es gilt: $\alpha = 1 + \dfrac{n}{\sum_{i=1}^{n}} \log \dfrac{x_i}{x_min}$ \\
 \hrule
