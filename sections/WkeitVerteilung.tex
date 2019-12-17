@@ -244,8 +244,15 @@ Standardnormalverteilung. \\
 	\end{multicols} 
 \end{minipage}
 \begin{minipage}[t]{0.4\textwidth}
-	\underline{Halbwertszeit}\\[2pt]
-	$ t_{1/2} = \dfrac{log(2)}{a} $
+	\underline{Halbwertszeit}
+	\begin{multicols}{2}
+		$ t_{1/2} = \dfrac{log(2)}{a} $
+		
+		\columnbreak
+		
+		$ a = \dfrac{log(2)}{t_{1/2}} $		
+	\end{multicols}
+	
 \end{minipage}
 
     
@@ -292,8 +299,8 @@ Standardnormalverteilung. \\
 
 \hrule \hspace{3mm}
 
-	\subsection{Poissonverteilung}
-	Kann als Approximation der Binominalverteilung (für kleine p) verwendet werden.
+\subsection{Poissonverteilung}
+Kann als Approximation der Binominalverteilung (für kleine p) verwendet werden.
 	\begin{multicols}{2}
 		\begin{tabular}{ll}
         $P_\lambda(k)=\frac{\lambda^k}{k!}e^{-\lambda}$ &
@@ -317,98 +324,98 @@ Standardnormalverteilung. \\
      \end{multicols}
         
 \hrule
-	\subsection{Binomialverteilung}
+\subsection{Binomialverteilung}
 		
-    	Wird angewendet bei einem Experiment mit nur zwei Ausgängen (Ereignis mit W'keit $p$ tritt
-    	ein, Ereignis tritt nicht ein). \\
-    	Eine Zufallsvariable mit diskreten Werten $k \in \{
-    	0,\ldots,n \}$ heisst binomialverteilt zum Parameter $p$, wenn die
-        Wahrscheinlichkeit des Wertes $k$ wie folgt ist:
+Wird angewendet bei einem Experiment mit nur zwei Ausgängen (Ereignis mit W'keit $p$ tritt
+ein, Ereignis tritt nicht ein). \\
+Eine Zufallsvariable mit diskreten Werten $k \in \{
+0,\ldots,n \}$ heisst binomialverteilt zum Parameter $p$, wenn die
+Wahrscheinlichkeit des Wertes $k$ wie folgt ist:
 
-      $$P(X=k) = \binom n k p^k(1-p)^{n-k} \qquad \mu = E(X) = p \cdot n \qquad \sigma^2 =
-      var(X) = n \cdot p (1-p)$$
+$$P(X=k) = \binom n k p^k(1-p)^{n-k} \qquad \mu = E(X) = p \cdot n \qquad \sigma^2 =
+var(X) = n \cdot p (1-p)$$
 
-      $n$: Versuche \hspace{10mm}
-      $k$: k-mal erfolgreich \hspace{10mm}
-      $p$: Wahrscheinlichkeit\\
-      
-      Approximation mit Normalverteilung: $P(a \leq x \leq b) \simeq \underbrace{P(a-0.5 \leq x \leq b+0.5)}_{\text{Normalverteilung}}$\\[7pt]
-      \textbf{\textcolor{red}{Achtung:}} Für seltene Ereignisse Poissonverteilung verwenden!\\
-      
-      {\bf Beispiel:} Wie hoch ist die Wahrscheinlichkeit, dass bei 350 Leuten genau
-      k $(k\leq 350)$ heute Geburtstag haben?\\
-      $P(k)=\binom {350} k \left(\frac{1}{365}\right)^k
-      \left(\frac{364}{365}\right)^{350-k}$ \\
+$n$: Versuche \hspace{10mm}
+$k$: k-mal erfolgreich \hspace{10mm}
+$p$: Wahrscheinlichkeit\\
+
+Approximation mit Normalverteilung: $P(a \leq x \leq b) \simeq \underbrace{P(a-0.5 \leq x \leq b+0.5)}_{\text{Normalverteilung}}$\\[7pt]
+\textbf{\textcolor{red}{Achtung:}} Für seltene Ereignisse Poissonverteilung verwenden!\\
+
+{\bf Beispiel:} Wie hoch ist die Wahrscheinlichkeit, dass bei 350 Leuten genau
+k $(k\leq 350)$ heute Geburtstag haben?\\
+$P(k)=\binom {350} k \left(\frac{1}{365}\right)^k
+\left(\frac{364}{365}\right)^{350-k}$ \\
 
 
 
 \hrule
-		\subsection{Gleichverteilung}
-      \begin{multicols}{3}
-        \textbf{Stetig}\\ \\
-        $\varphi(x) = \begin{cases}
-          0 & x < a\\
-          \frac{1}{b-a} & x \in [a, b]\\
-          0 & x > b
-        \end{cases}$ \\
-        $F(x) = \begin{cases}
-          0 & x < a\\
-          \frac{x-a}{b-a} & x \in [a,b]\\
-          1 & x > b
-        \end{cases}$\\
-        \begin{tabular}{ll}
-          Erwartungswert: & $E(X)=\frac{a + b}{2}$\\
-          Varianz:  &$var(X)=\frac{(b-a)^2}{12}$\\
-        \end{tabular}
-      \columnbreak
-      
-        \textbf{Diskret}\\ \\
-        $F(x) = \begin{cases}
-          0 & x \leq 1\\
-          \frac{|x|}{n} & 1 \leq x \leq n \\
-          1 & x \geq n
-        \end{cases}$\\
-        \begin{tabular}{ll}
-          Wahrscheinlichkeit: & $p(k) = \frac{1}{n}$\\
-          Erwartungswert: & $E(X)=\frac{n + 1}{2}$\\
-          Varianz: & $var(X)=\frac{n^2-1}{12}$\\
-          $E(X^2) = \frac{2n^2+3n+1}{6}$ &
-        \end{tabular}
-      \columnbreak
-      	\input{tikz/Gleichverteilung.tex}\\ 
-        Stetig: Blau \quad Diskret: Braun
-      \end{multicols}
+\subsection{Gleichverteilung}
+\begin{multicols}{3}
+	\textbf{Stetig}\\ \\
+	$\varphi(x) = \begin{cases}
+	0 & x < a\\
+	\frac{1}{b-a} & x \in [a, b]\\
+	0 & x > b
+	\end{cases}$ \\
+	$F(x) = \begin{cases}
+	0 & x < a\\
+	\frac{x-a}{b-a} & x \in [a,b]\\
+	1 & x > b
+	\end{cases}$\\
+	\begin{tabular}{ll}
+		Erwartungswert: & $E(X)=\frac{a + b}{2}$\\
+		Varianz:  &$var(X)=\frac{(b-a)^2}{12}$\\
+	\end{tabular}
+	\columnbreak
+	
+	\textbf{Diskret}\\ \\
+	$F(x) = \begin{cases}
+	0 & x \leq 1\\
+	\frac{|x|}{n} & 1 \leq x \leq n \\
+	1 & x \geq n
+	\end{cases}$\\
+	\begin{tabular}{ll}
+		Wahrscheinlichkeit: & $p(k) = \frac{1}{n}$\\
+		Erwartungswert: & $E(X)=\frac{n + 1}{2}$\\
+		Varianz: & $var(X)=\frac{n^2-1}{12}$\\
+		$E(X^2) = \frac{2n^2+3n+1}{6}$ &
+	\end{tabular}
+	\columnbreak
+   	\input{tikz/Gleichverteilung.tex}\\ 
+	Stetig: Blau \quad Diskret: Braun
+\end{multicols}
   
-  \hrule 
+\hrule 
       
-	\subsection{Potenzgesetze (Power-Laws) \skript{\pageref{sk-potenzgesetze}}}
-	Die Normalverteilung beschreibt (physikalische) Grössen, die vor allem in einer bestimmten
-	Grössenordnung vorkommen. Die Potenzgesetze dienen dazu, Grössen welche einen grossen
-	Wertebereich annehmen können, zu beschreiben.
+\subsection{Potenzgesetze (Power-Laws) \skript{\pageref{sk-potenzgesetze}}}
+Die Normalverteilung beschreibt (physikalische) Grössen, die vor allem in einer bestimmten
+Grössenordnung vorkommen. Die Potenzgesetze dienen dazu, Grössen welche einen grossen
+Wertebereich annehmen können, zu beschreiben.
 	
-    \begin{multicols}{2}
-		$\varphi(x) = \begin{cases}
-		\dfrac{\alpha - 1}{x_{min}} \left( \dfrac{x}{x_{min}}\right)^{-\alpha} & x \geq x_{min} \\
-		0 & sonst
-		\end{cases} \qquad $ mit $\alpha > 1$\\
-		
-		$ F(x) = \begin{cases}
-			1-\left( \dfrac{x}{x_{min}} \right)^{1-\alpha} & x \geq x_{min}\\
-			0 & sonst
-		\end{cases}$
-		
-    \columnbreak
-    \begin{tabular}{ll}
-    	$E(X) = \dfrac{\alpha - 1}{\alpha - 2} \cdot x_{min}$ & $\alpha > 2$\\
-    	$E(X^2) = \dfrac{\alpha - 1}{\alpha - 3} \cdot x_{min}^2$ & $\alpha > 3$ \\
-    	$var(X) = \left(\dfrac{\alpha - 1}{\alpha - 3} - \left(\dfrac{\alpha -1}{\alpha -2}\right)^2\right)\cdot x_{min}^2$  & $\alpha > 3$\\
-    	$x_{\frac{1}{2}} = 2^{\frac{1}{\alpha - 1}} \cdot x_{min}$ \quad Median & $\alpha > 1$\\
-    \end{tabular}
-		
-	\end{multicols}
+\begin{multicols}{2}
+	$\varphi(x) = \begin{cases}
+	\dfrac{\alpha - 1}{x_{min}} \left( \dfrac{x}{x_{min}}\right)^{-\alpha} & x \geq x_{min} \\
+	0 & sonst
+	\end{cases} \qquad $ mit $\alpha > 1$\\
 	
-	Eine nach dem Potenzgesetz verteilte Zufallsvariable kann man daran erkennen, dass die Dichtefunktion in doppelt logarithmischer Darstellung eine Gerade ist. Wegen
-	$\log p(x) = -\alpha \log x + \log C$ ist die Steigung der Geraden $-\alpha$. \\
+	$ F(x) = \begin{cases}
+	1-\left( \dfrac{x}{x_{min}} \right)^{1-\alpha} & x \geq x_{min}\\
+	0 & sonst
+	\end{cases}$
 	
-	Der Parameter $\alpha$ kann mithilfe eines Maximum-Likelihood Schätzers bestimmt werden. Es gilt: $\alpha = 1 + \dfrac{n}{\sum_{i=1}^{n}} \log \dfrac{x_i}{x_min}$ \\
+	\columnbreak
+	\begin{tabular}{ll}
+		$E(X) = \dfrac{\alpha - 1}{\alpha - 2} \cdot x_{min}$ & $\alpha > 2$\\
+		$E(X^2) = \dfrac{\alpha - 1}{\alpha - 3} \cdot x_{min}^2$ & $\alpha > 3$ \\
+		$var(X) = \left(\dfrac{\alpha - 1}{\alpha - 3} - \left(\dfrac{\alpha -1}{\alpha -2}\right)^2\right)\cdot x_{min}^2$  & $\alpha > 3$\\
+		$x_{\frac{1}{2}} = 2^{\frac{1}{\alpha - 1}} \cdot x_{min}$ \quad Median & $\alpha > 1$\\
+	\end{tabular}
+
+\end{multicols}
+	
+Eine nach dem Potenzgesetz verteilte Zufallsvariable kann man daran erkennen, dass die Dichtefunktion in doppelt logarithmischer Darstellung eine Gerade ist. Wegen
+$\log p(x) = -\alpha \log x + \log C$ ist die Steigung der Geraden $-\alpha$. \\
+
+Der Parameter $\alpha$ kann mithilfe eines Maximum-Likelihood Schätzers bestimmt werden. Es gilt: $\alpha = 1 + \dfrac{n}{\sum_{i=1}^{n}} \log \dfrac{x_i}{x_min}$ \\
 \hrule
