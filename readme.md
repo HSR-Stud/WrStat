@@ -1,19 +1,16 @@
 WrStat
 ======
 
+Vorläufiger Release
+ * Änderungswünsche und Fehler bitte sofort melden...
 
-Erlaubte Hilfsmittel (HS 12/13)
+
+Erlaubte Hilfsmittel (HS19)
 -------------------------------
 
-	* Open Books
-	* beliebige gedruckte oder handgeschriebene Hilfsmittel
-	* Taschenrechner
-	* keine Laptops, Computer, etc.
+ * Open Books
+ * beliebige gedruckte oder handgeschriebene Hilfsmittel
+ * Zusatzblätter (siehe Ordner Zusatzblaetter)
+ * Taschenrechner
+ * keine Laptops, Computer, etc.
 
-Build
--------
-Damit die pagerefs richtig gesetzt werden können, muss zuerst das als Submodul eingebundene Skript mit folgenden Befehlen gebaut werden:
-
-* make
-* makeindex skript
-* make
