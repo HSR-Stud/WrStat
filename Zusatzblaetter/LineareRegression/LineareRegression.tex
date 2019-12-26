@@ -1,51 +1,63 @@
 %Autor: Simon Walker
-%Version: 1.0
-%Datum: 04.12.2019
+%Version: 1.2
+%Datum: 26.12.2019
 %Lizenz CC-BY-NC-SA
 \newcommand{\titleinfo}{Lineare Regression}
 \newcommand{\authorinfo}{Simon Walker}  
 
-\input{../header.tex}
+% Genereller Header
+\documentclass[10pt,a4paper,fleqn]{article}
+% Dateiencoding
+\usepackage[utf8]{inputenc}
+% Seitenränder
+\usepackage[left=2cm,right=2cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+% Sprachpaket
+\usepackage[ngerman]{babel,varioref}
+
+\usepackage{amsmath}
 
 \usepackage{tabularx}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 \newcommand{\Fett}[1]{\Large{$\mathbf{#1}$}}
 
 \begin{document}
-	\begin{tabularx}{\textwidth}{XrX}
-		& \Large{Name: } & \hrule \\
-		&&\\
-		& Dieses Blatt gehört zur Aufgabe: & \hrule \\
-	\end{tabularx}
+\pagestyle{empty}
+\huge{\textbf{Lineare Regression}}\\[10pt]
+\normalsize
+\begin{tabularx}{\textwidth}{Xrp{180pt}}
+	& \Large{Name: } & \hrule \\
+	&&\\
+	& Dieses Blatt gehört zur Aufgabe: & \hrule \\
+\end{tabularx}
 
-	\renewcommand{\arraystretch}{2.2}
-	\begin{tabularx}{\textwidth}{|c||Y|Y||Y|Y||Y|}
-		\hline
-		\Fett{k} & \Fett{x} & \Fett{x^2} & \Fett{y} & \Fett{y^2} & \Fett{xy}\\ \hline \hline
-		\Fett{1} &     &       &     &       &     \\ \hline
-		\Fett{2} &     &       &     &       &     \\ \hline
-		\Fett{3} &     &       &     &       &     \\ \hline
-		\Fett{4} &     &       &     &       &     \\ \hline
-		\Fett{5} &     &       &     &       &     \\ \hline
-		\Fett{6} &     &       &     &       &     \\ \hline
-		\Fett{7} &     &       &     &       &     \\ \hline
-		\Fett{8} &     &       &     &       &     \\ \hline
-		\Fett{9} &     &       &     &       &     \\ \hline
-		\Fett{10} &     &       &     &       &     \\ \hline
-		\Fett{11} &     &       &     &       &     \\ \hline
-		\Fett{12} &     &       &     &       &     \\ \hline
-		\Fett{13} &     &       &     &       &     \\ \hline
-		\Fett{14} &     &       &     &       &     \\ \hline
-		\Fett{15} &     &       &     &       &     \\ \hline
-		\Fett{16} &     &       &     &       &     \\ \hline
-		\Fett{17} &     &       &     &       &     \\ \hline
-		\Fett{18} &     &       &     &       &     \\ \hline
-		\Fett{19} &     &       &     &       &     \\ \hline
-		\Fett{20} &     &       &     &       &     \\ \hline
-		\hline
-		\Large{$\mathbf{\sum}$} &     &       &     &       &     \\ \hline
-		\Large{$\mathbf{E}$} &     &       &     &       &     \\ \hline
-		
-	\end{tabularx}
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{|c||Y|Y||Y|Y||Y|}
+	\hline
+	\Fett{k} & \Fett{x} & \Fett{x^2} & \Fett{y} & \Fett{y^2} & \Fett{xy}\\ \hline \hline
+	\Fett{1} &     &       &     &       &     \\ \hline
+	\Fett{2} &     &       &     &       &     \\ \hline
+	\Fett{3} &     &       &     &       &     \\ \hline
+	\Fett{4} &     &       &     &       &     \\ \hline
+	\Fett{5} &     &       &     &       &     \\ \hline
+	\Fett{6} &     &       &     &       &     \\ \hline
+	\Fett{7} &     &       &     &       &     \\ \hline
+	\Fett{8} &     &       &     &       &     \\ \hline
+	\Fett{9} &     &       &     &       &     \\ \hline
+	\Fett{10}&     &       &     &       &     \\ \hline
+	\hline
+	\Large{$\mathbf{\sum}$} &     &       &     &       &     \\ \hline
+	\Large{$\mathbf{E}$} &     &       &     &       &     \\ \hline
+	
+\end{tabularx}\\[25pt]
+\large
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{rX}
+	$var(X) = E(X^2) - E^2(X) =$ & \hrule\\
+	$var(Y) = E(Y^2) - E^2(Y) =$ & \hrule\\
+	$cov(X,Y) = E(XY)-E(X)E(Y) =$ & \hrule\\%\hline
+	$a=\dfrac{cov(X,Y)}{var(X)} =$ & \hrule\\
+	$b=E(Y)-aE(X) =$ & \hrule\\
+	$r = \dfrac{cov(X,Y)}{\sqrt{var(X)var(Y)}}=$ & \hrule
+\end{tabularx}
 
 \end{document}
