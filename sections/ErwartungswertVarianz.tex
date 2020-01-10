@@ -51,20 +51,29 @@
 
 \subsection{Erwartungswert und Varianz des arithmetischen Mittels}
 Es sei eine Folge von unabhängigen Zufallsvariablen $X_1, X_2, \ldots , X_n$ mit gleichem Erwartungswert $ \mu $ und gleicher Varianz $ \sigma^2 $ gegeben. \\
-\begin{tabular}{m{0.33\textwidth} m{0.33\textwidth} m{0.33\textwidth}}
-	Mittelwert: $M_n=\frac{X_1+\ldots+X_n}{n}$ &
-	Erwartungswert: $E(X)=E(M_n) = \mu$  &
-	Varianz: $var(M_n)=\frac{1}{n}var(X) = \frac{\sigma ^2}{n} $
+\begin{tabular}{m{0.3\textwidth} m{0.33\textwidth} m{0.36\textwidth}}
+	Mittelwert: $\boxed{M_n=\dfrac{X_1+\ldots+X_n}{n}}$ &
+	Erwartungswert: $\boxed{E(X)=E(M_n) = \mu}$  &
+	Varianz: $\boxed{var(M_n)=\frac{1}{n}var(X) = \frac{\sigma ^2}{n}}$
 \end{tabular}
 \vspace{1mm}
 \hrule
 
 \subsection{Satz von Tschebyscheff}
-\begin{tabular}{ll}
-  $P(\left| X-E(X) \right|>\varepsilon)\leq\dfrac{var(X)}{\varepsilon^2}$ &
-  Wahrscheinlichkeit, dass $X$ um mehr als $\varepsilon$ vom Erwartungswert $E(X)$ abweicht.\\
-  $P(|M_{n}-\mu|>\varepsilon)\leq \frac{\sigma^{2}}{\varepsilon^{2}n} $ &
-  W'keit, dass $M_{n}$ von $n$ unab. ZV mit Mittelwert $\mu$ und Varianz $\sigma^{2}$ mehr als $\varepsilon$ von $\mu$ abweicht.
+\begin{tabular}{rll}
+	Satz von Tschebyscheff:&
+  	$\boxed{P(\left| X-\mu \right|>\varepsilon)\leq\dfrac{var(X)}{\varepsilon^2}}$&
+  	\hspace{-3cm}\multirow[c]{2}{9.3cm}[7pt]{Wahrscheinlichkeit, dass $X$ um mehr als 	$\varepsilon$ vom Erwartungswert $\mu$ abweicht.}
+  	\vspace{0.2cm}\\
+ 	Satz von Bernoulli:&
+  	$\boxed{P(|M_{n}-\mu|>\varepsilon)\leq \dfrac{var(X)}{n\varepsilon^{2}}}$&
+   	\hspace{-3cm}\multirow[c]{2}{9.3cm}[7pt]{W'keit, dass $M_{n}$ von $n$ unabh. ZV mit Erwartungswert $\mu$ und Varianz $var(X)$ um mehr als $\varepsilon$ von $\mu$ abweicht.}
+  	\vspace{0.2cm}\\
+  	Gesetz der grossen Zahlen:&
+  	$\boxed{P(\left|h_n-P(A)\right|>\varepsilon)\leq\dfrac{P(A)(1-P(A))}{n\varepsilon^2}\leq\frac{1}{4n\varepsilon^2}}$&
+  	\multirow[c]{2}{6.3cm}[7pt]{Warscheinlichkeit, dass $h_n$ um mehr als $\varepsilon$ von der Wahrscheinlichkeit abweicht.}
+  	\vspace{0.4cm}\\&$\to$ mit relativer Häufigkeit: $\boxed{h_n = \dfrac{X_1+...+X_n}{n}}$&
+  	\multirow[c]{2}{6.3cm}[7pt]{und \{$X_1,...,X_n$, Stichprobe von $X$\} als wiederholtes Experiment.}
 \end{tabular}
 
 \begin{minipage}[t]{9cm}
