@@ -33,7 +33,7 @@
 \renewcommand{\arraystretch}{2}
 \begin{tabularx}{\textwidth}{|c||Y|Y||Y|Y||Y|}
 	\hline
-	\Fett{i} & \Fett{x_i} & \Fett{y_i} & \Fett{x^2_i} & \Fett{y^2_i} & \Fett{x_i\cdot y_i}\\ \hline \hline
+	\Fett{k} & \Fett{x} & \Fett{x^2} & \Fett{y} & \Fett{y^2} & \Fett{xy}\\ \hline \hline
 	\Fett{1} &     &       &     &       &     \\ \hline
 	\Fett{2} &     &       &     &       &     \\ \hline
 	\Fett{3} &     &       &     &       &     \\ \hline
@@ -54,10 +54,10 @@
 \begin{tabularx}{\textwidth}{rX}
 	$var(X) = E(X^2) - E^2(X) =$ & \hrule\\
 	$var(Y) = E(Y^2) - E^2(Y) =$ & \hrule\\
-	$cov(X,Y) = E(XY)-E(X) \cdot E(Y) =$ & \hrule\\%\hline
+	$cov(X,Y) = E(XY)-E(X)E(Y) =$ & \hrule\\%\hline
 	$a=\dfrac{cov(X,Y)}{var(X)} =$ & \hrule\\
-	$b=E(Y)-a \cdot E(X) =$ & \hrule\\
-	$r^2 = \dfrac{cov(X,Y)}{var(X) \cdot var(Y)}=$ & \hrule
+	$b=E(Y)-aE(X) =$ & \hrule\\
+	$r = \dfrac{cov(X,Y)}{\sqrt{var(X)var(Y)}}=$ & \hrule
 \end{tabularx}
 
 \end{document}
