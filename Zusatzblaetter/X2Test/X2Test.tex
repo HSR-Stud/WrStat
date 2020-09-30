@@ -1,0 +1,82 @@
+%Autor: Simon Walker
+%Version: 1.0
+%Datum: 26.12.2019
+%Lizenz CC-BY-NC-SA
+\newcommand{\titleinfo}{$\chi^{2}$-Test}
+\newcommand{\authorinfo}{Simon Walker}  
+
+% Genereller Header
+\documentclass[10pt,a4paper,fleqn]{article}
+% Dateiencoding
+\usepackage[utf8]{inputenc}
+% Seitenränder
+\usepackage[left=2cm,right=2cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+% Sprachpaket
+\usepackage[ngerman]{babel,varioref}
+
+\usepackage{amsmath}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcommand{\Fett}[1]{\large{$\mathbf{#1}$}}
+
+\begin{document}
+	\pagestyle{empty}
+	\huge{\textbf{$\mathbf{\chi^{2}}$-Test}}\\[10pt]
+	\normalsize
+	\begin{tabularx}{\textwidth}{Xrp{180pt}}
+		& \Large{Name: } & \hrule \\
+		&&\\
+		& Dieses Blatt gehört zur Aufgabe: & \hrule \\
+	\end{tabularx}
+	\\[20pt]
+	
+	\renewcommand{\arraystretch}{1.2}
+	\begin{tabularx}{\textwidth}{p{70pt}X}
+		\large{Nullhypothese:} & \hrule\\
+		& \hrule\\
+		& \hrule\\
+	\end{tabularx}
+	
+%	\begin{tabularx}{\textwidth}{p{120pt} X r}
+%		\large{Gewähltes $\alpha$:} &\hrule \\ 
+%		\large{Anzahl Freiheitsgrade:} & k = i - 1 = \hrule \\ 
+%		\large{$D$-Krit:} &\hrule \\ 
+%	\end{tabularx}
+	\begin{tabularx}{\textwidth}{l p{50pt} X X}
+		\large{Gewähltes $\alpha$:} & $\alpha = $\hrule & \hrule \\
+		Berechnetes $p$:& $p = 1 - \alpha$ = & \hrule\\
+		\large{Anzahl Freiheitsgrade:} & $k = i - 1 =$ & \hrule \\
+		\large{$D$-Krit:} & \hrule &\hrule \\
+	\end{tabularx}
+	
+
+	\renewcommand{\arraystretch}{2}
+	\begin{tabularx}{\textwidth}{|c||Y|Y|Y|Y|Y|}
+		\hline
+		\Fett{i} & \large{\textbf{Ausgang}} & \Fett{n_i} & \Fett{p_i} & \Fett{np_i} & \Fett{(n_i-np_i)^2/np_i}\\ \hline \hline
+		\Fett{1} &     &       &     &       &     \\ \hline
+		\Fett{2} &     &       &     &       &     \\ \hline
+		\Fett{3} &     &       &     &       &     \\ \hline
+		\Fett{4} &     &       &     &       &     \\ \hline
+		\Fett{5} &     &       &     &       &     \\ \hline
+		\Fett{6} &     &       &     &       &     \\ \hline
+		\Fett{7} &     &       &     &       &     \\ \hline
+		\Fett{8} &     &       &     &       &     \\ \hline
+		\Fett{9} &     &       &     &       &     \\ \hline
+		\Fett{10}&     &       &     &       &     \\ \hline\hline
+		$\sum$   &     &$n = \qquad\qquad\qquad $&	  &    &$D = \quad\qquad\qquad$\\ \hline
+		
+	\end{tabularx}\\[20pt]
+
+
+	\renewcommand{\arraystretch}{1.2}
+	\begin{tabularx}{\textwidth}{r X}
+		\large{Schlussfolgerung:} & \hrule\\
+		& \hrule\\
+		& \hrule\\
+		& \hrule\\
+		& \hrule\\
+	\end{tabularx}	
+	
+\end{document}

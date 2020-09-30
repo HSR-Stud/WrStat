@@ -1,94 +1,87 @@
+\newpage
 \section{Ereignisse und ihre Wahrscheinlichkeit}
 
-\subsection{Kombinatorik \skript{\pageref{sk-chapter-kombinatorik}}}
-$k$ Positionen müssen unabhängig von einander markiert werden, wobei $n_i$ verschiedene Markierungen zur Verfügung stehen.\\
-$n_1 \cdot n_2 \cdots n_k =  \prod_{i=1}^{k} n_i$\\
-\begin{tabular}{| p{6cm} | c | c || c |}
-  \hline
-  Art der Auswahl von $k$ aus $n$ Elementen &
-  \multicolumn{3}{c|}{Anzahl der Möglichkeiten} \\
-  \cline{2-4}
-  & ohne Wiederholungen & TR & mit Wiederholungen (Zurücklegen) \\
- 	&	$(k\leq n)$   &      & $(k\leq n)$ \\
- 	\hline
- 	Permutationen & $P_n=n!\quad(n=k)$       & nPr(n,n) & $P_n^{(k)}=\frac{n!}{k!}$ \\
- 	Kombinationen & $C_n^{(k)}=\binom n k$   & nCr(n,k) & $C_n^{(k)}=\binom{n+k-1} k$ \\
-  Variationen   & $V_n^{(k)}=k!\binom n k$ & nPr(n,k) & $V_n^{(k)}=n^k$ \\
-  \hline
-\end{tabular}
-\begin{list}{$\bullet$}{\setlength{\itemsep}{0cm} \setlength{\parsep}{0cm}
-\setlength{\topsep}{0.1cm}}
-  \item \textbf{Permutationen}: Gegeben seien $n$ verschiedene Objekte. Dann
-    gibt es $n!$ verschiedene Reihenfolgen in denen man diese Objekte anordnen
-    kann. \\
-    z.B.: $x,y,z;\quad x,z,y;\quad z,y,x;\ldots$
-  \item \textbf{Kombination}: Gegeben seien $n$ verschiedene Objekte. Dann gibt
-    es $\binom n k$ Möglichkeiten, daraus $k$ Objekte auszuwählen, wenn es nicht
-    auf die Reihenfolge ankommt. \\
-    z.B.: Wie viele verschiedene Möglichkeiten hat man beim Lotto, 6 Zahlen aus
-    49 auszuwählen?
-  \item \textbf{Variation} nennt man eine Auswahl von $k$ Elementen aus $n$
-    verschiedenen Elementen unter Beachtung der Reihenfolge
-\end{list}
-\hrule
-\vspace{.5cm}
-\begin{minipage}[t]{6.5cm}
-\subsection{Ereignisse \skript{\pageref{sk-section-begriffe}}}
-Begriffe der Wahrscheinlichkeitstheorie und ihre mathematischen
-Modellierung\\
-\begin{tabular}{|l|c|}
-\hline
-Begriff&Modell\\
-\hline
-Elementarereignis&$\omega$\\
-alle Elementarereignisse&$\Omega$\\
-Ereignis&$A\subset\Omega$\\
-sicheres Ereignis&$\Omega$\\
-unm"ogliches Ereignis&$\emptyset$\\
-$A$ und $B$&$A\cap B$\\
-$A$ oder $B$&$A\cup B$\\
-$A$ hat $B$ zur Folge, $A\Rightarrow B$&$A\subset B$\\
-nicht $A$&$\Omega\setminus A$\\
-\hline
-\end{tabular}
-\end{minipage}
-\hspace{.5cm}
-\begin{minipage}[t]{9cm}
-\subsection{Wahrscheinlichkeit \& Rechenregeln \skript{\pageref{sk-begriffe-zusammenfassung}}}
-\begin{tabular}{ll}
-  Wertebereich: & ${0}\le{P(A)}\le{1}$\\
-  Sicheres Ereignis:    & $P(\Omega)=1$\\
-  unmögliches Ereignis: & $P(\emptyset)=0$\\
-  komplementär Ereignis: & $P(\bar{A})=P({\Omega}\setminus{A})=1-P(A)$\\
-  Differenz der Ereignisse A und B: & $P({A}\setminus{B})=P(A)-P({A}\cap{B})$\\
-  Vereinigung zweier Ereignisse: & $P({A}\cup{B})=P(A)+P(B)-P({A}\cap{B})$\\
-\end{tabular}
-
-\[P(A)=\lim\limits_{\text{Anzahl Versuche} \to \infty} \dfrac{\text{Anzahl Versuche bei der A eingetreten ist}}{\text{Anzahl Versuche}}
-\]
-\end{minipage}
-\vspace{.5cm}
+	\begin{tabular}{|l|l|c|}
+		\hline
+		Begriff & Beschreibung & Modell\\
+		\hline
+		Elementarereignis & Der Ausgang eines Experiments & $\omega$\\
+		alle Elementarereignisse & Alle mögliche Ausgänge eines Experiments & $\Omega$ \\
+		Ereignis & Teilmenge von $\Omega$ \quad $A$ eingetreten $\Leftrightarrow$ Versuchsausgang $\omega \in A$ \ & $A \subset \Omega$\\
+		\hline
+	\end{tabular}
+	
+	\vspace{0.2cm}
+	
+	\begin{tabular}{|l|l|c|c|}
+		\hline
+		Begriff & Beschreibung & Bild & Modell\\
+		\hline
+		Sicheres Ereignis & tritt immer ein & \input{tikz/SicheresEreignis.tex} & $\Omega$\\
+		\hline
+		Unmögliches Ereignis & kann nicht eintreten & \input{tikz/UnmoglichesEreignis.tex} & $\emptyset = \{\}$\\
+		\hline
+		$A$ und $B$ & Schnittmenge & \input{tikz/AundB1.tex} & $A \cap B$\\
+		\hline
+		$A$ oder $B$ & Vereinigung & \input{tikz/AoderB1.tex} & $A \cup B$\\
+		\hline
+		$A$ hat $B$ zur folge & A ist in B enthalten & \input{tikz/AhatBzurfolge.tex} & $A \subset B$ \\
+		\hline
+		nicht $A$ & Komplementär Ereignis & \input{tikz/NichtA.tex} & $\Omega\setminus A$\\
+		\hline
+	\end{tabular}
+\vspace{.2cm}
 \hrule
 
-\subsection{Bedingte Wahrscheinlichkeit \skript{\pageref{sk-def-bedingte-wahrscheinlichkeit}}}
-Die Wahrscheinlichkeit für das Eintreten des Ereignisses $A$ unter der
-Bedingung, dass das Ereignis $B$ bereits eingetreten ist.
-\[\boxed{P(A\mid B)= \dfrac{P(A\cap B)}{P(B)}}=\underbrace{\frac{P(A)\cdot
-  P(B)}{P(B)}=P(A)}_{\text{nur wenn unabhängig}} \qquad P(\overline{A}|B) = 1 -
-  P(A|B)\]
-  
+\subsection{Wahrscheinlichkeit \& Rechenregeln}
+	\begin{tabular}{l:l}
+	  Wertebereich: & ${0}\le{P(A)}\le{1}$\\ \hdashline
+	  Sicheres Ereignis:    & $P(\Omega)=1$\\ \hdashline
+	  unmögliches Ereignis: & $P(\emptyset)=0$\\ \hdashline
+	  komplementär Ereignis: & $P(\bar{A})=P({\Omega}\setminus{A})=1-P(A)$\\ \hdashline
+	  Differenz der Ereignisse A und B: & $P({A}\setminus{B})=P(A)-P({A}\cap{B})$\\ \hdashline
+	  Vereinigung zweier Ereignisse: & $P({A}\cup{B})=P(A)+P(B)-P({A}\cap{B})$\\
+	\end{tabular}
+	
+	\[P(A)=\lim\limits_{\text{Anzahl Versuche} \to \infty} \dfrac{\text{Anzahl Versuche bei der A eingetreten ist}}{\text{Anzahl Versuche}}
+	\]
+\vspace{.2cm}
 \hrule
 
-\subsection{Unabhängige Ereignise \skript{\pageref{sk-def-unabhaengige-ereignisse}}}
-		Für sie gilt \hspace*{5mm} $\boxed{P(A\cap B)=P(A)P(B)}$\\
-    	Die Tatsache, dass A eingetreten ist, hat keinen Einfluss auf die 
-		Wahrscheinlichkeit von B.\\
-		Unabhängige Ereignisse $A$ und $B$ liegen vor, wenn: 
-		\hspace*{5mm} $P(A\mid B)=P(A\mid \overline{B})$ \\	
-		Wenn Ereignisse nicht gleichzeitig eintreten können, so sind sie abhängig.	
+\subsection{Laplace-Experiment}
+	In einem endlichen Wahrscheinlichkeitsraum $\Omega$ haben alle
+	Elementarereignisse die gleiche Wahrscheinlichkeit.\\[2pt]
+	$\boxed{P(A)=\dfrac{\left| A\right|}{\left|\Omega\right|}}$\\[2pt]
+	\textbf{Beispiele:} Münzen werfen wenn der Rand vernachlässigt wird, Würfeln... 
+\vspace{.2cm}
+\hrule
 
-\begin{minipage}[t]{11.5cm}
-	\subsection{Totale Wahrscheinlichkeit \skript{\pageref{sk-zerlegung}}}
+
+\subsection{Bedingte Wahrscheinlichkeit}
+	Die Wahrscheinlichkeit für das Eintreten des Ereignisses $A$ unter der
+	Bedingung, dass das Ereignis $B$ bereits eingetreten ist.\\[.2cm]
+	$\boxed{P(A\mid B)= \dfrac{P(A\cap B)}{P(B)}}=\underbrace{\frac{P(A)\cdot
+	  P(B)}{P(B)}=P(A)}_{\text{nur wenn unabhängig}}$ \\
+		$P(\overline{A}|B) = 1 -
+	  P(A|B)$
+\vspace{.2cm}
+\hrule
+
+\subsection{Unabhängige Ereignise}
+	Für sie gilt \hspace*{5mm} $\boxed{P(A\cap B)=P(A)P(B)}$\\[2pt]
+   	Die Tatsache, dass A eingetreten ist, hat keinen Einfluss auf die 
+	Wahrscheinlichkeit von B.\\
+	Unabhängige Ereignisse $A$ und $B$ liegen vor, wenn: 
+	\hspace*{5mm} $P(A\mid B)=P(A\mid \overline{B})$ \\	
+	Wenn Ereignisse nicht gleichzeitig eintreten können, so sind sie abhängig.\\
+	\input{tikz/unAbhaenig.tex}\\
+	Beim Beispiel mit abhängigen Ereignissen wird $A$ unwahrscheinlicher, wenn bereits $B$ eingetroffen ist.  
+\vspace{.2cm}
+\hrule
+
+\begin{minipage}[t]{0.6\textwidth}
+	\vspace{2mm}
+	\subsection{Totale Wahrscheinlichkeit}
 		$\boxed{P(A)=\sum\limits_{i=1}^n P(A\mid B_i)\cdot P(B_i)}$ \\
 	
 		in Matrixform: \\
@@ -98,24 +91,20 @@ Bedingung, dass das Ereignis $B$ bereits eingetreten ist.
 		\vdots & \vdots & \ddots & \cdots \\
 		P(A_m|B_1) & P(A_m|B_2) & \ldots & P(A_m|B_n)\end{pmatrix}}_{\text{W'keitsmatrix}}
 		\cdot \begin{pmatrix}P(B_1)\\P(B_2)\\\vdots\\P(B_n)\end{pmatrix}$
-	\end{minipage}
-\begin{minipage}[t]{7cm}
-\subsection{Satz von Bayes \skript{\pageref{sk-satz-von-bayes}}}
-\begin{tabular}{ll}
-  $\boxed{P(B\mid A)=P(A\mid B) \cdot\dfrac{P(B)}{P(A)}}$
-  \vspace{1mm}
-\end{tabular}
-\subsection{Laplace-Ereignisse \skript{\pageref{sk-section-laplace-ereignisse}}}
-In einem endlichen Wahrscheinlichkeitsraum $\Omega$ haben alle
-Elementarereignisse die gleiche Wahrscheinlichkeit. \\
-$\boxed{P(A)=\dfrac{\left| A\right|}{\left|\Omega\right|}}$ \\
-\end{minipage}\\ \ \\
-
+		\vspace{.2cm}
+\end{minipage} \hspace{0.05\textwidth} \vrule \hspace{0.05\textwidth}
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{2mm}
+	\subsection{Satz von Bayes}
+	$\boxed{P(B\mid A)=P(A\mid B) \cdot\dfrac{P(B)}{P(A)}}$\\[2pt]
+	Tauscht die Ereignisse der Bedingten Wahrscheinlichkeit. 
+	\vspace{.2cm}
+\end{minipage}
 \hrule
 
 \subsection{Google Matrix}
 	Es gibt folgende Ereignisse: $P(S_i)=$\{Ein User ist auf der Seite i\} und \\
-								 \hspace*{43.3mm}$P(S_j')=$\{Ein User ist nach einem Klick auf der Seite j\} \\
+	\hspace*{43.3mm}$P(S_j')=$\{Ein User ist nach einem Klick auf der Seite j\} \\
 	nach einiger Zeit ergibt sich ein Gleichgewicht $P(S_i)=P(S_j')$ \\
 	$P(S_j')=P(S_j'|S_1)P(S_1)+P(S_j'|S_2)P(S_2)+\dots$ \\
 	$\begin{pmatrix}P(S_1')\\P(S_2')\\\vdots\end{pmatrix} = 
@@ -127,4 +116,3 @@ $\boxed{P(A)=\dfrac{\left| A\right|}{\left|\Omega\right|}}$ \\
 	Wird der freie Wille noch einberechnet, dann gilt: $H'=\alpha H+\frac{1-\alpha}{\textbf{Anzahl Seiten}}A$ wobei A nur aus 1en besteht.\\
 	
 \hrule
-

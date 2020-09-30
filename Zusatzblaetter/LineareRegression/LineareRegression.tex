@@ -1,0 +1,63 @@
+%Autor: Simon Walker
+%Version: 1.2
+%Datum: 26.12.2019
+%Lizenz CC-BY-NC-SA
+\newcommand{\titleinfo}{Lineare Regression}
+\newcommand{\authorinfo}{Simon Walker}  
+
+% Genereller Header
+\documentclass[10pt,a4paper,fleqn]{article}
+% Dateiencoding
+\usepackage[utf8]{inputenc}
+% Seitenränder
+\usepackage[left=2cm,right=2cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+% Sprachpaket
+\usepackage[ngerman]{babel,varioref}
+
+\usepackage{amsmath}
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcommand{\Fett}[1]{\Large{$\mathbf{#1}$}}
+
+\begin{document}
+\pagestyle{empty}
+\huge{\textbf{Lineare Regression}}\\[10pt]
+\normalsize
+\begin{tabularx}{\textwidth}{Xrp{180pt}}
+	& \Large{Name: } & \hrule \\
+	&&\\
+	& Dieses Blatt gehört zur Aufgabe: & \hrule \\
+\end{tabularx}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{|c||Y|Y||Y|Y||Y|}
+	\hline
+	\Fett{i} & \Fett{x_i} & \Fett{y_i} & \Fett{x^2_i} & \Fett{y^2_i} & \Fett{x_i\cdot y_i}\\ \hline \hline
+	\Fett{1} &     &       &     &       &     \\ \hline
+	\Fett{2} &     &       &     &       &     \\ \hline
+	\Fett{3} &     &       &     &       &     \\ \hline
+	\Fett{4} &     &       &     &       &     \\ \hline
+	\Fett{5} &     &       &     &       &     \\ \hline
+	\Fett{6} &     &       &     &       &     \\ \hline
+	\Fett{7} &     &       &     &       &     \\ \hline
+	\Fett{8} &     &       &     &       &     \\ \hline
+	\Fett{9} &     &       &     &       &     \\ \hline
+	\Fett{10}&     &       &     &       &     \\ \hline
+	\hline
+	\Large{$\mathbf{\sum}$} &     &       &     &       &     \\ \hline
+	\Large{$\mathbf{E}$} &     &       &     &       &     \\ \hline
+	
+\end{tabularx}\\[25pt]
+\large
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{rX}
+	$var(X) = E(X^2) - E^2(X) =$ & \hrule\\
+	$var(Y) = E(Y^2) - E^2(Y) =$ & \hrule\\
+	$cov(X,Y) = E(XY)-E(X) \cdot E(Y) =$ & \hrule\\%\hline
+	$a=\dfrac{cov(X,Y)}{var(X)} =$ & \hrule\\
+	$b=E(Y)-a \cdot E(X) =$ & \hrule\\
+	$r^2 = \dfrac{cov(X,Y)}{var(X) \cdot var(Y)}=$ & \hrule
+\end{tabularx}
+
+\end{document}

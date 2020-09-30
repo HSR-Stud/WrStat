@@ -1,5 +1,5 @@
 \newpage
-\section{Hypothesentest \skript{\pageref{sk-chapter-hypothesen-testen}}}
+\section{Hypothesentest}
 	\subsection{Grundsätze}
 	- ``Man braucht Aussagen, die man widerlegen könnte.''\\
 	- Irrtum ist möglich (Irrtumsw'keit $\alpha$)\\
@@ -22,8 +22,7 @@
     \end{enumerate}
     
 
-	\subsection{Testen einer diskreten Verteilung
-	\skript{\pageref{sk-section-testen-diskreter-wkeitsverteilung}}}
+	\subsection{Testen einer diskreten Verteilung}
 	\subsubsection{$\chi^2$-Test mit k-möglichen Ausgängen}
 		
 		\begin{tabular}{l l}
@@ -45,7 +44,10 @@
 			Damit der Test optimal funktioniert muss folgende Bedingung erfüllt sein:
 			$\boldsymbol{n_i\geq 5 \; \forall \; i}$\\
         
-        2. \textbf{Diskrepanz $D$} berechnen & \begin{tabular}[t]{|c|c|c|c|c|c|}
+        2. \textbf{Diskrepanz $D$} berechnen \scriptsize
+        Vorlage auf \href{https://github.com/RostBau/WrStat/tree/master/Zusatzblaetter/X2Test}{GitHub} %TODO Link überprüfen
+        \normalsize& 
+        \begin{tabular}[t]{|c|c|c|c|c|c|}
                                   \hline
                                   $i$ & Ausgang & $p_i$ & $n_i$ & $(n_i-np_i)$ &
                                   $(n_i-np_i)^2/np_i$\\
@@ -80,7 +82,7 @@
     	&			-wenn wenig Messwerte $\Longrightarrow$ geringe Aussagekraft
     \end{tabular}
    	
-  \subsection{Testen einer stetigen Verteilung\skript{\pageref{sk-section-testen-stetiger-wkeitsverteilung}}}
+  \subsection{Testen einer stetigen Verteilung}
   	\subsubsection{Mit $\chi^2$-Test}
   	\begin{minipage}{13cm}
   		Der $\chi^2$-Test kann im Prinzip nur diskrete Wahrscheinlichkeitsverteilungen testen.\\
@@ -149,7 +151,7 @@
 			verwerfe die Hypothese, dass $X$ die Verteilungsfunktion $F_X$ hat. 
 	\end{tabular}
 
-\subsection{Vergleichen von Mittelwerten (t-Test)\skript{\pageref{sk-section-t-test}}}
+\subsection{Vergleichen von Mittelwerten (t-Test)}
 	\begin{tabular}{l l}
 		\textbf{Nullhypothese} & 
 		$\Rightarrow$ $E(X) = E(Y)$\\

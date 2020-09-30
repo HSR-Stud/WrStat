@@ -1,4 +1,4 @@
-WrStat.pdf
+#WrStat.pdf
 *.synctex*
 *.aux
 *.log
@@ -7,3 +7,5 @@ tmp/
 /*.tcp
 /*.tps
 *.toc
+*.out
+*.pdf
